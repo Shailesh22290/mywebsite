@@ -1,0 +1,14 @@
+/* src/styles/components.css */
+@layer components {
+    .section-title {
+      @apply text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white;
+    }
+  
+    .card {
+      @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700;
+    }
+  
+    .primary-button {
+       @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300;
+    }
+  }

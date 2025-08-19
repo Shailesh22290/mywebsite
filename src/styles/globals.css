@@ -1,0 +1,27 @@
+/* src/styles/globals.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --background: 255 255 255; /* Light mode background */
+    --foreground: 10 10 10;   /* Light mode text */
+    /* Add other light mode variables */
+  }
+
+  .dark {
+    --background: 10 10 10;   /* Dark mode background */
+    --foreground: 250 250 250; /* Dark mode text */
+     /* Add other dark mode variables */
+  }
+
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}

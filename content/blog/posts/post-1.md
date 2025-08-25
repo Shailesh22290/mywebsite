@@ -1,7 +1,7 @@
 ---
 title: 'My First Blog Post'
 date: '2025-07-16'
-author: 'Your Name'
+author: 'Shailesh K'
 excerpt: 'This is a short summary of my first blog post, where I discuss my journey into the world of tech and research.'
 tags: ['introduction', 'tech', 'research']
 ---

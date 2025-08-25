@@ -4,6 +4,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
@@ -19,6 +20,9 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    hmr: {
+      overlay: false, // Disables the error overlay in the browser
+    },
   },
   build: {
     outDir: 'dist',

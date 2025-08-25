@@ -2,7 +2,7 @@
 
 export const personalDetails = {
     // Your full name
-    name: "Your Name",
+    name: "Shailesh K",
   
     // Your professional title or headline
     headline: "Machine Learning Researcher & Software Developer",

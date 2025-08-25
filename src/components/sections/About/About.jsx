@@ -19,7 +19,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('overview');
 
   const personalInfo = {
-    name: "Dr. Your Name",
+    name: "Dr. Shailesh K",
     title: "Professor & Researcher",
     location: "University City, Country",
     email: "your.email@university.edu",

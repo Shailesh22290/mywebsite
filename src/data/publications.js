@@ -3,7 +3,7 @@ export const publications = [
     {
       id: 1,
       title: "Deep Learning Approaches for Natural Language Processing in Healthcare",
-      authors: ["Your Name", "Dr. Jane Smith", "Dr. Michael Johnson"],
+      authors: ["Shailesh K", "Dr. Jane Smith", "Dr. Michael Johnson"],
       journal: "Journal of Medical Informatics",
       year: 2024,
       volume: "45",
@@ -22,7 +22,7 @@ export const publications = [
     {
       id: 2,
       title: "Ethical Considerations in AI-Driven Decision Making Systems",
-      authors: ["Your Name", "Dr. Sarah Wilson"],
+      authors: ["Shailesh K", "Dr. Sarah Wilson"],
       conference: "International Conference on AI Ethics",
       year: 2024,
       location: "San Francisco, CA",
@@ -39,7 +39,7 @@ export const publications = [
     {
       id: 3,
       title: "Scalable Machine Learning Infrastructure for Real-time Analytics",
-      authors: ["Your Name", "Dr. Alex Chen", "Dr. Maria Rodriguez"],
+      authors: ["Shailesh K", "Dr. Alex Chen", "Dr. Maria Rodriguez"],
       journal: "IEEE Transactions on Big Data",
       year: 2023,
       volume: "9",
@@ -58,7 +58,7 @@ export const publications = [
     {
       id: 4,
       title: "Quantum Computing Applications in Optimization Problems",
-      authors: ["Your Name", "Dr. Robert Kim"],
+      authors: ["Shailesh K", "Dr. Robert Kim"],
       journal: "Nature Quantum Information",
       year: 2023,
       volume: "9",
@@ -76,7 +76,7 @@ export const publications = [
     {
       id: 5,
       title: "Privacy-Preserving Federated Learning for Healthcare Data",
-      authors: ["Your Name", "Dr. Lisa Thompson", "Dr. James Lee"],
+      authors: ["Shailesh K", "Dr. Lisa Thompson", "Dr. James Lee"],
       conference: "ACM Conference on Computer and Communications Security",
       year: 2023,
       location: "Copenhagen, Denmark",
@@ -92,7 +92,7 @@ export const publications = [
     {
       id: 6,
       title: "Automated Code Review using Large Language Models",
-      authors: ["Your Name", "Dr. Emma Davis"],
+      authors: ["Shailesh K", "Dr. Emma Davis"],
       journal: "Journal of Software Engineering",
       year: 2024,
       status: "under_review",

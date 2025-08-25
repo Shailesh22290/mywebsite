@@ -30,7 +30,7 @@ const educationData = [
     period: "2018 - 2020",
     gpa: "3.8/4.0",
     thesis: "Distributed Systems for Large-Scale Data Processing",
-    advisor: "Dr. John Doe",
+    advisor: "Dr. Shailesh K",
     status: "completed",
     description: "Specialized in distributed systems, database management, and cloud computing. Developed novel algorithms for data consistency in distributed environments.",
     achievements: [

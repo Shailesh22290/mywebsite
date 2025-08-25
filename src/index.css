@@ -1,21 +1,14 @@
-/* src/index.css */
-
-/* Your imports MUST come first */
+@charset "UTF-8"; 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import './styles/globals.css';
-@import './styles/components.css'; /* We will create/use this next */
-@import './styles/animations.css';
-
-/* Regular CSS is fine here */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Your imports MUST come first */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import './styles/globals.css';
 @import './styles/components.css';
 @import './styles/animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 @layer base {
   html {
@@ -54,4 +47,4 @@ html {
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
-} */
+}

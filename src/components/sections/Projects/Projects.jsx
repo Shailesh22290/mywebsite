@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard';
 import ProjectFilter from './ProjectFilter';
 import ProjectModal from './ProjectModal';
 import { projects } from '../../../data/projects';
-import { staggerContainer, fadeInUp } from '../../../utils/animations.js';
+import { fadeInUp, staggerContainer } from '@/utils/animations';
 
 const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);

@@ -40,7 +40,7 @@ const Hero = () => {
             >
               Hi, I'm{' '}
               <span className="text-gradient">
-                John Doe
+                Shailesh K
               </span>
             </motion.h1>
 

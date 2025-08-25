@@ -40,7 +40,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="text-2xl font-bold text-gradient">
-              Portfolio
+              Shailesh K
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
               Research-focused portfolio showcasing projects, publications, and academic journey.

@@ -1,9 +1,10 @@
+// src/components/sections/Publications/Publications.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import PublicationCard from './PublicationCard';
 import PublicationSearch from './PublicationSearch';
 import { publications } from '../../../data/publications';
-import { fadeInUp, staggerContainer } from '../../../utils/animations';
+import { fadeInUp, staggerContainer } from '@/utils/animations';
 import { BookOpen, Award, TrendingUp, Calendar } from 'lucide-react';
 
 const Publications = () => {
@@ -12,6 +13,7 @@ const Publications = () => {
   const [selectedType, setSelectedType] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('date');
+  const [viewMode, setViewMode] = useState('grid'); // Add viewMode state
 
   // Get unique years and types
   const years = ['all', ...new Set(publications.map(pub => pub.year))].sort((a, b) => {
@@ -42,7 +44,7 @@ const Publications = () => {
         pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         pub.authors.some(author => author.toLowerCase().includes(searchTerm.toLowerCase())) ||
         pub.venue.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (pub.keywords && pub.keywords.some(keyword => 
+        (pub.keywords && pub.keywords.some(keyword =>
           keyword.toLowerCase().includes(searchTerm.toLowerCase())
         ))
       );
@@ -66,6 +68,16 @@ const Publications = () => {
 
     setFilteredPublications(filtered);
   }, [selectedYear, selectedType, searchTerm, sortBy]);
+
+  // Handle sort and view mode changes
+  const handleSortChange = (field) => {
+    setSortBy(field);
+  };
+
+  const handleSort = ({ sortBy, viewMode }) => {
+    setSortBy(sortBy);
+    setViewMode(viewMode); // Update viewMode
+  };
 
   // Calculate stats
   const stats = {
@@ -175,16 +187,18 @@ const Publications = () => {
               selectedType={selectedType}
               onTypeChange={setSelectedType}
               sortBy={sortBy}
-              onSortChange={setSortBy}
+              onSortChange={handleSortChange}
               years={years}
               types={types}
+              viewMode={viewMode}
+              onSort={handleSort} // Pass handleSort for viewMode updates
             />
           </motion.div>
 
           {/* Publications List */}
           <motion.div variants={fadeInUp}>
             {filteredPublications.length > 0 ? (
-              <div className="space-y-6">
+              <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-6'}>
                 {filteredPublications.map((publication, index) => (
                   <motion.div
                     key={publication.id}

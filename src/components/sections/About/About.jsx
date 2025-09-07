@@ -26,7 +26,7 @@ const About = () => {
     location: "Bhopal, India",
     email: "shailesh22@iiserb.ac.in",
     phone: "+91 900994457_",
-    website: "https://shaileshk.me",
+    website: "https://shailesh22290.github.io",
     joinDate: "December 2022"
   };
 

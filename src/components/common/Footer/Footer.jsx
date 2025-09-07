@@ -8,7 +8,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
+    // { icon: Twitter, href: 'https://twitter.com/yourusername', label: 'Twitter' },
     { icon: Mail, href: 'mailto:your.email@domain.com', label: 'Email' },
   ];
 
@@ -17,11 +17,11 @@ const Footer = () => {
       { label: 'Home', path: '/' },
       { label: 'About', path: '/about' },
       { label: 'Projects', path: '/projects' },
-      { label: 'Publications', path: '/publications' },
+      // { label: 'Publications', path: '/publications' },
     ]},
     { title: 'Research', links: [
       { label: 'Experience', path: '/experience' },
-      { label: 'Talks', path: '/talks' },
+      // { label: 'Talks', path: '/talks' },
       { label: 'Education', path: '/education' },
       { label: 'Blog', path: '/blog' },
     ]},
@@ -29,7 +29,7 @@ const Footer = () => {
       { label: 'Contact', path: '/contact' },
       { label: 'Consultancy', path: '/consultancy' },
       { label: 'Resources', path: '/resources' },
-      { label: 'Discussions', path: '/discussions' },
+      // { label: 'Discussions', path: '/discussions' },
     ]},
   ];
 
@@ -40,10 +40,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="text-2xl font-bold text-gradient">
-              Shailesh K
+              Shailesh K.
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
-              Research-focused portfolio showcasing projects, publications, and academic journey.
+              BS Data Science Student at IISERB
             </p>
             
             {/* Social Links */}
@@ -86,15 +86,13 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-4 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <div className="text-center">
             <p className="text-gray-600 dark:text-gray-400">
-              © {currentYear} Portfolio. All rights reserved.
-            </p>
-            <p className="mt-2 md:mt-0 text-gray-600 dark:text-gray-400 flex items-center">
-              Made with <Heart className="h-4 w-4 text-red-500 mx-1" /> using React & Tailwind CSS
+              © {currentYear} Shailesh K. All rights reserved.
             </p>
           </div>
+
         </div>
       </div>
     </footer>

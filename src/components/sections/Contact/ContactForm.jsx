@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = ({ selectedReason }) => {
   const [formData, setFormData] = useState({
@@ -9,8 +10,6 @@ const ContactForm = ({ selectedReason }) => {
     message: '',
     reason: selectedReason || '',
     organization: '',
-    urgency: 'normal',
-    newsletter: false
   });
 
   const [status, setStatus] = useState({
@@ -21,12 +20,17 @@ const ContactForm = ({ selectedReason }) => {
 
   const [errors, setErrors] = useState({});
 
-  const urgencyOptions = [
-    { value: 'low', label: 'Low Priority', description: 'Response within 5-7 days' },
-    { value: 'normal', label: 'Normal', description: 'Response within 2-3 days' },
-    { value: 'high', label: 'High Priority', description: 'Response within 24 hours' },
-    { value: 'urgent', label: 'Urgent', description: 'Response within 4-6 hours' }
-  ];
+  // Use Vite environment variables
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  // Initialize EmailJS
+  React.useEffect(() => {
+    if (EMAILJS_PUBLIC_KEY) {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+  }, [EMAILJS_PUBLIC_KEY]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -39,10 +43,6 @@ const ContactForm = ({ selectedReason }) => {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required';
     }
 
     if (!formData.message.trim()) {
@@ -66,14 +66,47 @@ const ContactForm = ({ selectedReason }) => {
       return;
     }
 
+    // Check if EmailJS is properly configured
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setStatus({ 
+        loading: false, 
+        success: false, 
+        error: 'Email service not configured. Please contact me directly at shailesh22@iiserb.ac.in' 
+      });
+      return;
+    }
+
     setStatus({ loading: true, success: false, error: null });
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        organization: formData.organization,
+        reason: formData.reason,
+        subject: formData.subject || `Contact from ${formData.name}`,
+        message: formData.message,
+        to_name: 'Shailesh Kachhi',
+        reply_to: formData.email,
+        time: new Date().toLocaleString('en-IN', { 
+          timeZone: 'Asia/Kolkata',
+          dateStyle: 'medium', 
+          timeStyle: 'short' 
+        })
+      };
+
+      console.log('Sending email with params:', templateParams);
+      console.log('Using Service ID:', EMAILJS_SERVICE_ID);
+      console.log('Using Template ID:', EMAILJS_TEMPLATE_ID);
       
-      // Here you would typically send the data to your backend
-      console.log('Form submitted:', formData);
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+      
+      console.log('Email sent successfully:', response);
       
       setStatus({ loading: false, success: true, error: null });
       
@@ -85,29 +118,31 @@ const ContactForm = ({ selectedReason }) => {
         message: '',
         reason: selectedReason || '',
         organization: '',
-        urgency: 'normal',
-        newsletter: false
       });
       
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setStatus({ loading: false, success: false, error: null });
-      }, 5000);
-      
     } catch (error) {
+      console.error('Failed to send email:', error);
+      let errorMessage = 'Failed to send message. ';
+      
+      if (error.text) {
+        errorMessage += `Error: ${error.text}. `;
+      }
+      
+      errorMessage += 'Please try again or contact me directly at shailesh22@iiserb.ac.in';
+      
       setStatus({ 
         loading: false, 
         success: false, 
-        error: 'Failed to send message. Please try again or contact directly via email.' 
+        error: errorMessage 
       });
     }
   };
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value
     }));
     
     // Clear error when user starts typing
@@ -124,10 +159,10 @@ const ContactForm = ({ selectedReason }) => {
   }, [selectedReason, formData.reason]);
 
   const reasonOptions = [
-    { value: 'collaboration', label: 'Research Collaboration' },
-    { value: 'consultation', label: 'Technical Consultation' },
-    { value: 'speaking', label: 'Speaking Engagement' },
-    { value: 'mentorship', label: 'Mentorship' },
+    { value: 'research', label: 'Research Collaboration' },
+    { value: 'technical', label: 'Technical Consultation' },
+    { value: 'freelance', label: 'Freelance Project' },
+    { value: 'academic', label: 'Academic Discussion' },
     { value: 'general', label: 'General Inquiry' }
   ];
 
@@ -139,7 +174,7 @@ const ContactForm = ({ selectedReason }) => {
           Message Sent Successfully!
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
-          Thank you for reaching out. I'll get back to you soon based on the urgency level you selected.
+          Thank you for reaching out. I'll get back to you as soon as possible.
         </p>
         <button
           onClick={() => setStatus({ loading: false, success: false, error: null })}
@@ -153,6 +188,15 @@ const ContactForm = ({ selectedReason }) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Debug info - remove in production */}
+      {(!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) && (
+        <div className="p-3 bg-yellow-100 dark:bg-yellow-900 border border-yellow-300 dark:border-yellow-700 rounded-lg">
+          <p className="text-yellow-800 dark:text-yellow-200 text-sm">
+            <strong>Note:</strong> Email service is not configured. Please set up EmailJS or messages will not be sent.
+          </p>
+        </div>
+      )}
+
       {/* Name and Email */}
       <div className="grid md:grid-cols-2 gap-4">
         <div>
@@ -241,7 +285,7 @@ const ContactForm = ({ selectedReason }) => {
       {/* Subject */}
       <div>
         <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-          Subject *
+          Subject
         </label>
         <input
           type="text"
@@ -249,14 +293,9 @@ const ContactForm = ({ selectedReason }) => {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white ${
-            errors.subject ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-          }`}
-          placeholder="Brief subject line"
+          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+          placeholder="Brief subject line (optional)"
         />
-        {errors.subject && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.subject}</p>
-        )}
       </div>
 
       {/* Message */}
@@ -273,58 +312,14 @@ const ContactForm = ({ selectedReason }) => {
           className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white resize-none ${
             errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
           }`}
-          placeholder="Please provide details about your inquiry, including any specific requirements, timeline, or background information that would be helpful..."
+          placeholder="Please provide details about your inquiry..."
         />
         {errors.message && (
           <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message}</p>
         )}
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        {/* <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
           {formData.message.length}/1000 characters
-        </p>
-      </div>
-
-      {/* Urgency Level */}
-      <div>
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-          Priority Level
-        </label>
-        <div className="space-y-2">
-          {urgencyOptions.map((option) => (
-            <label key={option.value} className="flex items-center cursor-pointer">
-              <input
-                type="radio"
-                name="urgency"
-                value={option.value}
-                checked={formData.urgency === option.value}
-                onChange={handleChange}
-                className="mr-3 text-blue-600 focus:ring-blue-500"
-              />
-              <div>
-                <span className="text-sm font-medium text-gray-900 dark:text-white">
-                  {option.label}
-                </span>
-                <span className="text-sm text-gray-500 dark:text-gray-400 ml-2">
-                  - {option.description}
-                </span>
-              </div>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      {/* Newsletter Signup */}
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          id="newsletter"
-          name="newsletter"
-          checked={formData.newsletter}
-          onChange={handleChange}
-          className="mr-2 text-blue-600 focus:ring-blue-500"
-        />
-        <label htmlFor="newsletter" className="text-sm text-gray-700 dark:text-gray-300">
-          Subscribe to my newsletter for research updates and insights
-        </label>
+        </p> */}
       </div>
 
       {/* Error Message */}
@@ -356,10 +351,9 @@ const ContactForm = ({ selectedReason }) => {
         )}
       </button>
 
-      <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-        By submitting this form, you agree to be contacted regarding your inquiry. 
-        Your information will be kept confidential and never shared with third parties.
-      </p>
+      {/* <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+        Your information will be used solely to respond to your inquiry and will not be shared with third parties.
+      </p> */}
     </form>
   );
 };

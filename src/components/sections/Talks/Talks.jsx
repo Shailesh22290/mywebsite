@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Users, Clock, ExternalLink, Filter, Search } from 'lucide-react';
 import TalkCard from './TalkCard';
 import TalkCalendar from './TalkCalendar';
-import { talks } from '../../data/talks';
+import { talks } from '../../../data/talks';
 
 const Talks = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');

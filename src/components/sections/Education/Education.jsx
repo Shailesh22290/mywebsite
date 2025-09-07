@@ -1,57 +1,57 @@
+// Education.js
+
 import React, { useState } from 'react';
 import { GraduationCap, Calendar, MapPin, Award, BookOpen, Filter } from 'lucide-react';
 import CourseGrid from './CourseGrid';
 import CertificateCard from './CertificateCard';
 
-// Mock data - replace with your actual education data
+// Updated education data (from CV + Transcript)
 const educationData = [
   {
     id: 1,
-    degree: "Ph.D. in Computer Science",
-    institution: "Stanford University",
-    location: "Stanford, CA",
-    period: "2020 - 2024",
-    gpa: "3.9/4.0",
-    thesis: "Advanced Machine Learning Techniques for Natural Language Processing",
-    advisor: "Dr. Jane Smith",
-    status: "completed",
-    description: "Focused on deep learning, NLP, and computational linguistics. Conducted research on transformer architectures and their applications in multilingual text processing.",
+    degree: "B.S. in Data Science and Engineering",
+    institution: "Indian Institute of Science Education and Research (IISER) Bhopal",
+    location: "Bhopal, India",
+    period: "Dec 2022 – Present",
+    gpa: "7.21/10.0",
+    status: "in-progress",
+    description:
+      "Undergraduate studies in Data Science and Engineering with a strong focus on Artificial Intelligence, Machine Learning, Computer Vision, Optimization, and Applied Mathematics. Completed multiple projects and internships in ML, AI, and full-stack development.",
     achievements: [
-      "Published 8 peer-reviewed papers in top-tier conferences",
-      "Received Graduate Research Fellowship",
-      "Teaching Assistant for Advanced AI courses"
+      "General Secretary, Technical Affairs – Student Activity Council (2024–2025)",
+      "Convenor – Techfest Armageddon (2023–2025)",
+      "Winner – Smart India Hackathon 2023 (National Level)",
+      "AIR 7288 – JEE Advanced 2022 (Top 1% among 1.5M candidates)"
     ]
   },
   {
     id: 2,
-    degree: "Master of Science in Computer Science",
-    institution: "MIT",
-    location: "Cambridge, MA",
-    period: "2018 - 2020",
-    gpa: "3.8/4.0",
-    thesis: "Distributed Systems for Large-Scale Data Processing",
-    advisor: "Dr. Shailesh K",
+    degree: "Senior Secondary Education (Class 12)",
+    institution: "Ashoka Hall Senior Secondary School",
+    location: "Jabalpur, India",
+    period: "2020 – 2021",
+    gpa: "83%",
     status: "completed",
-    description: "Specialized in distributed systems, database management, and cloud computing. Developed novel algorithms for data consistency in distributed environments.",
+    description:
+      "Completed Class 12 with a focus on Physics, Chemistry, and Mathematics. Developed strong foundations in problem solving and logical reasoning.",
     achievements: [
-      "Summa Cum Laude graduation",
-      "Outstanding Thesis Award",
-      "Published 3 conference papers"
+      "Scored 83% in Class 12 Boards",
+      "Prepared and qualified JEE Advanced 2022"
     ]
   },
   {
     id: 3,
-    degree: "Bachelor of Technology in Computer Science",
-    institution: "IIT Delhi",
-    location: "New Delhi, India",
-    period: "2014 - 2018",
-    gpa: "9.2/10.0",
+    degree: "Secondary Education (Class 10)",
+    institution: "Ashoka Hall Senior Secondary School",
+    location: "Jabalpur, India",
+    period: "2018 – 2019",
+    gpa: "91%",
     status: "completed",
-    description: "Strong foundation in computer science fundamentals, mathematics, and programming. Active in competitive programming and tech societies.",
+    description:
+      "Completed Class 10 with distinction, excelling in mathematics and science subjects.",
     achievements: [
-      "Valedictorian of the batch",
-      "President of Computer Science Society",
-      "Winner of multiple programming competitions"
+      "Scored 91% in Class 10 Boards",
+      "School merit list for academic excellence"
     ]
   }
 ];
@@ -73,9 +73,16 @@ const Education = () => {
     { id: 'bachelors', label: 'Bachelors' }
   ];
 
-  const filteredEducation = educationData.filter(edu => {
+  const filteredEducation = educationData.filter((edu) => {
     if (selectedLevel === 'all') return true;
-    return edu.degree.toLowerCase().includes(selectedLevel === 'phd' ? 'ph.d' : selectedLevel);
+    const degreeLower = edu.degree?.toLowerCase() || '';
+    const levelMap = {
+      phd: 'ph.d',
+      masters: 'master',
+      bachelors: 'b.s'
+    };
+    const searchTerm = levelMap[selectedLevel] || selectedLevel;
+    return degreeLower.includes(searchTerm);
   });
 
   const getStatusColor = (status) => {
@@ -91,13 +98,13 @@ const Education = () => {
 
   return (
     <section id="education" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+     <div className="container mx-auto px-6 sm:px-8 lg:px-16 xl:px-48">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Education & Learning
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My academic journey and continuous learning path in computer science and research
+            My academic journey and continuous learning path in Data Science, Engineering, and Artificial Intelligence
           </p>
         </div>
 
@@ -151,7 +158,7 @@ const Education = () => {
             </div>
 
             {/* Education Cards */}
-            <div className="space-y-8">
+            <div className="space-y-12">
               {filteredEducation.map((edu) => (
                 <div
                   key={edu.id}
@@ -191,22 +198,10 @@ const Education = () => {
                             Academic Details
                           </h4>
                           <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                            <div className="flex justify-between">
+                            <div className="flex ">
                               <span>GPA:</span>
                               <span className="font-medium">{edu.gpa}</span>
                             </div>
-                            {edu.thesis && (
-                              <div>
-                                <span className="font-medium">Thesis:</span>
-                                <p className="mt-1">{edu.thesis}</p>
-                              </div>
-                            )}
-                            {edu.advisor && (
-                              <div className="flex justify-between">
-                                <span>Advisor:</span>
-                                <span className="font-medium">{edu.advisor}</span>
-                              </div>
-                            )}
                           </div>
                         </div>
 

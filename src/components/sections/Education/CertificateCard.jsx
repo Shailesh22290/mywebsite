@@ -5,105 +5,105 @@ import { Award, Calendar, ExternalLink, Download, Eye, CheckCircle, Clock } from
 const certificatesData = [
   {
     id: 1,
-    title: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    issueDate: "2024-01-15",
-    expiryDate: "2027-01-15",
-    credentialId: "AWS-CSA-2024-001",
-    type: "Professional",
-    category: "Cloud Computing",
+    title: "SQL for Data Science",
+    issuer: "Coursera",
+    issueDate: "2023-09-15",
+    expiryDate: "Never",
+    credentialId: "COURSERA-SQL-2023-XYZ",
+    type: "Course",
+    category: "Data Science",
     status: "active",
-    image: "/assets/certificates/aws-cert.jpg",
-    verificationUrl: "https://aws.amazon.com/verification/ABC123",
-    downloadUrl: "/assets/documents/certificates/aws-cert.pdf",
-    description: "Validates expertise in designing distributed systems on AWS platform with focus on scalability, security, and cost optimization.",
-    skills: ["AWS", "Cloud Architecture", "Security", "Cost Optimization"],
-    level: "Associate"
+    image: "/assets/certificates/coursera-sql.jpg",
+    verificationUrl: "https://www.coursera.org/account/accomplishments/verify/ABC123",
+    downloadUrl: "/assets/documents/certificates/coursera-sql.pdf",
+    description: "Covers essential SQL skills for data analysis, including querying, data manipulation, and advanced database concepts.",
+    skills: ["SQL", "Data Analysis", "MySQL", "Database Management"],
+    level: "Fundamentals"
   },
   {
     id: 2,
-    title: "Google Cloud Professional Data Engineer",
-    issuer: "Google Cloud",
+    title: "Learning React.js: Scalable & High-Performance Apps",
+    issuer: "Infosys Springboard",
     issueDate: "2023-11-20",
-    expiryDate: "2025-11-20",
-    credentialId: "GCP-PDE-2023-045",
-    type: "Professional",
-    category: "Data Engineering",
+    expiryDate: "Never",
+    credentialId: "INFY-REACT-2023-LMN",
+    type: "Course",
+    category: "Web Development",
     status: "active",
-    image: "/assets/certificates/gcp-cert.jpg",
-    verificationUrl: "https://cloud.google.com/certification/verify/XYZ456",
-    downloadUrl: "/assets/documents/certificates/gcp-cert.pdf",
-    description: "Demonstrates ability to design, build, and maintain data processing systems on Google Cloud Platform.",
-    skills: ["BigQuery", "Data Pipeline", "Machine Learning", "Analytics"],
-    level: "Professional"
+    image: "/assets/certificates/infosys-react.jpg",
+    verificationUrl: "https://infyspringboard.onwingspan.com/verify/XYZ456",
+    downloadUrl: "/assets/documents/certificates/infosys-react.pdf",
+    description: "Focuses on building modern, high-performance web applications using React.js, covering components, state, and hooks.",
+    skills: ["React.js", "JavaScript", "Frontend", "Web Performance"],
+    level: "Intermediate"
   },
   {
     id: 3,
-    title: "Certified Kubernetes Administrator",
-    issuer: "Cloud Native Computing Foundation",
-    issueDate: "2023-09-10",
-    expiryDate: "2026-09-10",
-    credentialId: "CKA-2023-789",
+    title: "TensorFlow Developer Certificate",
+    issuer: "TensorFlow",
+    issueDate: "2024-03-10",
+    expiryDate: "Never",
+    credentialId: "TF-DEV-2024-PQR",
     type: "Professional",
-    category: "DevOps",
+    category: "Machine Learning",
     status: "active",
-    image: "/assets/certificates/cka-cert.jpg",
-    verificationUrl: "https://training.linuxfoundation.org/certification/verify/DEF789",
-    downloadUrl: "/assets/documents/certificates/cka-cert.pdf",
-    description: "Validates skills in Kubernetes cluster administration, troubleshooting, and management.",
-    skills: ["Kubernetes", "Container Orchestration", "Linux", "Networking"],
+    image: "/assets/certificates/tf-cert.jpg",
+    verificationUrl: "https://www.tensorflow.org/certificate/verify/DEF789",
+    downloadUrl: "/assets/documents/certificates/tf-cert.pdf",
+    description: "Validates expertise in building and training neural networks using TensorFlow for computer vision, NLP, and more.",
+    skills: ["TensorFlow", "Deep Learning", "Python", "Computer Vision"],
     level: "Professional"
   },
   {
     id: 4,
-    title: "Certified Ethical Hacker",
-    issuer: "EC-Council",
-    issueDate: "2023-06-30",
-    expiryDate: "2026-06-30",
-    credentialId: "CEH-2023-101",
+    title: "Docker Certified Associate",
+    issuer: "Docker",
+    issueDate: "2025-05-20",
+    expiryDate: "Never",
+    credentialId: "DCA-2025-GHI",
     type: "Professional",
-    category: "Cybersecurity",
+    category: "DevOps",
     status: "active",
-    image: "/assets/certificates/ceh-cert.jpg",
-    verificationUrl: "https://cert.eccouncil.org/verify/GHI101",
-    downloadUrl: "/assets/documents/certificates/ceh-cert.pdf",
-    description: "Demonstrates knowledge of information security threats and countermeasures.",
-    skills: ["Penetration Testing", "Security Assessment", "Vulnerability Analysis", "Risk Management"],
-    level: "Professional"
+    image: "/assets/certificates/docker-cert.jpg",
+    verificationUrl: "https://www.docker.com/certification/verify/GHI101",
+    downloadUrl: "/assets/documents/certificates/docker-cert.pdf",
+    description: "Demonstrates foundational knowledge and skills in using Docker for containerization and building modern applications.",
+    skills: ["Docker", "Containerization", "MLOps", "CI/CD"],
+    level: "Associate"
   },
   {
     id: 5,
-    title: "Microsoft Azure Fundamentals",
-    issuer: "Microsoft",
-    issueDate: "2023-04-15",
+    title: "Introduction to Quantum Computing",
+    issuer: "NPTEL",
+    issueDate: "2024-12-01",
     expiryDate: "Never",
-    credentialId: "AZ-900-2023-202",
-    type: "Fundamentals",
-    category: "Cloud Computing",
+    credentialId: "NPTEL-QC-2024-JKL",
+    type: "Course",
+    category: "Advanced Topics",
     status: "active",
-    image: "/assets/certificates/azure-cert.jpg",
-    verificationUrl: "https://learn.microsoft.com/en-us/users/verification/JKL202",
-    downloadUrl: "/assets/documents/certificates/azure-cert.pdf",
-    description: "Validates foundational knowledge of cloud services and Azure platform capabilities.",
-    skills: ["Azure", "Cloud Concepts", "Azure Services", "Security"],
+    image: "/assets/certificates/nptel-qc.jpg",
+    verificationUrl: "https://nptel.ac.in/noc/Ecertificate/?q=JKL202",
+    downloadUrl: "/assets/documents/certificates/nptel-qc.pdf",
+    description: "Provides a foundational understanding of quantum mechanics, quantum computation, and quantum algorithms.",
+    skills: ["Quantum Computing", "Algorithms", "Physics", "Computation"],
     level: "Fundamentals"
   },
   {
     id: 6,
-    title: "TensorFlow Developer Certificate",
-    issuer: "TensorFlow",
-    issueDate: "2023-02-10",
-    expiryDate: "2026-02-10",
-    credentialId: "TF-DEV-2023-303",
-    type: "Professional",
-    category: "Machine Learning",
-    status: "expiring",
-    image: "/assets/certificates/tf-cert.jpg",
-    verificationUrl: "https://www.tensorflow.org/certificate/verify/MNO303",
-    downloadUrl: "/assets/documents/certificates/tf-cert.pdf",
-    description: "Demonstrates proficiency in using TensorFlow for machine learning applications.",
-    skills: ["TensorFlow", "Deep Learning", "Neural Networks", "Python"],
-    level: "Professional"
+    title: "Full Stack Development",
+    issuer: "Infosys Springboard",
+    issueDate: "2022-12-30",
+    expiryDate: "Never",
+    credentialId: "INFY-FSD-2022-MNO",
+    type: "Course",
+    category: "Web Development",
+    status: "active",
+    image: "/assets/certificates/infosys-fsd.jpg",
+    verificationUrl: "https://infyspringboard.onwingspan.com/verify/MNO303",
+    downloadUrl: "/assets/documents/certificates/infosys-fsd.pdf",
+    description: "Comprehensive training in front-end and back-end technologies to build complete web applications.",
+    skills: ["HTML/CSS", "JavaScript", "Node.js", "REST APIs", "MongoDB"],
+    level: "Intermediate"
   }
 ];
 
@@ -114,16 +114,17 @@ const CertificateCard = () => {
 
   const categories = [
     { id: 'all', label: 'All Categories' },
-    { id: 'Cloud Computing', label: 'Cloud Computing' },
-    { id: 'Data Engineering', label: 'Data Engineering' },
+    { id: 'Web Development', label: 'Web Development' },
+    { id: 'Data Science', label: 'Data Science' },
+    { id: 'Machine Learning', label: 'Machine Learning' },
     { id: 'DevOps', label: 'DevOps' },
-    { id: 'Cybersecurity', label: 'Cybersecurity' },
-    { id: 'Machine Learning', label: 'Machine Learning' }
+    { id: 'Advanced Topics', label: 'Advanced Topics' }
   ];
 
   const levels = [
     { id: 'all', label: 'All Levels' },
     { id: 'Fundamentals', label: 'Fundamentals' },
+    { id: 'Intermediate', label: 'Intermediate' },
     { id: 'Associate', label: 'Associate' },
     { id: 'Professional', label: 'Professional' }
   ];
@@ -152,6 +153,7 @@ const CertificateCard = () => {
       case 'Professional':
         return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300';
       case 'Associate':
+      case 'Intermediate':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
       case 'Fundamentals':
         return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300';
@@ -223,7 +225,7 @@ const CertificateCard = () => {
                   {cert.issuer}
                 </span>
               </div>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 items-end">
                 <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(cert.status)}`}>
                   {cert.status === 'active' ? 'Active' : cert.status === 'expiring' ? 'Expiring Soon' : 'Expired'}
                 </span>
@@ -289,7 +291,7 @@ const CertificateCard = () => {
               </div>
             )}
 
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setSelectedCertificate(cert)}
@@ -316,7 +318,7 @@ const CertificateCard = () => {
                 <ExternalLink className="w-4 h-4" />
                 <span>Verify</span>
               </a>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

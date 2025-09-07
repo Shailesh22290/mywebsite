@@ -28,48 +28,48 @@ const SocialLinks = ({ size = 'default', showLabels = true, className = '' }) =>
       color: 'hover:bg-blue-50 dark:hover:bg-blue-900',
       description: 'Professional network and career updates'
     },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/username',
-      icon: Twitter,
-      color: 'hover:bg-blue-50 dark:hover:bg-blue-900',
-      description: 'Research thoughts and academic discussions'
-    },
-    {
-      name: 'Google Scholar',
-      url: 'https://scholar.google.com/citations?user=username',
-      icon: BookOpen,
-      color: 'hover:bg-green-50 dark:hover:bg-green-900',
-      description: 'Academic publications and citations'
-    },
-    {
-      name: 'ResearchGate',
-      url: 'https://researchgate.net/profile/username',
-      icon: Users,
-      color: 'hover:bg-teal-50 dark:hover:bg-teal-900',
-      description: 'Research collaboration and publications'
-    },
-    {
-      name: 'ORCID',
-      url: 'https://orcid.org/0000-0000-0000-0000',
-      icon: FileText,
-      color: 'hover:bg-green-50 dark:hover:bg-green-900',
-      description: 'Academic identifier and research outputs'
-    },
-    {
-      name: 'YouTube',
-      url: 'https://youtube.com/channel/username',
-      icon: Youtube,
-      color: 'hover:bg-red-50 dark:hover:bg-red-900',
-      description: 'Educational content and research presentations'
-    },
-    {
-      name: 'Email',
-      url: 'mailto:contact@researcher.com',
-      icon: Mail,
-      color: 'hover:bg-gray-100 dark:hover:bg-gray-700',
-      description: 'Direct email communication'
-    }
+    // {
+    //   name: 'Twitter',
+    //   url: 'https://twitter.com/username',
+    //   icon: Twitter,
+    //   color: 'hover:bg-blue-50 dark:hover:bg-blue-900',
+    //   description: 'Research thoughts and academic discussions'
+    // },
+    // {
+    //   name: 'Google Scholar',
+    //   url: 'https://scholar.google.com/citations?user=username',
+    //   icon: BookOpen,
+    //   color: 'hover:bg-green-50 dark:hover:bg-green-900',
+    //   description: 'Academic publications and citations'
+    // },
+    // {
+    //   name: 'ResearchGate',
+    //   url: 'https://researchgate.net/profile/username',
+    //   icon: Users,
+    //   color: 'hover:bg-teal-50 dark:hover:bg-teal-900',
+    //   description: 'Research collaboration and publications'
+    // },
+    // {
+    //   name: 'ORCID',
+    //   url: 'https://orcid.org/0000-0000-0000-0000',
+    //   icon: FileText,
+    //   color: 'hover:bg-green-50 dark:hover:bg-green-900',
+    //   description: 'Academic identifier and research outputs'
+    // },
+    // {
+    //   name: 'YouTube',
+    //   url: 'https://youtube.com/channel/username',
+    //   icon: Youtube,
+    //   color: 'hover:bg-red-50 dark:hover:bg-red-900',
+    //   description: 'Educational content and research presentations'
+    // },
+    // {
+    //   name: 'Email',
+    //   url: 'mailto:contact@researcher.com',
+    //   icon: Mail,
+    //   color: 'hover:bg-gray-100 dark:hover:bg-gray-700',
+    //   description: 'Direct email communication'
+    // }
   ];
 
   const sizeClasses = {
@@ -115,7 +115,7 @@ const SocialLinks = ({ size = 'default', showLabels = true, className = '' }) =>
       ))}
       
       {/* Additional Contact Methods */}
-      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+      {/* <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
         <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-3">
           Alternative Contact Methods
         </h4>
@@ -145,10 +145,10 @@ const SocialLinks = ({ size = 'default', showLabels = true, className = '' }) =>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       
       {/* QR Code for Contact */}
-      <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+      {/* <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
         <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-3">
           Quick Connect
         </h4>
@@ -162,7 +162,7 @@ const SocialLinks = ({ size = 'default', showLabels = true, className = '' }) =>
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

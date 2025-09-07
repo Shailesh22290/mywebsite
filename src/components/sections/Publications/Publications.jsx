@@ -117,14 +117,14 @@ const Publications = () => {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Publications & Research
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            {/* <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               A comprehensive collection of my research publications, papers, and 
               contributions to the academic community.
-            </p>
+            </p> */}
           </motion.div>
 
           {/* Publication Stats */}
-          <motion.div variants={fadeInUp} className="mb-12">
+          {/* <motion.div variants={fadeInUp} className="mb-12">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg text-center">
                 <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">
@@ -175,7 +175,7 @@ const Publications = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Search and Filters */}
           <motion.div variants={fadeInUp} className="mb-8">

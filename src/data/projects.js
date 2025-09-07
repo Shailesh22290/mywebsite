@@ -1,439 +1,342 @@
 export const projects = [
+  // 🌍 Research
+  {
+    id: 1,
+    title: "Ensemble Optimization for Monsoon Prediction",
+    description: "Developed automated stopping-point detection to optimize computational cost in large-scale monsoon prediction ensembles.",
+    longDescription: "At IIT Delhi's DST Centre of Excellence for Climate Information, I designed a stopping criterion for ensemble runs that reduces redundant computation in climate simulations. Analyzed long-term datasets (CESM: 50 years, MPI: 100 years, PPE: 262 years) using ML + statistical methods to improve efficiency in monsoon prediction models.",
+    category: "Research",
+    type: "Machine Learning",
+    technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
+    status: "in-progress",
+    startDate: "2025-05-01",
+    endDate: null,
+    teamSize: 3,
+    role: "Research Intern",
+    // githubUrl: "https://github.com/Shailesh22290",
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/en.png"],
+    tags: ["Climate Modeling", "Machine Learning", "Ensemble Methods"],
+    featured: true
+  },
+
+  // 🖼️ Research
     {
-      id: 1,
-      title: "Neural Network Optimization for Healthcare",
-      description: "Developed advanced neural network architectures for medical image analysis, improving diagnostic accuracy by 15% and reducing processing time by 30%.",
-      longDescription: "This project involved creating custom neural network architectures specifically designed for medical imaging applications. The research focused on optimizing convolutional neural networks for X-ray, MRI, and CT scan analysis. Key achievements include implementing attention mechanisms, developing novel loss functions, and creating efficient data augmentation techniques.",
-      category: "Research",
-      type: "Machine Learning",
-      technologies: ["Python", "TensorFlow", "PyTorch", "OpenCV", "NumPy"],
-      status: "Completed",
-      startDate: "2023-01-15",
-      endDate: "2023-08-30",
-      teamSize: 4,
-      role: "Lead Researcher",
-      githubUrl: "https://github.com/username/neural-healthcare",
-      liveUrl: "https://neural-healthcare-demo.com",
-      paperUrl: "https://arxiv.org/abs/2023.12345",
-      images: [
-        "/assets/images/projects/neural-healthcare-1.jpg",
-        "/assets/images/projects/neural-healthcare-2.jpg",
-        "/assets/images/projects/neural-healthcare-3.jpg"
-      ],
-      tags: ["Deep Learning", "Healthcare", "Computer Vision", "Medical Imaging"],
-      metrics: {
-        accuracy: "94.2%",
-        processingTime: "2.3s",
-        datasetSize: "10,000 images",
-        modelSize: "45MB"
-      },
-      challenges: [
-        "Handling imbalanced medical datasets",
-        "Ensuring model interpretability for clinical use",
-        "Optimizing for real-time processing"
-      ],
-      outcomes: [
-        "15% improvement in diagnostic accuracy",
-        "30% reduction in processing time",
-        "Published in top-tier medical AI conference"
-      ],
-      featured: true
-    },
+    id: 2,
+    title: "VR-based Urban Safety Perception",
+    description: "Designed a VR–biometrics–NLP framework for studying multisensory threat perception in urban environments.",
+    longDescription: "At IISER Bhopal’s GeoAI4Cities Lab, developed an integrated VR framework that combines biometrics and NLP to assess women's perception of safety. Extracted visual, audio, and semantic features from 360° VR urban scenes and correlated them with stress and survey responses. Developed an LSTM model for predicting threat levels.",
+    category: "Research",
+    type: "AI/ML",
+    technologies: ["Unity3D", "Python", "LSTM", "NLP"],
+    status: "in-progress",
+    startDate: "2025-01-01",
+    endDate: null,
+    teamSize: 4,
+    role: "Research Intern",
+    // githubUrl: null,
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/pr.png"],
+    tags: ["VR", "Urban Safety", "AI", "Biometrics"],
+    featured: true
+  },
+  
+
+
+  {
+    id: 3,
+   title: " Vehicle License Plate Recognition System ",
+    description: "Creating a cross-platform vehicle recognition application with Flutter frontend and React.js admin panel.",
+    longDescription: "Developing a vehicle license plate recognition system using Flutter for mobile app and React.js for admin panel. The system uses Python, OpenCV, and Tesseract OCR for real-time license plate detection and recognition. The app captures vehicle images, processes them to extract license plate numbers, and sends data to the admin panel for monitoring and management.",
+    category: "Development",
+    type: "Full Stack",
+    technologies: ["node.js", "flutter", "python", "OpenCV", "React.js"],
+    status: "in-progress",
+    startDate: "2025-09-07",
+    endDate: null,
+    teamSize: 3,
+    role: "Full-Stack Developer",
+    // githubUrl: "https://github.com/Shailesh22290",
+    // liveUrl: "https://movx.in/iiserb_election_new/client_side/system_login.php",
+    // paperUrl: null,
+    image: ["/assets/images/projects/vn.png"],
+    tags: ["Full Stack", "E-Governance", "Data Security"],
+    metrics: { users: "200+", responseTime: "< 300ms" },
+    challenges: [
+      "Dataset collection and preprocessing for diverse license plates",
+      "Integrating real-time image processing with mobile and web platforms"
+    ],
+    outcomes: [
+      "Successfully deployed for campus-level election simulations",
+      "Built reusable election software architecture"
+    ],
+    featured: true
+  },
+
+  // 🧠 Research
+{
+    id: 4,
+    title: "AR/VR Streetview Campus Exploration",
+    description: "Developed an interactive AR/VR 360° streetview platform for IISER Bhopal campus navigation.",
+    longDescription: "Created a Web-based AR/VR platform using 360° panoramic imaging for IISER Bhopal. Designed immersive campus navigation with interactive hotspots and smooth transitions across locations. Platform can be extended to smart campuses and tourism applications.",
+    category: "Development",
+    type: "AR/VR",
+    technologies: ["Three.js", "WebGL", "React", "360° Imaging"],
+    status: "completed",
+    startDate: "2025-03-01",
+    endDate: null,
+    teamSize: 2,
+    role: "Lead Developer",
+    // githubUrl: "https://github.com/Shailesh22290",
+    // liveUrl: "https://streetview-cc-iiserb.netlify.app/",
+    // paperUrl: null,
+    image: ["/assets/images/projects/vr.png"],
+    tags: ["AR/VR", "Streetview", "3D Visualization"],
+    featured: true
+  },
+
+  // 📊 Development
+  {
+    id: 5,
+    title: "Job Portal with Analytics",
+    description: "Developed a ML-powered job portal for Punjab Government with candidate matching and analytics.",
+    longDescription: "Built with Flask, React.js, and SQL, this job portal featured ML-based recommendation models using Scikit-learn for candidate-job matching. Added demographic analytics dashboards for employers. This project won the **Smart India Hackathon 2023 (1st Place)**.",
+    category: "Development",
+    type: "Full Stack",
+    technologies: ["Python", "Flask", "React.js", "SQL", "Scikit-learn"],
+    status: "completed",
+    startDate: "2023-12-01",
+    endDate: "2024-01-30",
+    teamSize: 4,
+    role: "Backend + ML Developer",
+    // githubUrl: "https://github.com/Shailesh22290/SIH_2023_Grand_Finale",
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/pb.png"],
+    tags: ["Full Stack", "ML", "Analytics"],
+    featured: true
+  },
+
+  // 🛰️ Research
+  {
+    id: 6,
+    title: "Drone-based Traffic Surveillance",
+    description: "Built ML pipelines for vehicle detection, road classification, and motion tracking from drone footage.",
+    longDescription: "At IIT Mandi, annotated drone footage and built models for vehicle classification (6 types), road type detection, and trajectory tracking. Supported research on automated surveillance for unauthorized vehicles and traffic analysis.",
+    category: "Research",
+    type: "Computer Vision",
+    technologies: ["Python", "OpenCV", "TensorFlow"],
+    status: "completed",
+    startDate: "2024-05-01",
+    endDate: "2024-06-30",
+    teamSize: 3,
+    role: "Research Intern",
+    // githubUrl: null,
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/dv.png"],
+    tags: ["Drone Vision", "Traffic Analysis", "Computer Vision"],
+    featured: false
+  },
+
+  // 🌐 Development
+  {
+    id: 7,
+    title: "BondVue Learning Platform",
+    description: "Developed an online learning platform for bond market courses with progress tracking and recommendations.",
+    longDescription: "As a freelance Product Development Associate, I built a platform for BondVue where users can enroll in courses, track their progress, and receive personalized learning recommendations via collaborative filtering.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js", "Node.js", "SQL"],
+    status: "completed",
+    startDate: "2024-08-01",
+    endDate: "2024-10-30",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    // githubUrl: null,
+    // liveUrl: "https://learninghub.bondvue.com/",
+    // paperUrl: null,
+    image: ["/assets/images/projects/bv.png"],
+    tags: ["E-Learning", "Full Stack", "Recommendations"],
+    featured: false
+  },
+
+  // 🕹️ Development
+  {
+    id: 8,
+    title: "SimDaaS Autonomous Simulation Platform",
+    description: "Built 3D autonomous system simulations and a web-based data visualization portal.",
+    longDescription: "At SimDaaS, I created 3D simulation environments for autonomous systems and built a web platform to visualize simulation outputs. Backend was designed for multi-user support and real-time updates.",
+    category: "Development",
+    type: "Simulation",
+    technologies: ["React.js", "Node.js", "Three.js", "Docker"],
+    status: "completed",
+    startDate: "2024-10-01",
+    endDate: "2025-01-30",
+    teamSize: 3,
+    role: "Software Developer",
+    // githubUrl: null,
+    // liveUrl: "https://simdaas.com/",
+    // paperUrl: null,
+    image: ["/assets/images/projects/sd.png"],
+    tags: ["Simulation", "Autonomous Systems", "3D"],
+    featured: false
+  },
+
+  // 👨‍🏫 Development
+  {
+    id: 9,
+    title: "Professor's Portfolio Website",
+    description: "Developed a professional academic website for Prof. Saroj Kanta Mishra at IIT Delhi.",
+    longDescription: "Created a responsive personal website highlighting research, publications, and teaching activities for Prof. Mishra. Designed with clean navigation and optimized performance for academic audiences.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js", "HTML", "CSS"],
+    status: "completed",
+    startDate: "2024-12-01",
+    endDate: "2025-01-15",
+    teamSize: 1,
+    role: "Web Developer",
+    // githubUrl: null,
+    // liveUrl: "https://dcecm.iitd.ac.in/skm/website/",
+    // paperUrl: null,
+    image: ["/assets/images/projects/co.png"],
+    tags: ["Portfolio", "Academic", "Web Development"],
+    featured: false
+  },
+
+  // 👨‍🎓 Development
+  {
+    id: 10,
+    title: "Student Portfolio Website",
+    description: "Built a personal academic website for MS Student Anirudh Arora at IISER Bhopal.",
+    longDescription: "Designed and deployed a portfolio website for showcasing academic projects, publications, and achievements. Built with responsive design principles for accessibility across devices.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js", "HTML", "CSS"],
+    status: "completed",
+    startDate: "2024-12-01",
+    endDate: "2025-01-15",
+    teamSize: 1,
+    role: "Web Developer",
+    // githubUrl: null,
+    // liveUrl: "https://anirudharora.netlify.app/",
+    // paperUrl: null,
+    image: ["/assets/images/projects/ee.png"],
+    tags: ["Portfolio", "Academic", "Web Development"],
+    featured: false
+  },
+
+  // 🗳️ Development
+  {
+    id: 11,
+    title: "Election Management Software",
+    description: "Built a full-stack election management system with live vote tracking and analytics.",
+    longDescription: "Designed a secure election software with role-based access, Dockerized backend, and real-time dashboards powered by WebSockets. Used in IISER Bhopal simulations.",
+    category: "Development",
+    type: "Full Stack",
+    technologies: ["JavaScript", "SQL", "Docker", "WebSocket"],
+    status: "completed",
+    startDate: "2025-04-01",
+    endDate: "2025-04-30",
+    teamSize: 3,
+    role: "Full-Stack Developer",
+    // githubUrl: "https://github.com/Shailesh22290",
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/em.png"],
+    tags: ["E-Governance", "Full Stack", "Secure Systems"],
+    featured: false
+  },
+
+  // 📚 Development (New)
+  {
+    id: 12,
+    title: "Central Library Website",
+    description: "Official website of Central Library, IISER Bhopal with full virtual experience and resource access.",
+    longDescription: "Developed a modern library website for IISER Bhopal using React.js, MongoDB, Tailwind CSS, and HTML. Integrated book databases, digital resources, and a virtual walkthrough to improve the accessibility of library services.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js", "MongoDB", "Tailwind", "HTML"],
+    status: "completed",
+    startDate: "2024-01-01",
+    endDate: "2024-05-30",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    // githubUrl: "https://library-iiserb.netlify.app/",
+    // liveUrl: "https://library-iiserb.netlify.app/",
+    // paperUrl: null,
+    image: ["/assets/images/projects/cl.png"],
+    tags: ["Web Development", "React", "MongoDB", "Tailwind"],
+    featured: true
+  },
     {
-      id: 2,
-      title: "E-commerce Analytics Dashboard",
-      description: "Built a comprehensive analytics platform for e-commerce businesses with real-time data visualization and predictive insights.",
-      longDescription: "A full-stack web application that provides e-commerce businesses with detailed analytics about their sales, customer behavior, and inventory management. The platform includes real-time dashboards, predictive analytics for demand forecasting, and automated reporting features.",
-      category: "Development",
-      type: "Web Application",
-      technologies: ["React", "Node.js", "PostgreSQL", "Redis", "Chart.js", "Express"],
-      status: "In Progress",
-      startDate: "2023-06-01",
-      endDate: null,
-      teamSize: 3,
-      role: "Full-Stack Developer",
-      githubUrl: "https://github.com/username/ecommerce-analytics",
-      liveUrl: "https://ecommerce-analytics-demo.com",
-      paperUrl: null,
-      images: [
-        "/assets/images/projects/ecommerce-analytics-1.jpg",
-        "/assets/images/projects/ecommerce-analytics-2.jpg"
-      ],
-      tags: ["React", "Analytics", "E-commerce", "Data Visualization"],
-      metrics: {
-        users: "500+",
-        dataPoints: "1M+",
-        responseTime: "< 200ms",
-        uptime: "99.9%"
-      },
-      challenges: [
-        "Handling large-scale real-time data processing",
-        "Creating intuitive data visualizations",
-        "Ensuring data privacy and security"
-      ],
-      outcomes: [
-        "Improved decision-making for 100+ businesses",
-        "20% average increase in sales efficiency",
-        "Featured in tech industry publications"
-      ],
-      featured: true
-    },
+    id: 13,
+    title: "Freelance Portal",
+    description: "Developed a web platform for freelancers with analytics and progress tracking features.",
+    longDescription: "Designed a freelancing portal at IISER Bhopal using React.js and SQL. Integrated user authentication, profile dashboards, and analytics for skill-based project recommendations.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js", "SQL"],
+    status: "completed",
+    startDate: "2025-02-01",
+    endDate: "2025-02-28",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    // githubUrl: "https://github.com/Shailesh22290",
+    // liveUrl: "https://movx.in/iiserb/home",
+    // paperUrl: null,
+    image: ["/assets/images/projects/fr.png"],
+    tags: ["Freelancing", "Web Development", "Analytics"],
+    metrics: { users: "50+", projects: "20+" },
+    challenges: ["Building secure multi-user architecture", "Implementing personalized analytics"],
+    outcomes: ["Improved project allocation efficiency", "Enhanced user engagement with progress tracking"],
+    featured: false
+  },
     {
-      id: 3,
-      title: "Climate Data Analysis Platform",
-      description: "Developed a comprehensive platform for analyzing climate data patterns and predicting environmental changes using machine learning.",
-      longDescription: "This research project involved creating a sophisticated platform for processing and analyzing large-scale climate datasets. The system incorporates time series analysis, geospatial data processing, and predictive modeling to help researchers understand climate patterns and predict future environmental changes.",
-      category: "Research",
-      type: "Data Science",
-      technologies: ["Python", "R", "Apache Spark", "Hadoop", "Jupyter", "Plotly"],
-      status: "Completed",
-      startDate: "2022-09-01",
-      endDate: "2023-05-15",
-      teamSize: 6,
-      role: "Data Scientist",
-      githubUrl: "https://github.com/username/climate-analysis",
-      liveUrl: null,
-      paperUrl: "https://doi.org/10.1000/climate.2023.001",
-      images: [
-        "/assets/images/projects/climate-analysis-1.jpg",
-        "/assets/images/projects/climate-analysis-2.jpg",
-        "/assets/images/projects/climate-analysis-3.jpg"
-      ],
-      tags: ["Climate Science", "Big Data", "Machine Learning", "Environmental Research"],
-      metrics: {
-        dataProcessed: "50TB",
-        accuracy: "87.5%",
-        predictionRange: "12 months",
-        regions: "200+"
-      },
-      challenges: [
-        "Processing massive climate datasets",
-        "Dealing with missing and irregular data",
-        "Creating accurate long-term predictions"
-      ],
-      outcomes: [
-        "Improved climate prediction accuracy by 12%",
-        "Identified new climate pattern indicators",
-        "Collaboration with 5 international research institutes"
-      ],
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Mobile Learning Application",
-      description: "Created an adaptive mobile learning platform that personalizes educational content based on individual learning patterns.",
-      longDescription: "A cross-platform mobile application that uses AI to create personalized learning experiences. The app adapts to each user's learning style, pace, and preferences to optimize educational outcomes. Features include interactive lessons, progress tracking, and social learning components.",
-      category: "Development",
-      type: "Mobile App",
-      technologies: ["React Native", "Firebase", "TensorFlow Lite", "Node.js", "MongoDB"],
-      status: "Completed",
-      startDate: "2022-03-01",
-      endDate: "2023-01-30",
-      teamSize: 5,
-      role: "Mobile Developer",
-      githubUrl: "https://github.com/username/mobile-learning",
-      liveUrl: "https://apps.apple.com/app/adaptive-learning",
-      paperUrl: null,
-      images: [
-        "/assets/images/projects/mobile-learning-1.jpg",
-        "/assets/images/projects/mobile-learning-2.jpg"
-      ],
-      tags: ["Mobile Development", "EdTech", "AI", "Personalization"],
-      metrics: {
-        downloads: "10,000+",
-        activeUsers: "5,000+",
-        completionRate: "78%",
-        rating: "4.6/5"
-      },
-      challenges: [
-        "Implementing AI on mobile devices",
-        "Creating engaging user interfaces",
-        "Ensuring offline functionality"
-      ],
-      outcomes: [
-        "25% improvement in learning outcomes",
-        "Featured in education technology conferences",
-        "Positive feedback from 1000+ users"
-      ],
-      featured: true
-    },
-    {
-      id: 5,
-      title: "Blockchain-based Supply Chain Tracker",
-      description: "Implemented a blockchain solution for transparent and secure supply chain tracking across multiple industries.",
-      longDescription: "A comprehensive blockchain-based system that provides end-to-end visibility in supply chains. The platform enables companies to track products from origin to consumer, ensuring authenticity, preventing counterfeiting, and improving transparency in global trade.",
-      category: "Development",
-      type: "Blockchain",
-      technologies: ["Solidity", "Ethereum", "Web3.js", "React", "IPFS", "Truffle"],
-      status: "Completed",
-      startDate: "2022-11-01",
-      endDate: "2023-07-15",
-      teamSize: 4,
-      role: "Blockchain Developer",
-      githubUrl: "https://github.com/username/blockchain-supply-chain",
-      liveUrl: "https://supply-chain-tracker.com",
-      paperUrl: null,
-      images: [
-        "/assets/images/projects/blockchain-supply-1.jpg",
-        "/assets/images/projects/blockchain-supply-2.jpg"
-      ],
-      tags: ["Blockchain", "Supply Chain", "Ethereum", "Transparency"],
-      metrics: {
-        transactions: "50,000+",
-        partners: "25",
-        products: "100,000+",
-        efficiency: "40% improvement"
-      },
-      challenges: [
-        "Ensuring scalability on blockchain networks",
-        "Integrating with existing supply chain systems",
-        "Managing transaction costs"
-      ],
-      outcomes: [
-        "Reduced counterfeiting by 60%",
-        "Improved supply chain visibility",
-        "Adopted by 3 major corporations"
-      ],
-      featured: false
-    },
-    {
-      id: 6,
-      title: "AI-powered Content Management System",
-      description: "Developed an intelligent CMS that automatically categorizes, tags, and optimizes content using natural language processing.",
-      longDescription: "An advanced content management system that leverages AI to automate content workflows. The system uses natural language processing to understand content context, automatically generate tags and categories, optimize for SEO, and suggest content improvements.",
-      category: "Development",
-      type: "Web Application",
-      technologies: ["Python", "Django", "PostgreSQL", "React", "NLTK", "spaCy"],
-      status: "In Progress",
-      startDate: "2023-04-01",
-      endDate: null,
-      teamSize: 3,
-      role: "Backend Developer",
-      githubUrl: "https://github.com/username/ai-cms",
-      liveUrl: null,
-      paperUrl: null,
-      images: [
-        "/assets/images/projects/ai-cms-1.jpg"
-      ],
-      tags: ["AI", "NLP", "Content Management", "Automation"],
-      metrics: {
-        contentProcessed: "10,000+ articles",
-        accuracy: "92%",
-        timeReduction: "70%",
-        languages: "5"
-      },
-      challenges: [
-        "Understanding context in multiple languages",
-        "Ensuring content quality standards",
-        "Balancing automation with human oversight"
-      ],
-      outcomes: [
-        "70% reduction in content processing time",
-        "Improved content discoverability",
-        "Enhanced SEO performance"
-      ],
-      featured: false
-    }
-  ];
-  
-  export const projectCategories = [
-    { id: 'all', name: 'All Projects', count: projects.length },
-    { id: 'research', name: 'Research', count: projects.filter(p => p.category === 'Research').length },
-    { id: 'development', name: 'Development', count: projects.filter(p => p.category === 'Development').length },
-    { id: 'featured', name: 'Featured', count: projects.filter(p => p.featured).length }
-  ];
-  
-  export const projectTypes = [
-    'Machine Learning',
-    'Web Application',
-    'Mobile App',
-    'Data Science',
-    'Blockchain',
-    'AI/ML',
-    'Full Stack'
-  ];
-  
-  export const projectTechnologies = [
-    'Python', 'JavaScript', 'React', 'Node.js', 'TensorFlow', 'PyTorch',
-    'PostgreSQL', 'MongoDB', 'Firebase', 'AWS', 'Docker', 'Kubernetes',
-    'Solidity', 'Ethereum', 'Django', 'Flask', 'React Native', 'Vue.js'
-  ];
-  
-  export const projectStatuses = [
-    'Completed',
-    'In Progress',
-    'Planning',
-    'On Hold',
-    'Cancelled'
-  ];
-  
-  // Utility Functions
-  export const getFeaturedProjects = () => projects.filter(project => project.featured);
-  
-  export const getProjectsByCategory = (category) => {
-    if (category === 'all') return projects;
-    return projects.filter(project => project.category.toLowerCase() === category.toLowerCase());
-  };
-  
-  export const getProjectsByTechnology = (technology) => {
-    return projects.filter(project => 
-      project.technologies.includes(technology)
-    );
-  };
-  
-  export const getProjectsByStatus = (status) => {
-    return projects.filter(project => project.status === status);
-  };
-  
-  export const getProjectsByType = (type) => {
-    return projects.filter(project => project.type === type);
-  };
-  
-  export const getProjectById = (id) => {
-    return projects.find(project => project.id === id);
-  };
-  
-  export const getProjectsByDateRange = (startDate, endDate) => {
-    return projects.filter(project => {
-      const projectStart = new Date(project.startDate);
-      const projectEnd = project.endDate ? new Date(project.endDate) : new Date();
-      const rangeStart = new Date(startDate);
-      const rangeEnd = new Date(endDate);
-      
-      return projectStart <= rangeEnd && projectEnd >= rangeStart;
-    });
-  };
-  
-  export const getProjectsByRole = (role) => {
-    return projects.filter(project => 
-      project.role.toLowerCase().includes(role.toLowerCase())
-    );
-  };
-  
-  export const getProjectsByTeamSize = (minSize, maxSize) => {
-    return projects.filter(project => 
-      project.teamSize >= minSize && project.teamSize <= maxSize
-    );
-  };
-  
-  export const searchProjects = (query) => {
-    const lowercaseQuery = query.toLowerCase();
-    return projects.filter(project => 
-      project.title.toLowerCase().includes(lowercaseQuery) ||
-      project.description.toLowerCase().includes(lowercaseQuery) ||
-      project.longDescription.toLowerCase().includes(lowercaseQuery) ||
-      project.technologies.some(tech => tech.toLowerCase().includes(lowercaseQuery)) ||
-      project.tags.some(tag => tag.toLowerCase().includes(lowercaseQuery))
-    );
-  };
-  
-  export const getProjectMetrics = () => {
-    const totalProjects = projects.length;
-    const completedProjects = projects.filter(p => p.status === 'Completed').length;
-    const inProgressProjects = projects.filter(p => p.status === 'In Progress').length;
-    const featuredProjects = projects.filter(p => p.featured).length;
-    
-    const allTechnologies = projects.flatMap(p => p.technologies);
-    const uniqueTechnologies = [...new Set(allTechnologies)];
-    const mostUsedTechnology = uniqueTechnologies.reduce((prev, current) => 
-      allTechnologies.filter(tech => tech === current).length > 
-      allTechnologies.filter(tech => tech === prev).length ? current : prev
-    );
-    
-    const categories = [...new Set(projects.map(p => p.category))];
-    const types = [...new Set(projects.map(p => p.type))];
-    
-    return {
-      totalProjects,
-      completedProjects,
-      inProgressProjects,
-      featuredProjects,
-      completionRate: Math.round((completedProjects / totalProjects) * 100),
-      uniqueTechnologies: uniqueTechnologies.length,
-      mostUsedTechnology,
-      categories: categories.length,
-      types: types.length,
-      averageTeamSize: Math.round(projects.reduce((sum, p) => sum + p.teamSize, 0) / totalProjects)
-    };
-  };
-  
-  export const sortProjects = (sortBy = 'startDate', order = 'desc') => {
-    return [...projects].sort((a, b) => {
-      let aValue = a[sortBy];
-      let bValue = b[sortBy];
-      
-      // Handle date sorting
-      if (sortBy === 'startDate' || sortBy === 'endDate') {
-        aValue = new Date(aValue || '1970-01-01');
-        bValue = new Date(bValue || '1970-01-01');
-      }
-      
-      // Handle string sorting
-      if (typeof aValue === 'string' && typeof bValue === 'string') {
-        aValue = aValue.toLowerCase();
-        bValue = bValue.toLowerCase();
-      }
-      
-      if (order === 'asc') {
-        return aValue > bValue ? 1 : -1;
-      } else {
-        return aValue < bValue ? 1 : -1;
-      }
-    });
-  };
-  
-  export const getProjectDuration = (project) => {
-    if (!project.endDate) return 'Ongoing';
-    
-    const start = new Date(project.startDate);
-    const end = new Date(project.endDate);
-    const diffInMs = end - start;
-    const diffInDays = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
-    const diffInMonths = Math.ceil(diffInDays / 30);
-    
-    if (diffInMonths < 1) return `${diffInDays} days`;
-    if (diffInMonths < 12) return `${diffInMonths} months`;
-    
-    const years = Math.floor(diffInMonths / 12);
-    const remainingMonths = diffInMonths % 12;
-    
-    if (remainingMonths === 0) return `${years} year${years > 1 ? 's' : ''}`;
-    return `${years} year${years > 1 ? 's' : ''} ${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`;
-  };
-  
-  export const getRecentProjects = (count = 3) => {
-    return sortProjects('startDate', 'desc').slice(0, count);
-  };
-  
-  export const getProjectsWithPapers = () => {
-    return projects.filter(project => project.paperUrl);
-  };
-  
-  export const getProjectsWithLiveUrls = () => {
-    return projects.filter(project => project.liveUrl);
-  };
-  
-  // Export default for easier importing
-  export default {
-    projects,
-    projectCategories,
-    projectTypes,
-    projectTechnologies,
-    projectStatuses,
-    getFeaturedProjects,
-    getProjectsByCategory,
-    getProjectsByTechnology,
-    getProjectsByStatus,
-    getProjectsByType,
-    getProjectById,
-    getProjectsByDateRange,
-    getProjectsByRole,
-    getProjectsByTeamSize,
-    searchProjects,
-    getProjectMetrics,
-    sortProjects,
-    getProjectDuration,
-    getRecentProjects,
-    getProjectsWithPapers,
-    getProjectsWithLiveUrls
-  };
+    id: 14,
+    title: "DST CoE Website",
+    description: "Developed a web platform for the DST Centre of Excellence with resource access and virtual experience.",
+    longDescription: "Created a comprehensive website for the DST CoE at IIT Delhi using React.js. With the details of Centre work collaborators and people.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js","JavaScript","Tailwind CSS"],
+    status: "completed",
+    startDate: "2025-02-01",
+    endDate: "2025-02-28",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    // githubUrl: "https://dcecm.iitd.ac.in/",
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/ci.png"],
+    tags: ["Freelancing", "Web Development"],
+
+    featured: false
+  },
+   {
+    id: 15,
+    title: "SAC IISERB",
+   description: "Official web platform for the Student Activity Council (SAC) at IISER Bhopal, the elected student body representing and supporting the campus community.",
+   longDescription: "Designed and developed a digital platform for the Student Activity Council (SAC) at IISER Bhopal. The portal highlights SAC’s role as the bridge between administration and students, showcasing its initiatives, activities, and responsibilities in ensuring smooth functioning of campus life while giving visibility to student concerns, events, and collaborations.",
+
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js","JavaScript","Tailwind CSS"],
+    status: "completed",
+    startDate: "2023-02-01",
+    endDate: "2023-07-28",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    // githubUrl: "https://students.ac.in/",
+    // liveUrl: null,
+    // paperUrl: null,
+    image: ["/assets/images/projects/sac.png"],
+    tags: [ "Web Development"],
+
+    featured: false
+  },
+
+];

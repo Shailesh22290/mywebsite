@@ -130,36 +130,52 @@ const ProjectCard = ({ project, onClick }) => {
           </div>
         )}
 
-        {/* Action Links */}
+      {/* Action Links */}
         <div className="flex gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-          {github && (
+          {project.githubUrl && (
             <a
-              href={github}
+              href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 
-                       text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 
-                       dark:hover:bg-gray-600 transition-colors text-sm"
+                        text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 
+                        dark:hover:bg-gray-600 transition-colors text-sm"
               onClick={(e) => e.stopPropagation()}
             >
               <Github className="w-4 h-4" />
               <span>Code</span>
             </a>
           )}
-          {demo && (
+
+          {project.liveUrl && (
             <a
-              href={demo}
+              href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 py-2 bg-blue-600 text-white 
-                       rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                        rounded-lg hover:bg-blue-700 transition-colors text-sm"
               onClick={(e) => e.stopPropagation()}
             >
               <ExternalLink className="w-4 h-4" />
-              <span>Demo</span>
+              <span>Live</span>
+            </a>
+          )}
+
+          {project.paperUrl && (
+            <a
+              href={project.paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 bg-green-600 text-white 
+                        rounded-lg hover:bg-green-700 transition-colors text-sm"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>Paper</span>
             </a>
           )}
         </div>
+
       </div>
     </motion.div>
   );

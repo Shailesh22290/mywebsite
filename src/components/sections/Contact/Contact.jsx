@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Calendar, MessageSquare, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Calendar, MessageSquare, Clock, BookOpen, Code, Brain } from 'lucide-react';
 import ContactForm from './ContactForm';
 import SocialLinks from './SocialLinks';
 
@@ -9,31 +9,31 @@ const Contact = () => {
 
   const contactReasons = [
     {
-      id: 'collaboration',
+      id: 'research',
       title: 'Research Collaboration',
-      description: 'Discuss potential research partnerships and joint projects',
-      icon: '🤝',
+      description: 'Discuss potential research in ML, Computer Vision or Data Science',
+      icon: '🔬',
       color: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
     },
     {
-      id: 'consultation',
+      id: 'technical',
       title: 'Technical Consultation',
-      description: 'Get expert advice on technical challenges and solutions',
-      icon: '💡',
+      description: 'Get expert advice on ML projects, web development or data solutions',
+      icon: '💻',
       color: 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
     },
     {
-      id: 'speaking',
-      title: 'Speaking Engagement',
-      description: 'Invite me to speak at conferences, workshops, or events',
-      icon: '🎤',
+      id: 'freelance',
+      title: 'Freelance Project',
+      description: 'Discuss potential freelance opportunities in development or data science',
+      icon: '🚀',
       color: 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200'
     },
     {
-      id: 'mentorship',
-      title: 'Mentorship',
-      description: 'Seeking guidance for academic or career development',
-      icon: '🌱',
+      id: 'academic',
+      title: 'Academic Discussion',
+      description: 'Talk about coursework, projects or academic opportunities',
+      icon: '🎓',
       color: 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
     },
     {
@@ -49,28 +49,28 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@researcher.com',
-      href: 'mailto:contact@researcher.com',
-      description: 'Best way to reach me'
+      value: 'shailesh22@iiserb.ac.in',
+      href: 'mailto:shailesh22@iiserb.ac.in',
+      description: 'Preferred method for detailed discussions'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
-      description: 'Available Mon-Fri, 9AM-5PM EST'
+      value: '+91 9009944572',
+      href: 'tel:+919009944572',
+      description: 'Available Mon-Sat, 10AM-6PM IST'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'University City, State',
-      description: 'Available for in-person meetings'
+      value: 'Bhopal, Madhya Pradesh',
+      description: 'Open to remote and on-site opportunities'
     },
     {
       icon: Calendar,
       label: 'Schedule',
       value: 'Book a meeting',
-      href: 'https://calendly.com/researcher',
+      href: 'https://calendly.com/shaileshkachhi786',
       description: 'Schedule a 30-minute call'
     }
   ];
@@ -91,14 +91,55 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 mt-4">
             Get In Touch
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I'm always interested in discussing research opportunities, collaborations, 
-            and innovative ideas. Let's connect and explore how we can work together.
+            I'm always interested in discussing research opportunities, technical collaborations, 
+            and innovative projects in Data Science and Web Development. Let's connect!
           </p>
         </motion.div>
+
+        {/* Expertise Highlights */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-12"
+        >
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            Areas of Expertise
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm flex items-center">
+              <div className="mr-4 p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                <Brain className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Machine Learning</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Computer Vision, NLP, Predictive Modeling</p>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm flex items-center">
+              <div className="mr-4 p-3 bg-green-100 dark:bg-green-900 rounded-lg">
+                <Code className="w-6 h-6 text-green-600 dark:text-green-400" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Full Stack Development</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">React, Node.js, MongoDB, SQL</p>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm flex items-center">
+              <div className="mr-4 p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
+                <BookOpen className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Research</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">AI/ML, VR, Urban Safety, Climate Prediction</p>
+              </div>
+            </div>
+          </div>
+        </motion.div> */}
 
         {/* Contact Reasons */}
         <motion.div
@@ -195,7 +236,7 @@ const Contact = () => {
             </div>
 
             {/* Response Times */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+            {/* <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Response Times
@@ -214,7 +255,7 @@ const Contact = () => {
                   <span className="font-medium text-gray-900 dark:text-white">{responseTime.collaboration}</span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Social Links */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
@@ -224,22 +265,19 @@ const Contact = () => {
               <SocialLinks />
             </div>
 
-            {/* Office Hours */}
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-xl p-6">
+            {/* Current Status */}
+            {/* <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-4">
-                Virtual Office Hours
+                Current Status
               </h3>
               <div className="space-y-2 text-blue-800 dark:text-blue-200">
-                <p><strong>Tuesdays:</strong> 2:00 PM - 4:00 PM EST</p>
-                <p><strong>Thursdays:</strong> 10:00 AM - 12:00 PM EST</p>
+                <p><strong>Education:</strong> B.S. Data Science & Engineering at IISER Bhopal</p>
+                <p><strong>Availability:</strong> Open to research collaborations and freelance projects</p>
                 <p className="text-sm mt-3">
-                  Open for quick questions and informal discussions. 
-                  <a href="#" className="underline hover:no-underline ml-1">
-                    Join the session
-                  </a>
+                  Actively working on ML research projects and available for technical discussions.
                 </p>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
 
@@ -256,20 +294,20 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto space-y-6">
             {[
               {
-                question: "How should I prepare for a research collaboration discussion?",
-                answer: "Please prepare a brief overview of your research interests, proposed timeline, and any specific goals. Having a clear idea of what you hope to achieve will help make our conversation more productive."
+                question: "What types of projects are you currently interested in?",
+                answer: "I'm particularly interested in Machine Learning research, Computer Vision applications, and Full Stack Development projects. I enjoy working on problems that combine technical complexity with real-world impact."
               },
               {
-                question: "Do you provide academic references or recommendations?",
-                answer: "Yes, I'm happy to provide references for students and colleagues I've worked with closely. Please allow at least 2-3 weeks notice for reference requests."
+                question: "Are you available for freelance work?",
+                answer: "Yes, I'm available for freelance projects in web development, data analysis, and machine learning. I've previously worked with companies like SimDataS and BondVue on freelance basis."
               },
               {
-                question: "What's the best way to propose a speaking engagement?",
-                answer: "Please include details about the event, audience, expected talk length, and timeline. I typically need at least 4-6 weeks notice for speaking engagements."
+                question: "Do you provide academic guidance or mentorship?",
+                answer: "As a student myself, I'm happy to share my experiences and provide guidance to fellow students, particularly in Data Science, programming, and research methodology."
               },
               {
-                question: "Are you available for remote collaborations?",
-                answer: "Absolutely! I regularly collaborate with researchers worldwide and am comfortable with remote work arrangements and virtual meetings."
+                question: "What's the best way to propose a research collaboration?",
+                answer: "Please include details about your research interests, proposed methodology, and how my skills in ML/Data Science could contribute. I'm particularly interested in climate prediction, 3D computer vision, and urban safety applications."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">

@@ -7,11 +7,13 @@ const MobileMenu = ({ isOpen }) => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/projects', label: 'Projects' },
-    { path: '/publications', label: 'Publications' },
+    // { path: '/publications', label: 'Publications' },
     { path: '/experience', label: 'Experience' },
-    { path: '/talks', label: 'Talks' },
+    { path: '/consultancy', label: 'Consultancy' },
+    // { path: '/talks', label: 'Talks' },
     { path: '/education', label: 'Education' },
     { path: '/blog', label: 'Blog' },
+    { path: '/resources', label: 'Resources' },
     { path: '/contact', label: 'Contact' },
   ];
 

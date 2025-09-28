@@ -1,0 +1,6 @@
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://shailesh22290.github.io/sitemap.xml

@@ -2,9 +2,9 @@ export const projects = [
   // 🌍 Research
   {
     id: 1,
-    title: "Ensemble Optimization for Monsoon Prediction",
-    description: "Developed automated stopping-point detection to optimize computational cost in large-scale monsoon prediction ensembles.",
-    longDescription: "At IIT Delhi's DST Centre of Excellence for Climate Information, I designed a stopping criterion for ensemble runs that reduces redundant computation in climate simulations. Analyzed long-term datasets (CESM: 50 years, MPI: 100 years, PPE: 262 years) using ML + statistical methods to improve efficiency in monsoon prediction models.",
+    title: "Optimization for Monsoon Prediction",
+    description: "Working to optimize computational cost in large-scale monsoon predictions.",
+    longDescription: "At IIT Delhi's DST Centre of Excellence for Climate Information, I am working on a criterion that reduces redundant computation in climate simulations. Analyzed long-term datasets using ML + statistical methods to improve efficiency in monsoon prediction models.",
     category: "Research",
     type: "Machine Learning",
     technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
@@ -25,8 +25,8 @@ export const projects = [
     {
     id: 2,
     title: "VR-based Urban Safety Perception",
-    description: "Designed a VR–biometrics–NLP framework for studying multisensory threat perception in urban environments.",
-    longDescription: "At IISER Bhopal’s GeoAI4Cities Lab, developed an integrated VR framework that combines biometrics and NLP to assess women's perception of safety. Extracted visual, audio, and semantic features from 360° VR urban scenes and correlated them with stress and survey responses. Developed an LSTM model for predicting threat levels.",
+    description: "Research project exploring how virtual reality can be used to study human perceptions of safety in urban environments.",
+    longDescription: "At IISER Bhopal’s GeoAI4Cities Lab, Developing a VR-based research framework to study how people perceive safety in urban environments. The system integrates multiple data sources from immersive 360° scenes and explores links between environmental cues and participants’ responses. The project also investigates machine learning approaches for analyzing perception patterns.",
     category: "Research",
     type: "AI/ML",
     technologies: ["Unity3D", "Python", "LSTM", "NLP"],

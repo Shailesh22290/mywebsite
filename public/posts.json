@@ -91,7 +91,7 @@
       "readTime": "6 min read"
     },
     {
-      "id": 12,
+      "id": 7,
       "slug": "conversations-with-my-compiler",
       "title": "Conversations with My Compiler",
       "excerpt": "If compilers could talk, they’d probably roast us every time we forget a semicolon. Here’s how my imaginary chats with my compiler usually go.",
@@ -106,7 +106,7 @@
       "readTime": "5 min read"
     },
     {
-      "id": 13,
+      "id": 8,
       "slug": "if-ai-models-were-roommates",
       "title": "If AI Models Were My Roommates",
       "excerpt": "Ever wondered what life would be like if AI models shared your flat? Let’s imagine the chaos  from GPT never shutting up to CNN hogging the mirror.",
@@ -121,7 +121,7 @@
       "readTime": "8 min read"
     },
     {
-      "id": 14,
+      "id": 9,
       "slug": "dear-bug-diary",
       "title": "Dear Bug Diary",
       "excerpt": "Every developer has a love–hate relationship with bugs. Here’s my (fictional) bug diary, where errors write back to me.",

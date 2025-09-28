@@ -16,14 +16,14 @@ const SocialLinks = ({ size = 'default', showLabels = true, className = '' }) =>
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/username',
+      url: 'https://github.com/shailesh22290',
       icon: Github,
       color: 'hover:bg-gray-100 dark:hover:bg-gray-700',
       description: 'Code repositories and open source projects'
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/username',
+      url: 'https://www.linkedin.com/in/shailesh-kachhi-681a041a2/',
       icon: Linkedin,
       color: 'hover:bg-blue-50 dark:hover:bg-blue-900',
       description: 'Professional network and career updates'

@@ -49,17 +49,17 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'shailesh22@iiserb.ac.in',
+      value: 'shailesh22@iiserb.ac.in / shaileshkachhi786@gmail.com',
       href: 'mailto:shailesh22@iiserb.ac.in',
       description: 'Preferred method for detailed discussions'
     },
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91 9009944572',
-      href: 'tel:+919009944572',
-      description: 'Available Mon-Sat, 10AM-6PM IST'
-    },
+    // {
+    //   icon: Phone,
+    //   label: 'Phone',
+    //   value: '+91',
+    //   href: 'tel:+91',
+    //   description: 'Available Mon-Sat, 10AM-6PM IST'
+    // },
     {
       icon: MapPin,
       label: 'Location',

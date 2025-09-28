@@ -24,8 +24,8 @@ const Blog = () => {
       setError(null);
       
       try {
-        console.log('Loading posts from src/components/sections/Blog/posts.json...');
-        const response = await fetch('src/components/sections/Blog/posts.json');
+        console.log('Loading posts from /posts.json...');
+        const response = await fetch('/posts.json');
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

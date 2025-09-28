@@ -24,8 +24,8 @@ const About = () => {
     name: "Shailesh K.",
     title: "Data Science & Engineering Student",
     location: "Bhopal, India",
-    email: "shailesh22@iiserb.ac.in",
-    phone: "+91 900994457_",
+    email: "shailesh22@iiserb.ac.in ",
+    phone: "+91",
     website: "https://shailesh22290.github.io",
     joinDate: "December 2022"
   };
@@ -319,18 +319,18 @@ case 'interests':
                   <Mail className="w-5 h-5 mr-3 text-green-500" />
                   <span>{personalInfo.email}</span>
                 </div>
-                <div className="flex items-center text-gray-700 dark:text-gray-300">
+                {/* <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <Phone className="w-5 h-5 mr-3 text-purple-500" />
                   <span>{personalInfo.phone}</span>
-                </div>
+                </div> */}
                 <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <Globe className="w-5 h-5 mr-3 text-orange-500" />
                   <span>{personalInfo.website}</span>
                 </div>
-                <div className="flex items-center text-gray-700 dark:text-gray-300">
+                {/* <div className="flex items-center text-gray-700 dark:text-gray-300">
                   <Calendar className="w-5 h-5 mr-3 text-red-500" />
                   <span>Since {personalInfo.joinDate}</span>
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-8 space-y-3">
@@ -339,10 +339,11 @@ case 'interests':
                   <Download className="w-5 h-5 mr-2" />
                   Download CV
                 </button> </a>
-                {/* <button className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
+                    <a href="/projects" target="_blank" rel="noopener noreferrer" className="mt-3 block">
+                <button className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
                   <ExternalLink className="w-5 h-5 mr-2" />
                   View Projects
-                </button> */}
+                </button></a>
               </div>
             </div>
           </div>

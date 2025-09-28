@@ -112,7 +112,7 @@ const Hero = () => {
         </div>
 
         {/* Floating Data Particles */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30">
           {Array.from({ length: 20 }, (_, i) => (
             <motion.div
               key={`particle-${i}`}
@@ -136,7 +136,7 @@ const Hero = () => {
         </div>
 
         {/* Background Chart Visualization */}
-        <div className="absolute top-1/4 right-10 w-64 h-32 opacity-5">
+        <div className="absolute top-1/4 right-10 w-64 h-32 opacity-15">
           <svg viewBox="0 0 200 100" className="w-full h-full">
             {/* Chart background */}
             <rect width="200" height="100" fill="transparent" stroke="rgb(59 130 246)" strokeWidth="1" />
@@ -182,7 +182,7 @@ const Hero = () => {
         </div>
 
         {/* Mathematical Formulas */}
-        <div className="absolute top-20 left-10 text-blue-400 dark:text-blue-300 font-mono text-sm opacity-30 space-y-2">
+        <div className="absolute top-20 left-10 text-blue-400 dark:text-blue-300 font-mono text-sm opacity-70 space-y-2">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 0.2, x: 0 }}
@@ -207,7 +207,7 @@ const Hero = () => {
         </div>
 
         {/* Neural Network Representation */}
-        <div className="absolute bottom-20 right-20 w-48 h-32 opacity-20">
+        <div className="absolute bottom-20 right-20 w-48 h-32 opacity-25">
           <svg viewBox="0 0 150 100" className="w-full h-full">
             {/* Input layer */}
             {Array.from({ length: 4 }, (_, i) => (
@@ -290,7 +290,7 @@ const Hero = () => {
         </div>
 
         {/* Binary Data Stream */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
           {Array.from({ length: 6 }, (_, i) => (
             <motion.div
               key={`binary-${i}`}

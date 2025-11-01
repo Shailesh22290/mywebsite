@@ -41,7 +41,7 @@ const About = () => {
     { category: 'Research', items: ['Machine Learning', 'Data Science', 'AI Ethics', 'Computer Vision'] },
     { category: 'Teaching', items: ['Curriculum Design', 'Student Mentoring', 'Educational Technology'] },
     { category: 'Technology', items: ['React', 'Python', 'TensorFlow', 'Cloud Computing'] },
-    { category: 'Hobbies', items: ['Photography', 'Travel', 'Reading', 'Cooking'] }
+    { category: 'Hobbies', items: ['Trekking', 'Travel', 'Reading', 'Cooking'] }
   ];
 
   const renderTabContent = () => {
@@ -229,10 +229,11 @@ case 'interests':
   return (
     <div className="space-y-6">
       <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        Life is about balance diving deep into challenging research projects while finding joy in simple moments. 
-        From early morning swims that clear my mind for complex algorithms, to capturing the perfect shot through 
-        photography, I believe our personal passions fuel our professional creativity. Growing up in Jabalpur 
-        and now studying in Bhopal, I've learned to appreciate both the journey and the destination.
+      Life is all about balance pushing myself in demanding research spaces while staying grounded through nature.
+From long Himalayan trails that test endurance and spirit, to quiet moments watching the mountains breathe, trekking keeps me connected to clarity and purpose.
+
+I've completed treks like Kedarkantha in Uttarakhand and Kheerganga in Himachal Pradesh, and each journey reminded me that growth happens step-by-step, whether it's climbing peaks or solving complex problems.
+Growing up in Jabalpur and now studying in Bhopal, I’ve learned to embrace both forward momentum and the beauty of the path itself.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="text-center">
@@ -249,10 +250,10 @@ case 'interests':
           <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <Globe className="w-8 h-8 text-white" />
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Photography</h3>
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Trekking</h3>
           <p className="text-gray-600 dark:text-gray-400">
-            Capturing moments and stories through my lens. From campus life at IISER to urban landscapes, 
-            I love finding beauty in everyday scenes and technical compositions.
+          
+From sunrise climbs in the Himalayas to quiet forest paths, I love discovering new perspectives in nature where every step, horizon, and breath of mountain air feels like its own story.
           </p>
         </div>
         <div className="text-center">

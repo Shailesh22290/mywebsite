@@ -12,8 +12,9 @@ const ProjectCard = ({ project, onClick }) => {
     status,
     duration,
     team,
-    github,
-    demo,
+    githubUrl,  
+    liveUrl,    
+    paperUrl, 
     highlights
   } = project;
 

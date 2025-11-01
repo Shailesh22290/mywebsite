@@ -377,7 +377,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-l text-gray-600 dark:text-gray-300 mb-8"
             >
-              I also work as a freelance web and mobile app developer with expertise in modern full-stack technologies, delivering end-to-end solutions from concept to deployment.
+             I am actively seeking <b> internship opportunities </b> in Data Science, Machine Learning, and AI, where I can apply my analytical, research and engineering skills to meaningful problem-solving. Alongside this, I also work as a freelance web and mobile app developer, delivering end-to-end full-stack solutions from concept to deployment.
             </motion.p>
 
             <motion.div

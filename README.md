@@ -1,62 +1,68 @@
-# Research & Developer Portfolio
+# Portfolio — Shailesh K.
 
-This is the repository for my personal portfolio website, built with React, Tailwind CSS, and Framer Motion. The site showcases my projects, publications, experience, and blog, highlighting my dual identity as a developer and researcher.
+Public repository for a fast, animated React + Vite portfolio site showcasing projects, blog posts, talks, publications, experience, and consultancy/services.
 
-## ✨ Features
+Live demo: https://shailesh22290.github.io
 
--   **Dual Identity Focus**: Sections for both software projects and academic publications.
--   **Responsive Design**: Mobile-first layout that looks great on all devices.
--   **Dark/Light Mode**: User-selectable theme preference.
--   **Interactive UI**: Smooth animations and interactive elements using Framer Motion.
--   **CMS-ready**: Blog and content pages are written in Markdown.
+Quick summary
+- Tech: React, Vite, Tailwind CSS, Framer Motion
+- Purpose: Personal portfolio + consultancy landing with searchable content and rich UI
+- Static site — suitable for Netlify, Vercel or GitHub Pages
 
-## 🚀 Getting Started
+Top features
+- Projects: data-driven project cards, gallery images, modal detail view, links to Live / Code / Paper
+- Client-side Global Search: in-memory search across projects, blog, talks and experience
+- Blog / Posts: local JSON and data-driven posts (public/posts.json + src/data/blog.js)
+- Talks & Publications: listings with filters and direct links
+- Experience & Education: timeline and cards with responsibilities / certificates
+- Consultancy / Services pages: service cards, testimonials and CTA banners
+- Contact form: EmailJS integration (env keys) + social links
+- Visual polish: animated hero, global background, data-science preloader (framer-motion & SVGs)
+- Utilities: custom hooks (debounce, intersection), API wrapper, helper utils
+- Accessibility: keyboard-friendly controls, ARIA attributes on interactive elements
 
-### Prerequisites
+Where to edit content (single-source of truth)
+- Personal info / Bio: src/data/personal.js
+- Projects: src/data/projects.js (images in public/assets/)
+- Blog posts: src/data/blog.js and public/posts.json
+- Talks: src/data/talks.js
+- Publications: src/data/publications.js (or components under src/components/sections/Publications)
+- Experience / Education / Certificates: src/data/experience.js, src/data/education.js
 
--   Node.js (v18 or later)
--   npm or yarn
+Key UI components (common locations)
+- App entry: src/main.jsx
+- Layout + footer: src/components/common/Layout/Layout.jsx
+- Hero & preloader: src/components/sections/Home/Hero.jsx and src/components/common/UI/DataSciencePreloader.jsx
+- Projects list, cards, modal: src/components/sections/Projects/Projects.jsx, ProjectCard.jsx, ProjectModal.jsx
+- Global Search: src/components/features/Search/GlobalSearch.jsx
+- Contact form: src/components/sections/Contact/Contact.jsx, ContactForm.jsx
+- Styles: src/index.css and src/styles/*, Tailwind config in tailwind.config.js
 
-### Installation & Setup
+Development (Windows / PowerShell)
+1. Install
+   npm install
+2. Run dev server
+   npm run dev
+3. Build
+   npm run build
+4. Preview production build
+   npm run preview
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/portfolio-website.git](https://github.com/your-username/portfolio-website.git)
-    cd portfolio-website
-    ```
+Environment & deployment
+- Secrets: add EmailJS (and any other) keys to .env — see .env.example. Do NOT commit .env.
+- Deploy: static output from `npm run build`. Use Netlify/Vercel/GitHub Actions for CI/CD. netlify.toml included if using Netlify.
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+Editing tips
+- Add a project: update src/data/projects.js and add images to public/assets/, then verify project id and links.
+- Add a blog post: add to src/data/blog.js or public/posts.json (if used by search).
+- Change search indexing: edit GlobalSearch.jsx to include new data sources or fields.
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    The site will be available at `http://localhost:5173`.
+Testing & linting
+- See package.json for any test or lint scripts. Add unit tests under src/__tests__ as needed.
 
-## 🛠️ Built With
+Contributing
+- Fork, create a branch, open a PR. Describe content edits or UI changes and include screenshots for visual updates.
 
--   **[React](https://react.dev/)** - Frontend library
--   **[Vite](https://vitejs.dev/)** - Build tool
--   **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
--   **[Framer Motion](https://www.framer.com/motion/)** - Animation library
--   **[React Router](https://reactrouter.com/)** - Routing
--   **[React Icons](https://react-icons.github.io/react-icons/)** - Icon library
 
-## 部署 (Deployment)
-
-This site is configured for easy deployment on platforms like Netlify or Vercel.
-
-1.  Push your code to a GitHub repository.
-2.  Connect your repository to Netlify/Vercel.
-3.  Configure the build settings:
-    -   **Build Command:** `npm run build`
-    -   **Publish Directory:** `dist`
-
-A `netlify.toml` file is included in the project for automatic configuration on Netlify.
-
-## 📄 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+Need help?
+Open an issue or PR with the change you want and reference the file(s) above. Follow the Editing tips for quick

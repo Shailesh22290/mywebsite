@@ -22,7 +22,7 @@ export const projects = [
   teamSize: 1,
   role: "Developer & Research Lead",
   githubUrl: "https://github.com/Shailesh22290/analytical-ai-agent",
-  liveUrl: "",
+  liveUrl: "https://trustfirstai.streamlit.app/",
   demoVideoUrl: "",
   image: ["/assets/images/projects/aa.png"],
   tags: ["GenAI", "Data Privacy", "RAG", "FAISS", "Pandas", "Data Security"],

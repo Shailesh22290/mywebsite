@@ -29,7 +29,7 @@ const Navigation = () => {
     { path: '/', label: 'Home', icon: Home },
     { path: '/about', label: 'About', icon: User },
     { path: '/projects', label: 'Projects', icon: FolderOpen },
-    // { path: '/publications', label: 'Publications', icon: BookOpen },
+    { path: '/publications', label: 'Publications', icon: BookOpen },
     { path: '/experience', label: 'Experience', icon: Briefcase },
     // { path: '/talks', label: 'Talks', icon: Mic },
     { path: '/education', label: 'Education', icon: GraduationCap },

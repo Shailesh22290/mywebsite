@@ -26,7 +26,7 @@ function App() {
     // You can adjust this duration or tie it to actual data loading
     const loadingTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000); // 6 seconds loading time
+    }, 2000); // 2 seconds loading time
 
     // Optional: Add real loading logic here
     // For example, you could wait for critical data to load:

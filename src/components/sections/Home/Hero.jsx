@@ -340,7 +340,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl text-gray-600 dark:text-gray-300 mb-4 md:-mb-6"
             >
-             4th Year Data Science & Engineering Student at Indian Institute of Science Education and Research Bhopal, India
+             Master's Student in Data Science & Engineering at Indian Institute of Science Education and Research (IISER) Bhopal, India
             </motion.p>
           </motion.div>
 
@@ -367,8 +367,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl"
             >
-              I'm passionate about advancing artificial intelligence and machine learning 
-              through innovative research and practical applications. My Research Interests are in 3D Computer Vision, deep learning, and natural language processing.
+              My research focuses on <b>Agentic GeoAI, Computer Vision, and Urban Perception</b>, alongside 3D vision, deep learning, and natural language processing. I'm currently working on my Master's thesis in this space — building AI systems that understand and reason about cities and the environments people live in.
             </motion.p>
             
             <motion.p
@@ -377,7 +376,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg md:text-l text-gray-600 dark:text-gray-300 mb-8"
             >
-             I am actively seeking <b> internship opportunities </b> in Data Science, Machine Learning, and AI, where I can apply my analytical, research and engineering skills to meaningful problem-solving. Alongside this, I also work as a freelance web and mobile app developer, delivering end-to-end full-stack solutions from concept to deployment.
+             In my current internship I work hands-on with <b>ML algorithms, computer vision, NLP, RAG pipelines, LLM integrations, and agentic systems</b>, along with end-to-end full-stack development. I'm open to <b>Data Science, ML, and AI opportunities</b> where I can bring both research depth and engineering skills — and I also take on freelance web and mobile projects, delivering full-stack solutions from concept to deployment.
             </motion.p>
 
             <motion.div

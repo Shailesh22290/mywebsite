@@ -1,0 +1,62 @@
+media:
+  input: public/assets/images
+  output: /assets/images
+
+content:
+  - name: posts
+    label: Blog Posts
+    type: file
+    path: public/posts.json
+    format: json
+    fields:
+      - name: posts
+        label: Posts
+        type: object
+        list: true
+        fields:
+          - name: id
+            label: ID (unique number)
+            type: number
+          - name: slug
+            label: Slug (url, e.g. my-new-post)
+            type: string
+          - name: title
+            label: Title
+            type: string
+          - name: excerpt
+            label: Excerpt (short summary)
+            type: text
+          - name: content
+            label: Content (Markdown)
+            type: text
+          - name: publishDate
+            label: Publish Date
+            type: date
+            options:
+              time: true
+          - name: categories
+            label: Categories
+            type: string
+            list: true
+          - name: tags
+            label: Tags
+            type: string
+            list: true
+          - name: views
+            label: Views
+            type: number
+            default: 0
+          - name: featured
+            label: Featured
+            type: boolean
+            default: false
+          - name: author
+            label: Author
+            type: string
+            default: Shailesh K.
+          - name: image
+            label: Cover Image
+            type: image
+          - name: readTime
+            label: Read Time (e.g. 5 min read)
+            type: string

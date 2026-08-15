@@ -5,7 +5,7 @@ export const projects = [
   id: 1,
   title: "Speak to Your Data: A Trust-First Generative AI Analyst",
   description: "A privacy-first AI data assistant that uses LLMs only for language and Python for proof.",
-  longDescription: "A next-generation conversational data analysis tool inspired by NotebookLM, but built with a trust-first approach. Users can upload CSV or PDF files, query them in natural language, and get verified outputs executed through Python and Pandas — eliminating LLM hallucinations. The system performs local embeddings and retrieval using FAISS so user data never needs to be sent to the LLM. It combines natural-language understanding, secure vector retrieval, and code-based execution to deliver accurate analytics and visualizations.",
+  longDescription: "A next-generation conversational data analysis tool inspired by NotebookLM, but built with a trust-first approach. Users can upload CSV or PDF files, query them in natural language, and get verified outputs executed through Python and Pandas, eliminating LLM hallucinations. The system performs local embeddings and retrieval using FAISS so user data never needs to be sent to the LLM. It combines natural-language understanding, secure vector retrieval, and code-based execution to deliver accurate analytics and visualizations.",
   category: "Product/Prototype",
   type: "Generative AI / Data Analysis",
   technologies: [

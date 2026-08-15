@@ -42,7 +42,7 @@ export const blogPosts = [
   
   ## The Challenge of Scale
   
-  Moving from research prototypes to production systems presents unique challenges. Scalability isn't just about handling more data—it's about maintaining performance, reliability, and maintainability...
+  Moving from research prototypes to production systems presents unique challenges. Scalability isn't just about handling more data; it's about maintaining performance, reliability, and maintainability...
   
   ## Architecture Patterns
   
@@ -365,7 +365,7 @@ Techniques that enable AI training while protecting individual privacy...
 
 ## Conclusion
 
-The debate between data quality and quantity is not binary—both matter, but context determines which is more important...
+The debate between data quality and quantity is not binary; both matter, but context determines which is more important...
     `,
     categories: ['Data Science'],
     tags: ['Data Science', 'AI', 'Data Quality', 'Machine Learning', 'Big Data'],

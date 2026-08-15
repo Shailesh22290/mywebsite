@@ -43,7 +43,7 @@ const Footer = () => {
               Shailesh K.
             </Link>
             <p className="mt-4 text-gray-600 dark:text-gray-400">
-              BS Data Science Student at IISERB
+              BS-MS Data Science Student at IISERB
             </p>
             
             {/* Social Links */}

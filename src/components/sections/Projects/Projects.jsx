@@ -62,10 +62,6 @@ const Projects = () => {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               My Projects
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              A collection of projects I've worked on, showcasing my skills in development, 
-              research, and problem-solving across various domains.
-            </p>
           </motion.div>
 
           {/* Search Bar */}

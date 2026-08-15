@@ -367,16 +367,15 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg text-gray-600 dark:text-gray-400 mb-6 max-w-2xl"
             >
-              My research focuses on <b>Agentic GeoAI, Computer Vision, and Urban Perception</b>, alongside 3D vision, deep learning, and natural language processing. I'm currently working on my Master's thesis in this space — building AI systems that understand and reason about cities and the environments people live in.
-            </motion.p>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg md:text-l text-gray-600 dark:text-gray-300 mb-8"
-            >
-             In my current internship I work hands-on with <b>ML algorithms, computer vision, NLP, RAG pipelines, LLM integrations, and agentic systems</b>, along with end-to-end full-stack development. I'm open to <b>Data Science, ML, and AI opportunities</b> where I can bring both research depth and engineering skills — and I also take on freelance web and mobile projects, delivering full-stack solutions from concept to deployment.
+              My research focuses on <b>Agentic GeoAI, Computer Vision, and Urban Perception</b>, alongside 3D vision, deep learning, and natural language processing. I'm currently working on my Master's thesis in this space, building AI systems that understand and reason about cities and the environments people live in at{' '}
+              <a
+                href="https://geoai4cities.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+              >
+                GeoAI4Cities Lab
+              </a>{'.'}
             </motion.p>
 
             <motion.div

@@ -9,7 +9,7 @@ import CertificateCard from './CertificateCard';
 const educationData = [
   {
     id: 1,
-    degree: "B.S. in Data Science and Engineering",
+    degree: "BS-MS in Data Science and Engineering",
     institution: "Indian Institute of Science Education and Research (IISER) Bhopal",
     location: "Bhopal, India",
     period: "Dec 2022 – Present",
@@ -103,9 +103,6 @@ const Education = () => {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Education & Learning
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My academic journey and continuous learning path in Data Science, Engineering, and Artificial Intelligence
-          </p>
         </div>
 
         {/* Tab Navigation */}

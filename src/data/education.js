@@ -3,7 +3,7 @@ export const education = [
   {
     id: 1,
     institution: "Indian Institute of Science Education and Research (IISER) Bhopal",
-    degree: "B.S. in Data Science and Engineering",
+    degree: "BS-MS in Data Science and Engineering",
     specialization: "Data Science, Artificial Intelligence, and Optimization",
     startDate: "2022-12-01",
     endDate: "Present",
@@ -197,7 +197,7 @@ export const academicHonors = [
 
 export const getEducationByLevel = (level) => {
   const levelMap = {
-    'bachelors': education.filter(edu => edu.degree.includes('B.S.') || edu.degree.includes('B.A.'))
+    'bachelors': education.filter(edu => edu.degree.includes('BS-MS') || edu.degree.includes('B.A.'))
   };
   return levelMap[level] || education;
 };

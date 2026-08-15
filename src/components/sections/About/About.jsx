@@ -98,6 +98,12 @@ const About = () => {
                   <span className="font-semibold">Visualization & Analysis:</span> Power BI, Jupyter Notebook, Matplotlib, Seaborn, QGIS
                 </span>
               </li>
+              <li className="flex items-center text-gray-700 dark:text-gray-300">
+                <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
+                <span>
+                  <span className="font-semibold">Generative AI & Agents:</span> RAG Pipelines, LLM Integrations, Agentic Systems
+                </span>
+              </li>
             </ul>
           </div>
         </div>
@@ -186,7 +192,7 @@ case 'interests':
     <div className="space-y-6">
       <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
         My philosophy is rooted in the belief that technology and leadership should serve humanity's greater good. 
-        I approach every challenge—whether in research, development, or team management—with the conviction that 
+        I approach every challenge, whether in research, development, or team management, with the conviction that
         innovation thrives when we combine technical excellence with empathy, collaboration, and ethical responsibility.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -201,7 +207,7 @@ case 'interests':
         <div className="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/10 dark:to-teal-900/10 p-6 rounded-lg">
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Leadership & Collaboration</h3>
           <p className="text-gray-700 dark:text-gray-300">
-            Effective leadership isn't about commanding—it's about empowering. From managing 80+ students in technical 
+            Effective leadership isn't about commanding; it's about empowering. From managing 80+ students in technical
             events to coordinating research teams, I believe in fostering environments where every individual can 
             contribute their unique strengths toward shared goals.
           </p>

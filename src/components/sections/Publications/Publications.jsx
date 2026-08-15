@@ -13,7 +13,7 @@ const Publications = () => {
   const [selectedType, setSelectedType] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('date');
-  const [viewMode, setViewMode] = useState('grid'); // Add viewMode state
+  const [viewMode, setViewMode] = useState('list'); // Full-width cards by default
 
   // Get unique years and types
   const years = ['all', ...new Set(publications.map(pub => pub.year))].sort((a, b) => {
@@ -43,7 +43,7 @@ const Publications = () => {
       filtered = filtered.filter(pub =>
         pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         pub.authors.some(author => author.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        pub.venue.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (pub.venue || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
         (pub.keywords && pub.keywords.some(keyword =>
           keyword.toLowerCase().includes(searchTerm.toLowerCase())
         ))

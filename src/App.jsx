@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/common/Layout/Layout';
 import Home from './components/sections/Home/Hero';
+import News from './components/sections/News/News';
+import AllNews from './components/sections/News/AllNews';
 import About from './components/sections/About/About';
 import Projects from './components/sections/Projects/Projects';
 import Publications from './components/sections/Publications/Publications';
@@ -65,12 +67,13 @@ function App() {
           element={
             <>
               <Home />
+              <News />
               <About />
-              <Projects />
               <Contact />
             </>
           }
         />
+        <Route path="/news" element={<AllNews />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/publications" element={<Publications />} />

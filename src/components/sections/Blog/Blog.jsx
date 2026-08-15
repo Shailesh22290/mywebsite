@@ -128,7 +128,7 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Research Blog
+              Blogs
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Loading blog posts...
@@ -156,12 +156,8 @@ const Blog = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Research Blog
+            Blogs
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Insights, discoveries, and thoughts from my research journey. 
-            Exploring the intersection of technology, science, and innovation.
-          </p>
           {error && (
             <div className="mt-4 p-4 bg-yellow-100 dark:bg-yellow-900 border border-yellow-400 dark:border-yellow-700 rounded-lg">
               <p className="text-sm text-yellow-800 dark:text-yellow-200">

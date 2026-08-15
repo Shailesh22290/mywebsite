@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ExternalLink, 
-  FileText, 
-  Quote, 
-  Award, 
-  Calendar, 
-  Users, 
+import {
+  ExternalLink,
+  FileText,
+  Quote,
+  Calendar,
+  Users,
   TrendingUp,
   Copy,
   Check,
   BookOpen,
-  Download
+  Github
 } from 'lucide-react';
 
 const PublicationCard = ({ publication }) => {
@@ -26,7 +25,8 @@ const PublicationCard = ({ publication }) => {
     type,
     abstract,
     doi,
-    pdf,
+    pdfUrl,
+    codeUrl,
     citations,
     impactFactor,
     keywords,
@@ -79,11 +79,14 @@ const PublicationCard = ({ publication }) => {
     }
   };
 
-  const formatAuthors = (authors) => {
-    if (authors.length <= 3) {
-      return authors.join(', ');
-    }
-    return `${authors.slice(0, 3).join(', ')}, et al.`;
+  // Authors are stored as "Name (Affiliation)"; split them apart for the chip display.
+  const parseAuthor = (author) => {
+    const openParen = author.indexOf('(');
+    if (openParen === -1) return { name: author, affiliation: null };
+    return {
+      name: author.slice(0, openParen).trim(),
+      affiliation: author.slice(openParen + 1, author.lastIndexOf(')')).trim(),
+    };
   };
 
   return (
@@ -96,12 +99,30 @@ const PublicationCard = ({ publication }) => {
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 leading-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
               {title}
             </h3>
-            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-2">
-              <Users className="w-4 h-4" />
-              <span>{formatAuthors(authors)}</span>
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <Users className="w-4 h-4 text-gray-500 dark:text-gray-400 flex-shrink-0" />
+              {authors.map((author, index) => {
+                const { name, affiliation } = parseAuthor(author);
+                return (
+                  <span
+                    key={index}
+                    className="group/author inline-flex items-baseline gap-1.5 px-2.5 py-1 rounded-full
+                             bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm font-medium
+                             hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300
+                             hover:scale-105 transition-all duration-200 cursor-default"
+                  >
+                    {name}
+                    {affiliation && (
+                      <span className="text-xs font-normal text-gray-500 dark:text-gray-400 group-hover/author:text-blue-500 dark:group-hover/author:text-blue-400">
+                        {affiliation}
+                      </span>
+                    )}
+                  </span>
+                );
+              })}
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
               <BookOpen className="w-4 h-4" />
@@ -207,16 +228,28 @@ const PublicationCard = ({ publication }) => {
               <span>DOI</span>
             </a>
           )}
-          {pdf && (
+          {pdfUrl && (
             <a
-              href={pdf}
+              href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-2 bg-red-600 text-white rounded-lg 
+              className="flex items-center gap-2 px-3 py-2 bg-red-600 text-white rounded-lg
                        hover:bg-red-700 transition-colors text-sm"
             >
               <FileText className="w-4 h-4" />
               <span>PDF</span>
+            </a>
+          )}
+          {codeUrl && (
+            <a
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-2 bg-gray-800 text-white rounded-lg
+                       hover:bg-gray-900 transition-colors text-sm"
+            >
+              <Github className="w-4 h-4" />
+              <span>Code</span>
             </a>
           )}
           {bibtex && (

@@ -55,9 +55,6 @@ const Talks = () => {
           <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
             Talks & Presentations
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Sharing knowledge and insights through conferences, workshops, and speaking engagements
-          </p>
         </div>
 
         {/* Stats */}

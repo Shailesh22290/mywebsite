@@ -182,7 +182,7 @@ const EnhancedConsultancy = () => {
     {
       id: 2, // Changed ID to make it appear first, assuming it's the main offering
       title: "High-Converting Web Applications",
-      description: "Full-stack solutions that don't just look good—they convert visitors into customers.",
+      description: "Full-stack solutions that don't just look good, they convert visitors into customers.",
       icon: <Globe className="w-6 h-6" />,
       features: [
         "Modern React.js frontend with 90+ PageSpeed score",
@@ -412,9 +412,6 @@ const EnhancedConsultancy = () => {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Solutions That Drive <span className="text-blue-600">Real Results</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              My primary focus is delivering robust web applications, complemented by research-driven AI exploration to unlock future growth.
-            </p>
           </motion.div>
           <div className="grid lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
@@ -439,9 +436,6 @@ const EnhancedConsultancy = () => {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Simple, Transparent <span className="text-purple-600">Process</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              From idea to implementation—here's exactly how we'll work together to achieve your goals.
-            </p>
           </motion.div>
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
             <div className="grid md:grid-cols-2 gap-8">
@@ -467,9 +461,6 @@ const EnhancedConsultancy = () => {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Success Stories From <span className="text-green-600">Happy Clients</span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Real results from real businesses—see how my web solutions have transformed their operations and bottom line.
-            </p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -494,10 +485,6 @@ const EnhancedConsultancy = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Build a Better Web Experience?
             </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Join successful clients who've increased their conversions with high-performance web applications. 
-              Let's discuss your project in a free 30-minute strategy session.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
                <a href="https://calendly.com/shaileshkachhi786" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2">

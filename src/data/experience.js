@@ -2,26 +2,29 @@
 export const workExperience = [
   {
     id: 1,
-    company: "GeoAI4Cities",
-    position: "Student Researcher",
-    location: "Bhopal, Madhya Pradesh, India",
+    company: "OpEx360AI",
+    position: "AI/ML Engineer",
+    location: "Dover, Delaware, United States · Hybrid",
     type: "Part-time",
-    startDate: "2025-08-01",
-    endDate: null,
-    current: true,
+    startDate: "2025-09-01",
+    endDate: "2026-08-31",
+    current: false,
     description:
-      "Working on Multisensory Threat Perception in Women through VR-Simulated Urban scenes and Temporal Transitions",
+      "Designed and deployed Agentic RAG systems integrating LLM-based AI agents with production software to perform automated data analysis, generate real-time insights, and deliver contextual recommendations across industrial and safety management domains.",
     responsibilities: [
-      "Developing an integrated VR-biometrics-NLP framework to study women's multisensory threat perception.",
-      "Designing and extracting dynamic visual, audio, and semantic features from VR scenes.",
-      "Building an LSTM-based model capable of predicting perceived threat levels from video input."
+      "Designed and deployed Agentic RAG systems integrating LLM-based AI agents with production software for automated data analysis and real-time insights.",
+      "Built conversational interfaces enabling natural-language interaction with AI agents across knowledge bases, live operational databases, and scanned documents simultaneously.",
+      "Leveraged pgvector-backed semantic search, multimodal LLMs, and custom RAG pipelines with tool-use capabilities to enhance retrieval accuracy.",
+      "Automated report generation workflows and delivered scalable real-time decision support for enterprise clients.",
+      "Built a computer vision application for HSE PPE compliance, detecting personal protective equipment usage from live footage to flag safety violations in real time."
     ],
-    technologies: ["Machine Learning", "Computer Vision", "VR", "Python", "LSTM"],
+    technologies: ["Retrieval-Augmented Generation (RAG)", "Natural Language Processing (NLP)", "LLM Agents", "pgvector", "Computer Vision"],
     achievements: [
-      "Developed integrated framework for real-time physiological monitoring.",
-      "Applications in urban planning and public safety."
+      "Delivered production Agentic RAG systems across industrial and safety management domains.",
+      "Built multimodal, tool-using RAG pipelines improving retrieval accuracy for enterprise clients.",
+      "Built a computer vision-based HSE PPE compliance application for real-time safety monitoring."
     ],
-    logo: "/assets/images/companies/geoai.png",
+    logo: "/assets/images/companies/opex360ai.png",
     website: "#"
   },
   {

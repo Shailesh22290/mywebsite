@@ -10,13 +10,10 @@ import {
   ExternalLink,
   ChevronDown,
   ChevronUp,
-  Filter,
-  Search,
   Heart,
   Target,
   Clock,
-  Globe,
-  Sparkles
+  Globe
 } from 'lucide-react';
 
 // CORRECTED IMPORT PATH:
@@ -27,13 +24,8 @@ import { workExperience, volunteerExperience } from '../../../data/experience.js
 // you may need to adjust the '../../../data/experience.js' path slightly.
 
 const Experience = () => { // Removed props from the component signature
-  const [selectedType, setSelectedType] = useState('all');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedLocation, setSelectedLocation] = useState('all');
-  const [sortBy, setSortBy] = useState('recent');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('professional');
   const [expandedExperience, setExpandedExperience] = useState(null);
-  const [viewMode, setViewMode] = useState('timeline');
 
   // Use the imported data directly
   const experienceData = workExperience;
@@ -45,41 +37,10 @@ const Experience = () => { // Removed props from the component signature
     ...volunteerData.map(exp => ({ ...exp, category: 'volunteer' }))
   ];
 
-  // Extract unique values for filters
-  const types = [...new Set(allExperiences.filter(exp => exp.type).map(exp => exp.type))];
-  const locations = [...new Set(allExperiences.filter(exp => exp.location).map(exp => exp.location))];
-
-  // Filter and sort experience data
+  // Show only the selected category, most recent first
   const filteredExperience = allExperiences
-    .filter(exp => {
-      const matchesType = selectedType === 'all' || exp.type === selectedType;
-      const matchesCategory = selectedCategory === 'all' || exp.category === selectedCategory;
-      const matchesLocation = selectedLocation === 'all' || exp.location === selectedLocation;
-      const matchesSearch = searchTerm === '' || 
-        (exp.position && exp.position.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (exp.company && exp.company.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (exp.organization && exp.organization.toLowerCase().includes(searchTerm.toLowerCase())) || // Added for volunteer orgs
-        (exp.description && exp.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (exp.technologies && exp.technologies.some(tech => 
-          tech.toLowerCase().includes(searchTerm.toLowerCase())
-        ));
-      
-      return matchesType && matchesCategory && matchesLocation && matchesSearch;
-    })
-    .sort((a, b) => {
-      switch (sortBy) {
-        case 'recent':
-          return new Date(b.endDate || '2999-12-31') - new Date(a.endDate || '2999-12-31');
-        case 'oldest':
-          return new Date(a.startDate) - new Date(b.startDate);
-        case 'company': // This will sort by company or organization
-          return (a.company || a.organization || '').localeCompare(b.company || b.organization || '');
-        case 'position':
-          return (a.position || '').localeCompare(b.position || '');
-        default:
-          return 0;
-      }
-    });
+    .filter(exp => exp.category === selectedCategory)
+    .sort((a, b) => new Date(b.endDate || '2999-12-31') - new Date(a.endDate || '2999-12-31'));
 
   const formatDate = (dateString) => {
     if (!dateString) return 'Present';
@@ -114,15 +75,15 @@ const Experience = () => { // Removed props from the component signature
   };
 
   const getCategoryColor = (category) => {
-    return category === 'volunteer' 
-      ? 'from-pink-500 to-rose-500 text-white' 
-      : 'from-blue-500 to-indigo-500 text-white';
+    return category === 'volunteer'
+      ? 'from-amber-600 to-orange-600 text-white'
+      : 'from-slate-700 to-blue-900 text-white';
   };
 
   const getCategoryBorderColor = (category) => {
-    return category === 'volunteer' 
-      ? 'border-pink-200 dark:border-pink-800' 
-      : 'border-blue-200 dark:border-blue-800';
+    return category === 'volunteer'
+      ? 'border-amber-200 dark:border-amber-800'
+      : 'border-slate-200 dark:border-slate-700';
   };
 
   // Enhanced Work Card Component
@@ -227,17 +188,11 @@ const Experience = () => { // Removed props from the component signature
             </div>
           )}
 
-          {experience.achievements && experience.achievements.length > 0 && (
-            <div className="flex items-center gap-2 text-sm text-amber-600 dark:text-amber-400">
-              <Award className="w-4 h-4" />
-              <span>{experience.achievements.length} Achievement{experience.achievements.length > 1 ? 's' : ''}</span>
-            </div>
-          )}
         </div>
 
         {/* Expanded Content */}
         <AnimatePresence>
-          {isExpanded && (experience.responsibilities || experience.contributions) && (
+          {isExpanded && (experience.responsibilities || experience.contributions || experience.achievements) && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
@@ -245,25 +200,52 @@ const Experience = () => { // Removed props from the component signature
               transition={{ duration: 0.3 }}
               className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50"
             >
-              <div className="p-6">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                  <Target className="w-4 h-4" />
-                  {experience.responsibilities ? 'Key Responsibilities' : 'Key Contributions'}
-                </h4>
-                <ul className="space-y-2">
-                  {(experience.responsibilities || experience.contributions).map((item, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
-                    >
-                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-gradient-to-r ${gradientColor}`}></div>
-                      <span>{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+              <div className="p-6 space-y-6">
+                {(experience.responsibilities || experience.contributions) && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                      <Target className="w-4 h-4" />
+                      {experience.responsibilities ? 'Key Responsibilities' : 'Key Contributions'}
+                    </h4>
+                    <ul className="space-y-2">
+                      {(experience.responsibilities || experience.contributions).map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: index * 0.1 }}
+                          className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
+                        >
+                          <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-gradient-to-r ${gradientColor}`}></div>
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {experience.achievements && experience.achievements.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                      <Award className="w-4 h-4 text-amber-500" />
+                      Key Achievements
+                    </h4>
+                    <ul className="space-y-2">
+                      {experience.achievements.map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ x: -20, opacity: 0 }}
+                          animate={{ x: 0, opacity: 1 }}
+                          transition={{ delay: index * 0.1 }}
+                          className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
+                        >
+                          <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-amber-500"></div>
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
@@ -305,17 +287,9 @@ const Experience = () => { // Removed props from the component signature
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-full shadow-lg mb-6">
-              <Sparkles className="w-5 h-5 text-yellow-500" />
-              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Experience Journey</span>
-            </div>
-            
             <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6">
              Experience
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
-              My journey through various roles and organizations, showcasing growth, expertise, and community involvement across different domains and technologies.
-            </p>
           </motion.div>
 
           {/* Enhanced Category Toggle */}
@@ -327,7 +301,6 @@ const Experience = () => { // Removed props from the component signature
           >
             <div className="flex bg-white dark:bg-gray-800 rounded-xl p-2 shadow-lg border border-gray-200 dark:border-gray-700">
               {[
-                { key: 'all', label: 'All Experience', icon: Target, count: allExperiences.length },
                 { key: 'professional', label: 'Professional', icon: Briefcase, count: experienceData.length },
                 { key: 'volunteer', label: 'Volunteer', icon: Heart, count: volunteerData.length }
               ].map(({ key, label, icon: Icon, count }) => (
@@ -336,7 +309,7 @@ const Experience = () => { // Removed props from the component signature
                   onClick={() => setSelectedCategory(key)}
                   className={`flex items-center gap-3 px-6 py-3 rounded-lg transition-all duration-300 ${
                     selectedCategory === key
-                      ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg transform scale-105'
+                      ? `bg-gradient-to-r ${getCategoryColor(key)} shadow-lg transform scale-105`
                       : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
                   }`}
                 >
@@ -354,120 +327,24 @@ const Experience = () => { // Removed props from the component signature
             </div>
           </motion.div>
 
-          {/* Enhanced Filters and Search */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-12 space-y-6"
-          >
-            {/* Search Bar */}
-            <div className="relative max-w-2xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl blur opacity-20"></div>
-              <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search by position, company, technology, or description..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-transparent text-gray-900 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-            </div>
-
-            {/* Filter Options */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center gap-2 bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-lg border border-gray-200 dark:border-gray-700">
-                <Filter className="w-4 h-4 text-gray-500" />
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="bg-transparent text-gray-900 dark:text-white focus:outline-none"
-                >
-                  <option value="all">All Types</option>
-                  {types.map(type => (
-                    <option key={type} value={type}>
-                      {type.charAt(0).toUpperCase() + type.slice(1)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-lg border border-gray-200 dark:border-gray-700">
-                <select
-                  value={selectedLocation}
-                  onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="bg-transparent text-gray-900 dark:text-white focus:outline-none"
-                >
-                  <option value="all">All Locations</option>
-                  {locations.map(location => (
-                    <option key={location} value={location}>
-                      {location}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-lg border border-gray-200 dark:border-gray-700">
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="bg-transparent text-gray-900 dark:text-white focus:outline-none"
-                >
-                  <option value="recent">Most Recent</option>
-                  <option value="oldest">Oldest First</option>
-                  <option value="company">Company Name</option>
-                  <option value="position">Position</option>
-                </select>
-              </div>
-
-              <div className="flex gap-2">
-                {['timeline', 'grid'].map((mode) => (
-                  <button
-                    key={mode}
-                    onClick={() => setViewMode(mode)}
-                    className={`px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
-                      viewMode === mode
-                        ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg transform scale-105'
-                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 shadow-lg border border-gray-200 dark:border-gray-700'
-                    }`}
-                  >
-                    {mode.charAt(0).toUpperCase() + mode.slice(1)}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
           {/* Experience Display */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className={viewMode === 'timeline' 
-              ? 'relative max-w-4xl mx-auto' 
-              : 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'}
+            className="relative max-w-4xl mx-auto"
           >
-            {viewMode === 'timeline' && (
-              <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-pink-500 rounded-full"></div>
-            )}
-            
+            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-700 to-amber-600 rounded-full"></div>
+
             {filteredExperience.map((experience, index) => (
               <motion.div
                 key={`${experience.category}-${experience.id || index}`}
                 variants={itemVariants}
-                className={viewMode === 'timeline' ? 'relative mb-12' : ''}
+                className="relative mb-12"
               >
-                {viewMode === 'timeline' && (
-                  <div className={`absolute left-6 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10 ${
-                    experience.category === 'volunteer' 
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-500' 
-                      : 'bg-gradient-to-r from-blue-500 to-indigo-500'
-                  }`}></div>
-                )}
-                
-                <div className={viewMode === 'timeline' ? 'ml-20' : ''}>
+                <div className={`absolute left-6 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10 bg-gradient-to-r ${getCategoryColor(experience.category)}`}></div>
+
+                <div className="ml-20">
                   <EnhancedWorkCard 
                     experience={experience}
                     onToggleExpanded={() => toggleExpanded(`${experience.category}-${experience.id || index}`)}
@@ -489,29 +366,19 @@ const Experience = () => { // Removed props from the component signature
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-12 max-w-md mx-auto border border-gray-200 dark:border-gray-700">
                 <div className="flex justify-center mb-6">
                   {selectedCategory === 'volunteer' ? (
-                    <Heart className="w-20 h-20 text-pink-400" />
-                  ) : selectedCategory === 'professional' ? (
-                    <Briefcase className="w-20 h-20 text-blue-400" />
+                    <Heart className="w-20 h-20 text-amber-400" />
                   ) : (
-                    <Target className="w-20 h-20 text-gray-400" />
+                    <Briefcase className="w-20 h-20 text-slate-400" />
                   )}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                  No experiences found
+                  No {selectedCategory} experience yet
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  Try adjusting your search terms or filters to find more experiences.
-                </p>
                 <button
-                  onClick={() => {
-                    setSearchTerm('');
-                    setSelectedType('all');
-                    setSelectedLocation('all');
-                    setSelectedCategory('all');
-                  }}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300"
+                  onClick={() => setSelectedCategory(selectedCategory === 'professional' ? 'volunteer' : 'professional')}
+                  className={`px-6 py-3 bg-gradient-to-r ${getCategoryColor(selectedCategory === 'professional' ? 'volunteer' : 'professional')} rounded-lg font-medium hover:shadow-lg transition-all duration-300`}
                 >
-                  Clear All Filters
+                  View {selectedCategory === 'professional' ? 'Volunteer' : 'Professional'} Experience
                 </button>
               </div>
             </motion.div>
@@ -529,13 +396,13 @@ const Experience = () => { // Removed props from the component signature
       title: "Professional Roles",
       value: experienceData.length,
       icon: Briefcase,
-      gradient: "from-blue-500 to-indigo-500",
+      gradient: "from-slate-700 to-blue-900",
     },
     {
       title: "Volunteer Roles",
       value: volunteerData.length,
       icon: Heart,
-      gradient: "from-pink-500 to-rose-500",
+      gradient: "from-amber-600 to-orange-600",
     },
     {
       title: "Organizations",

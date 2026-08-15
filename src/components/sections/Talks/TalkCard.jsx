@@ -183,7 +183,7 @@ const TalkCard = ({ talk, isUpcoming = false }) => {
             </p>
             {talk.feedbackAuthor && (
               <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">
-                — {talk.feedbackAuthor}
+                - {talk.feedbackAuthor}
               </p>
             )}
           </div>

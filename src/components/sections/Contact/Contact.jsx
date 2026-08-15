@@ -1,50 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Calendar, MessageSquare, Clock, BookOpen, Code, Brain } from 'lucide-react';
 import ContactForm from './ContactForm';
 import SocialLinks from './SocialLinks';
 
 const Contact = () => {
-  const [selectedReason, setSelectedReason] = useState('');
-
-  const contactReasons = [
-    {
-      id: 'research',
-      title: 'Research Collaboration',
-      description: 'Discuss potential research in ML, Computer Vision or Data Science',
-      icon: '🔬',
-      color: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
-    },
-    {
-      id: 'technical',
-      title: 'Technical Consultation',
-      description: 'Get expert advice on ML projects, web development or data solutions',
-      icon: '💻',
-      color: 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
-    },
-    {
-      id: 'freelance',
-      title: 'Freelance Project',
-      description: 'Discuss potential freelance opportunities in development or data science',
-      icon: '🚀',
-      color: 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200'
-    },
-    {
-      id: 'academic',
-      title: 'Academic Discussion',
-      description: 'Talk about coursework, projects or academic opportunities',
-      icon: '🎓',
-      color: 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
-    },
-    {
-      id: 'general',
-      title: 'General Inquiry',
-      description: 'Any other questions or discussions',
-      icon: '💬',
-      color: 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200'
-    }
-  ];
-
   const contactInfo = [
     {
       icon: Mail,
@@ -94,10 +54,6 @@ const Contact = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 mt-4">
             Get In Touch
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I'm always interested in discussing research opportunities, technical collaborations, 
-            and innovative projects in Data Science and Web Development. Let's connect!
-          </p>
         </motion.div>
 
         {/* Expertise Highlights */}
@@ -141,42 +97,6 @@ const Contact = () => {
           </div>
         </motion.div> */}
 
-        {/* Contact Reasons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
-        >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-            What would you like to discuss?
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {contactReasons.map((reason, index) => (
-              <motion.div
-                key={reason.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className={`cursor-pointer p-6 rounded-xl transition-all duration-300 ${
-                  selectedReason === reason.id
-                    ? `${reason.color} ring-2 ring-offset-2 ring-blue-500 dark:ring-offset-gray-900`
-                    : 'bg-white dark:bg-gray-800 hover:shadow-lg'
-                }`}
-                onClick={() => setSelectedReason(reason.id)}
-              >
-                <div className="text-3xl mb-3">{reason.icon}</div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  {reason.title}
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {reason.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
@@ -188,7 +108,7 @@ const Contact = () => {
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                 Send Message
               </h2>
-              <ContactForm selectedReason={selectedReason} />
+              <ContactForm />
             </div>
           </motion.div>
 
@@ -271,7 +191,7 @@ const Contact = () => {
                 Current Status
               </h3>
               <div className="space-y-2 text-blue-800 dark:text-blue-200">
-                <p><strong>Education:</strong> B.S. Data Science & Engineering at IISER Bhopal</p>
+                <p><strong>Education:</strong> BS-MS Data Science & Engineering at IISER Bhopal</p>
                 <p><strong>Availability:</strong> Open to research collaborations and freelance projects</p>
                 <p className="text-sm mt-3">
                   Actively working on ML research projects and available for technical discussions.
@@ -280,47 +200,6 @@ const Contact = () => {
             </div> */}
           </motion.div>
         </div>
-
-        {/* FAQ Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16"
-        >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                question: "What types of projects are you currently interested in?",
-                answer: "I'm particularly interested in Machine Learning research, Computer Vision applications, and Full Stack Development projects. I enjoy working on problems that combine technical complexity with real-world impact."
-              },
-              {
-                question: "Are you available for freelance work?",
-                answer: "Yes, I'm available for freelance projects in web development, data analysis, and machine learning. I've previously worked with companies like SimDataS and BondVue on freelance basis."
-              },
-              {
-                question: "Do you provide academic guidance or mentorship?",
-                answer: "As a student myself, I'm happy to share my experiences and provide guidance to fellow students, particularly in Data Science, programming, and research methodology."
-              },
-              {
-                question: "What's the best way to propose a research collaboration?",
-                answer: "Please include details about your research interests, proposed methodology, and how my skills in ML/Data Science could contribute. I'm particularly interested in climate prediction, 3D computer vision, and urban safety applications."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </div>
   );

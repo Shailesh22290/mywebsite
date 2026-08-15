@@ -202,9 +202,6 @@ const Posters = () => {
               Research Posters
             </h1>
           </div>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            A collection of research posters presented at conferences, workshops, and symposiums
-          </p>
         </div>
 
         {/* Filters and Search */}

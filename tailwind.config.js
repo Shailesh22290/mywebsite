@@ -17,21 +17,20 @@ export default {
           600: '#2563eb',
           700: '#1d4ed8',
         },
-        // True neutral scale (no blue undertone) so the dark theme reads as
-        // black, not navy. gray-900/950 are pure black for page backgrounds;
-        // 800/700/600 step up as neutral surfaces/borders for cards on top of it.
+        // Cool-tinted dark scale: rich near-black (not navy, not flat #000).
+        // 900/950 are page backgrounds; 800/700/600 step up as surfaces/borders.
         gray: {
           50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#000000',
-          950: '#000000',
+          100: '#f4f5f7',
+          200: '#e4e6eb',
+          300: '#cfd3db',
+          400: '#a0a7b4',
+          500: '#727a89',
+          600: '#4a5160',
+          700: '#2c323e',
+          800: '#171b23',
+          900: '#0b0d12',
+          950: '#060709',
         },
       },
       fontFamily: {

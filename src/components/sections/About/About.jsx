@@ -50,12 +50,8 @@ const About = () => {
       return (
         <div className="space-y-6">
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I am a Data Science and Engineering student with experience in machine learning, artificial intelligence, and full-stack development. My work focuses on designing and implementing solutions that combine advanced analytics with practical applications across diverse domains.
+            I am a Data Science and Engineering student with experience in 3D geospatial research and AI Applicaltion development. My work focuses on building scalable, data-driven solutions that bridge advanced analytics with practical applications. Through research, software development, and technical leadership, I aim to solve real-world challenges and drive meaningful innovation.
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Throughout my academic and professional journey, I have been involved in research, software development, and technical leadership, aiming to create impactful and scalable systems. I believe in the power of data-driven approaches to solve real-world challenges and drive meaningful innovation.
-          </p>
-
           {/* Technical Skills with colored bullets */}
           <div className="mt-8">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">

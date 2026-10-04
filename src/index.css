@@ -14,6 +14,15 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Native scrollbars, form controls and autofill follow the theme */
+  .dark {
+    color-scheme: dark;
+  }
+
+  .dark ::selection {
+    @apply bg-blue-500/30 text-white;
+  }
   
   body {
     @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300;
@@ -31,7 +40,7 @@
   }
   
   .card {
-    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 dark:hover:border-blue-500/40 rounded-lg shadow-sm hover:shadow-md dark:shadow-black/40 transition-all duration-200;
   }
   
   .section-padding {

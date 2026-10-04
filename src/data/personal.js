@@ -16,7 +16,7 @@ export const personalDetails = {
       "As a dedicated Machine Learning Researcher and Software Developer, I am passionate about solving complex problems at the intersection of artificial intelligence and human-computer interaction. My work focuses on developing robust, scalable, and explainable AI systems. I hold a Master's degree in Computer Science and have contributed to several open-source projects and academic publications. When I'm not coding or conducting research, I enjoy hiking, photography, and exploring the latest advancements in technology.",
   
     // Your contact email
-    email: "your.email@example.com",
+    email: "shaileshkachhi786@gmail.com",
     
     // Your location
     location: "New Delhi, India",
@@ -26,9 +26,9 @@ export const personalDetails = {
   
     // Links to your social and professional profiles
     socials: {
-      linkedin: "https://linkedin.com/in/your-username",
-      github: "https://github.com/your-username",
-      twitter: "https://twitter.com/your-username",
+      linkedin: "https://linkedin.com/in/",
+      github: "https://github.com/shailesh22290",
+      twitter: "https://twitter.com/shailesh22290",
       googleScholar: "https://scholar.google.com/citations?user=your-id",
     },
     

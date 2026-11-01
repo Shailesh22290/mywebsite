@@ -41,7 +41,7 @@ const BlogPost = () => {
         const data = await response.json();
         
         if (data.posts && Array.isArray(data.posts)) {
-          const foundPost = data.posts.find(p => p.slug === slug);
+          const foundPost = data.posts.find(p => p.slug === slug && !p.upcoming);
           
           if (!foundPost) {
             throw new Error('Post not found');
@@ -79,7 +79,7 @@ const BlogPost = () => {
       if (posts) {
         // Find related posts based on categories and tags
         const related = posts
-          .filter(p => p.id !== currentPost.id)
+          .filter(p => p.id !== currentPost.id && !p.upcoming)
           .filter(p => {
             const hasSharedCategory = p.categories?.some(cat => 
               currentPost.categories?.includes(cat)

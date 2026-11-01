@@ -12,10 +12,8 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage(
-    'theme',
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  );
+  // Always start in light mode; dark only if the visitor picked it with the toggle.
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
   const [reducedMotion, setReducedMotion] = useLocalStorage('reducedMotion', false);
 
   // Apply theme to document
@@ -62,22 +60,6 @@ export const ThemeProvider = ({ children }) => {
       root.classList.remove('reduce-motion');
     }
   }, [reducedMotion]);
-
-  // Listen for system theme changes
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const handleChange = (e) => {
-      // Only auto-switch if user hasn't manually set a preference
-      const userPreference = localStorage.getItem('theme');
-      if (!userPreference) {
-        setTheme(e.matches ? 'dark' : 'light');
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [setTheme]);
 
   // Listen for system reduced motion preference
   useEffect(() => {

@@ -4,9 +4,9 @@ export const newsItems = [
     id: 5,
     date: '2026-11-04',
     type: 'paper',
-    title: 'Presented GeoBuildSSL at ACM SIGSPATIAL 2026',
+    title: 'Our Paper GeoBuildSSL Presented at ACM SIGSPATIAL 2026, California, USA',
     description:
-      'Presented our research paper, GeoBuildSSL, in the Applications Track of the 34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems in Riverside, California, USA.',
+      'Our research paper, GeoBuildSSL, was presented in the Applications Track of the 34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems in Riverside, California, USA.',
     link: '/publications',
     linkLabel: 'View Publication',
   },
@@ -14,7 +14,7 @@ export const newsItems = [
     id: 4,
     date: '2026-10-13',
     type: 'award',
-    title: 'Awarded the ACM SIGSPATIAL 2026 Travel Grant',
+    title: 'Received a Travel Grant to Attend the 34th ACM SIGSPATIAL International Conference in Riverside, CA, USA',
     description:
       'Honored to receive a $500 travel grant from ACM SIGSPATIAL to attend ACM SIGSPATIAL 2026, a CORE A ranked conference, in Riverside, California, USA.',
     link: null,
@@ -24,7 +24,7 @@ export const newsItems = [
     id: 3,
     date: '2026-09-04',
     type: 'award',
-    title: 'Selected for the Prestigious JST LOTUS Fellowship',
+    title: 'Selected for the Prestigious JST LOTUS Fellowship in Japan',
     description:
       'Delighted to be selected for the JST LOTUS Fellowship, which supports a research stay of up to one year in Japan. I will conduct research at the University of Tokyo as part of its bilateral research collaboration with IISER Bhopal, India.',
     link: null,

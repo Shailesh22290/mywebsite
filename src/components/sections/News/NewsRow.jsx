@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Award, Library, ArrowRight } from 'lucide-react';
+import { Award, Library, ArrowRight, Trophy } from 'lucide-react';
 import { fadeInUp } from '@/utils/animations';
 import { formatNewsDate } from '@/data/news';
 
@@ -9,6 +9,10 @@ const NEWS_TYPE_STYLES = {
   paper: {
     icon: Award,
     accent: 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20',
+  },
+  award: {
+    icon: Trophy,
+    accent: 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20',
   },
   engagement: {
     icon: Library,

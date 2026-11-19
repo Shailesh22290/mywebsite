@@ -21,7 +21,7 @@ const TestimonialCard = ({ testimonial, delay = 0 }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+      className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow duration-300"
     >
       <div className="flex items-center mb-4">
         <Quote className="w-8 h-8 text-blue-600 dark:text-blue-400 mr-3" />
@@ -33,7 +33,7 @@ const TestimonialCard = ({ testimonial, delay = 0 }) => {
       </blockquote>
       
       <div className="flex items-center">
-        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold text-lg mr-4">
+        <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold text-lg mr-4">
           {testimonial.name.charAt(0)}
         </div>
         <div>

@@ -30,7 +30,7 @@ const NewsRow = ({ item }) => {
       </div>
       <div className="flex-1 min-w-0">
         <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
-          {formatNewsDate(item.date)}
+          {item.dateLabel || formatNewsDate(item.date)}
         </span>
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mt-1 mb-2 leading-snug">
           {item.title}

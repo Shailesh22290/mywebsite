@@ -7,8 +7,8 @@ export const newsItems = [
     title: 'Our Paper GeoBuildSSL Presented at ACM SIGSPATIAL 2026, California, USA',
     description:
       'Our research paper, GeoBuildSSL, was presented in the Applications Track of the 34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems in Riverside, California, USA.',
-    link: '/publications',
-    linkLabel: 'View Publication',
+    link: '/thesis/bs',
+    linkLabel: 'Thesis page and slides',
   },
   {
     id: 4,
@@ -39,6 +39,16 @@ export const newsItems = [
       "My first research paper, \"Building Instance Usage Mapping in Cross-Cultural Urban Scenes from Street View Images using Multimodal Self-Supervised Deep Learning,\" was accepted at the 34th ACM SIGSPATIAL International Conference (Applications Track, Full Paper).",
     link: '/publications',
     linkLabel: 'View Publication',
+  },
+  {
+    id: 6,
+    date: '2026-03-01', // sort key only; dateLabel is what is shown
+    dateLabel: '2025 and 2026',
+    type: 'award',
+    title: 'GATE Data Science & AI: AIR 604 (2025) and AIR 1106 (2026)',
+    description: 'Qualified GATE Data Science and Artificial Intelligence in two consecutive years.',
+    link: null,
+    linkLabel: null,
   },
   {
     id: 2,

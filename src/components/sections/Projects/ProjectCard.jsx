@@ -54,11 +54,15 @@ const ProjectCard = ({ project, onClick }) => {
     >
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-        />
+        {image?.length ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-blue-900/40 dark:to-indigo-900/40" />
+        )}
         <div className="absolute top-3 right-3 flex gap-2">
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(status)}`}>
             {status.replace('-', ' ')}

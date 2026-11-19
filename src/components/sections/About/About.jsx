@@ -337,7 +337,7 @@ From sunrise climbs in the Himalayas to quiet forest paths, I love discovering n
               </div>
 
               <div className="mt-8 space-y-3">
-                <a href="https://drive.google.com/file/d/14kiGLxpjgdprOKcGmoRWzWTZZdt3AHY5/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/file/d/1B3kt2UmzN5Z-iFPcgcocShfnOTpMjVHi/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                 <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
                   <Download className="w-5 h-5 mr-2" />
                   Download CV

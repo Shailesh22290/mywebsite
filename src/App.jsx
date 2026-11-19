@@ -10,6 +10,8 @@ import Publications from './components/sections/Publications/Publications';
 import Contact from './components/sections/Contact/Contact';
 import Blog from './components/sections/Blog/Blog';
 import BlogPost from './pages/BlogPost';
+import ThesisPage from './pages/ThesisPage';
+import HomeSections from './components/sections/Home/HomeSections';
 import Education from './components/sections/Education/Education';
 import Experience from './components/sections/Experience/Experience';
 import Talks from './components/sections/Talks/Talks';  
@@ -68,7 +70,7 @@ function App() {
             <>
               <Home />
               <News />
-              <About />
+              <HomeSections />
               <Contact />
             </>
           }
@@ -80,6 +82,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/thesis/:id" element={<ThesisPage />} />
         <Route path="/education" element={<Education />} />
         <Route path="/talks" element={<Talks />} />
         <Route path="/experience" element={<Experience experienceData={workExperience} />} />

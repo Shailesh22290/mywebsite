@@ -1,7 +1,8 @@
 // Education.js
 
 import React, { useState } from 'react';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen, Filter } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen, Filter, ArrowRight } from 'lucide-react';
 import CourseGrid from './CourseGrid';
 import CertificateCard from './CertificateCard';
 
@@ -15,6 +16,10 @@ const educationData = [
     period: "Dec 2022 – Present",
     gpa: "7.21/10.0",
     status: "in-progress",
+    theses: [
+      { label: 'BS thesis', to: '/thesis/bs' },
+      { label: 'MS thesis', to: '/thesis/ms' },
+    ],
     description:
       "Undergraduate studies in Data Science and Engineering with a strong focus on Artificial Intelligence, Machine Learning, Computer Vision, Optimization, and Applied Mathematics. Completed multiple projects and internships in ML, AI, and full-stack development.",
     achievements: [
@@ -200,6 +205,19 @@ const Education = () => {
                               <span className="font-medium">{edu.gpa}</span>
                             </div>
                           </div>
+                          {edu.theses && (
+                            <div className="mt-4">
+                              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Thesis</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {edu.theses.map((t) => (
+                                  <Link key={t.to} to={t.to}
+                                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+                                    {t.label} <ArrowRight className="w-4 h-4" />
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
 
                         <div>

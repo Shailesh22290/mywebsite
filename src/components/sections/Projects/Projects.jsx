@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer } from '@/utils/animations';
 
 const Projects = () => {
   const [filteredProjects, setFilteredProjects] = useState(projects);
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('Research');
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');

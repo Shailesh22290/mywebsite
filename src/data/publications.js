@@ -23,10 +23,40 @@ export const publications = [
       "Urban GeoAI",
       "Building Usage Classification",
     ],
-    codeUrl: "https://github.com/geoai4cities/geobuildssl",
-    pdfUrl: "",
+    codeUrl: "https://github.com/geoai4cities/geobuild-ssl",
+    pdfUrl: "https://drive.google.com/file/d/1f4rFpEHExIXyivyStMpaN3MtAG9Rrn4Q/view?usp=sharing",
+    doi: "10.1145/3841645.3843286",
+    bibtex: `@inproceedings{Kachhi2026GeoBuildSSL,
+  author    = {Kachhi, Shailesh and Kumar, Vaibhav and Arya, Deeksha},
+  title     = {Building Instance Usage Mapping in Cross-Cultural Urban Scenes from Street View Images using Multimodal Self-Supervised Deep Learning},
+  booktitle = {Proceedings of the 34th ACM International Conference on Advances in Geographic Information Systems},
+  series    = {SIGSPATIAL '26},
+  year      = {2026},
+  address   = {Riverside, CA, USA},
+  publisher = {ACM},
+  doi       = {10.1145/3841645.3843286}
+}`,
     featured: true,
   },
+];
+
+// Shown on the home page and the Publications page: urban AI focus first, then general ML.
+export const researchInterests = [
+  "Street-view imagery",
+  "OpenStreetMap data quality and enrichment",
+  "Trustworthy urban AI (uncertainty, bias, data quality)",
+  "Vision-language models for cities",
+  "Urban soundscapes",
+  "Machine Learning",
+  "Deep Learning",
+  "Natural Language Processing",
+  "Computer Vision",
+  "Data Science",
+  "Artificial Intelligence",
+  "Neural Networks",
+  "Reinforcement Learning",
+  "Statistical Modeling",
+  "Pattern Recognition",
 ];
 
 export const publicationTypes = [

@@ -13,14 +13,14 @@ const ServiceCard = ({ service, isActive, onToggle, delay }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: delay }}
-      className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md transition-all duration-300"
     >
       <div
         className="flex justify-between items-center p-6 cursor-pointer group"
         onClick={onToggle}
       >
         <div className="flex items-center gap-4">
-          <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-3 rounded-xl text-white shadow-lg group-hover:scale-105 transition-transform">
+          <div className="bg-blue-600 p-3 rounded-xl text-white shadow-sm transition-transform">
             {service.icon}
           </div>
           <div>
@@ -83,7 +83,7 @@ const ServiceCard = ({ service, isActive, onToggle, delay }) => {
                   </ul>
                 </div>
               </div>
-              <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-100 dark:border-blue-800">
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
@@ -95,7 +95,7 @@ const ServiceCard = ({ service, isActive, onToggle, delay }) => {
                       <span className="text-gray-600 dark:text-gray-300 font-medium">{service.duration}</span>
                     </div>
                   </div>
-                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
                     Get Quote
                   </button>
                 </div>
@@ -114,10 +114,10 @@ const TestimonialCard = ({ testimonial, delay }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: delay }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
+      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all duration-300"
     >
       <div className="flex items-center mb-4">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg mr-4">
+        <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg mr-4">
           {testimonial.name.charAt(0)}
         </div>
         <div>
@@ -150,7 +150,7 @@ const ProcessStep = ({ step, index, delay }) => {
       transition={{ delay: delay }}
       className="flex items-start gap-4"
     >
-      <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-lg">
+      <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-sm">
         {index + 1}
       </div>
       <div>
@@ -328,11 +328,11 @@ const EnhancedConsultancy = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-800 dark:to-slate-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full h-1 z-50 bg-gray-200 dark:bg-gray-700">
         <div 
-          className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300"
+          className="h-full bg-blue-600 transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -345,11 +345,11 @@ const EnhancedConsultancy = () => {
           className="text-center mb-20"
         >
           <div className="mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+            <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
               🚀 Building High-Performance Web Solutions
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent mb-6 leading-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
             Build Web Applications
             <br />
             <span className="text-blue-600 dark:text-blue-400">That Drive Real Growth</span>
@@ -359,7 +359,7 @@ const EnhancedConsultancy = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a href="https://calendly.com/shaileshkachhi786" target="_blank" rel="noopener noreferrer">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2">
                 <MessageSquare className="w-5 h-5" />
                 Start Free Consultation
               </button>
@@ -387,12 +387,12 @@ const EnhancedConsultancy = () => {
             <motion.div 
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 text-center hover:shadow-xl transition-all duration-300"
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 text-center hover:shadow-md transition-all duration-300"
             >
               <div className="flex justify-center mb-3 text-blue-600 dark:text-blue-400">
                 {stat.icon}
               </div>
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
                 {stat.value}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-tight">
@@ -434,10 +434,10 @@ const EnhancedConsultancy = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Simple, Transparent <span className="text-purple-600">Process</span>
+              Simple, Transparent <span className="text-blue-600 dark:text-blue-400">Process</span>
             </h2>
           </motion.div>
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm border border-gray-100 dark:border-gray-700">
             <div className="grid md:grid-cols-2 gap-8">
               {process.map((step, index) => (
                 <ProcessStep
@@ -478,7 +478,7 @@ const EnhancedConsultancy = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="text-center bg-gradient-to-r from-blue-600 to-purple-600 p-12 rounded-2xl shadow-2xl text-white relative overflow-hidden"
+          className="text-center bg-blue-600 p-12 rounded-lg shadow-sm text-white relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-black opacity-10"></div>
           <div className="relative z-10">
@@ -487,7 +487,7 @@ const EnhancedConsultancy = () => {
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
                <a href="https://calendly.com/shaileshkachhi786" target="_blank" rel="noopener noreferrer">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center gap-2">
+              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-2">
                 <MessageSquare className="w-5 h-5" />
                 Book Free Strategy Call
               </button>

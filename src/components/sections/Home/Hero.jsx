@@ -61,7 +61,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced Background with Graphs and Nodes */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
         {/* Animated Network Background */}
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
@@ -341,6 +341,9 @@ const Hero = () => {
               className="text-xl text-gray-600 dark:text-gray-300 mb-4 md:-mb-6"
             >
              Master's Student in Data Science & Engineering at Indian Institute of Science Education and Research (IISER) Bhopal, India
+              <span className="block mt-2 text-lg text-blue-700 dark:text-blue-300 font-medium">
+                Incoming JST LOTUS Fellow, CSIS, The University of Tokyo (Jan 2027)
+              </span>
             </motion.p>
           </motion.div>
 

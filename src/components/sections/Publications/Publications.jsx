@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import PublicationCard from './PublicationCard';
 import PublicationSearch from './PublicationSearch';
-import { publications } from '../../../data/publications';
+import ThesisCards from './ThesisCards';
+import { publications, researchInterests } from '../../../data/publications';
 import { fadeInUp, staggerContainer } from '@/utils/animations';
 import { BookOpen, Award, TrendingUp, Calendar } from 'lucide-react';
 
@@ -226,18 +227,7 @@ const Publications = () => {
               Research Interests
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
-              {[
-                'Machine Learning',
-                'Deep Learning',
-                'Natural Language Processing',
-                'Computer Vision',
-                'Data Science',
-                'Artificial Intelligence',
-                'Neural Networks',
-                'Reinforcement Learning',
-                'Statistical Modeling',
-                'Pattern Recognition'
-              ].map((interest, index) => (
+              {researchInterests.map((interest, index) => (
                 <span
                   key={index}
                   className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 
@@ -248,6 +238,14 @@ const Publications = () => {
                 </span>
               ))}
             </div>
+          </motion.div>
+
+          {/* Theses */}
+          <motion.div variants={fadeInUp} className="mt-16">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+              Theses
+            </h3>
+            <ThesisCards />
           </motion.div>
         </motion.div>
       </div>

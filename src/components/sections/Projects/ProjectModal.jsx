@@ -127,11 +127,15 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           <div className="p-6 space-y-6">
             {/* Main Image */}
             <div className="relative h-64 md:h-80 rounded-lg overflow-hidden">
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
+              {image?.length ? (
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-blue-900/40 dark:to-indigo-900/40" />
+              )}
             </div>
 
             {/* Action Buttons */}

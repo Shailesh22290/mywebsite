@@ -71,7 +71,6 @@ function App() {
               <Home />
               <News />
               <HomeSections />
-              <Contact />
             </>
           }
         />

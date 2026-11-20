@@ -149,7 +149,7 @@ export const theses = {
       {
         title: 'Part 2: GAVAS, Geometry-Aware Video-to-Audio Synthesis with 4D Acoustic Scene Graphs',
         text: 'Builds a 4D acoustic scene graph from street video so planners can hear a street change before it is built. A what-if street edit becomes an edit of the graph.',
-        note: 'Submitted to Nature Cities. Shailesh Kachhi, Vaibhav Kumar.',
+        note: 'Submitted to Nature Cities (Nature Portfolio). Shailesh Kachhi, Vaibhav Kumar.',
       },
       {
         title: 'Part 3: UrbanSG-QA',

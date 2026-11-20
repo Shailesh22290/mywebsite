@@ -29,19 +29,20 @@ const publications = [
   {
     authors: [ME, 'Vaibhav Kumar'],
     title: 'GAVAS: Geometry-Aware Video-to-Audio Synthesis with 4D Acoustic Scene Graphs.',
-    venue: 'Submitted to Nature Cities.',
+    venue: 'Nature Cities (Nature Portfolio), submitted.',
     links: [{ label: 'MS thesis', href: '/thesis/ms' }],
   },
 ];
 
 
 const honours = [
-  { year: '2026', text: 'JST LOTUS Fellowship for a research stay at CSIS, The University of Tokyo' },
-  { year: '2026', text: 'ACM SIGSPATIAL travel grant ($500) to present at SIGSPATIAL 2026, Riverside, CA' },
-  { year: '2025, 2026', text: 'GATE Data Science & AI: AIR 604 (2025) and AIR 1106 (2026)' },
-  { year: '2023', text: 'Winner, Smart India Hackathon 2023 (national level)' },
-  { year: '2022', text: 'JEE Advanced 2022: AIR 7288 (top 1% of 1.5M candidates)' },
-  { year: '2024–25', text: 'General Secretary, Technical Affairs, Student Activity Council, IISER Bhopal' },
+  'Received the JST LOTUS Fellowship for a Bilateral research collaboration between India and Japan by Japan Science and Technology Agency (JST), Government of Japan to stay Sekimoto Laboratory, The University of Tokyo Komaba, Meguro-ku, Tokyo Japan(2026).',
+  'Received the ACM SIGSPATIAL Travel Grant to present my research work at SIGSPATIAL 2026, Riverside, California, USA (2026).',
+  'Secured All India Rank 1106 in GATE Data Science and Artificial Intelligence (2026).',
+  'Secured All India Rank 604 in GATE Data Science and Artificial Intelligence (2025).',
+  'Elected General Secretary, Technical Affairs, Student Activity Council, IISER Bhopal (2024).',
+  'Won the national level Smart India Hackathon (2023), Meerut, Uttar Pradesh for Developing "A Solution for analysing the demographics of the users for Punjab Government".',
+  'Secured All India Rank 7288 in JEE Advanced, placing in the top 1% of 1.5 million candidates (2022).',
 ];
 
 const H2 = ({ children }) => <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-5">{children}</h2>;
@@ -50,9 +51,12 @@ const HomeSections = () => (
   <section id="publications" className="relative z-10 py-12 bg-white dark:bg-gray-900">
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <H2>Research interests</H2>
-      <ul className="flex flex-wrap gap-2 mb-12">
-        {researchInterests.map((i) => (
-          <li key={i} className="px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">{i}</li>
+      <ul className="grid sm:grid-cols-2 gap-3 mb-12">
+        {researchInterests.map((i, n) => (
+          <li key={i} className="flex items-baseline gap-3 border-l-2 border-blue-600 dark:border-blue-400 pl-4 py-2">
+            <span className="font-mono text-sm text-blue-600 dark:text-blue-400">{String(n + 1).padStart(2, '0')}</span>
+            <span className="font-medium text-gray-900 dark:text-white">{i}</span>
+          </li>
         ))}
       </ul>
 
@@ -60,14 +64,16 @@ const HomeSections = () => (
       <ol className="space-y-5">
         {publications.map((pub) => (
           <li key={pub.title} className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            {pub.authors.map((a, i) => (
-              <React.Fragment key={a}>
-                {i > 0 && ', '}
-                {a === ME ? <strong className="text-gray-900 dark:text-white">{a}</strong> : a}
-              </React.Fragment>
-            ))}
-            {'. '}
-            <em>{pub.title}</em> {pub.venue}
+            <strong className="block text-gray-900 dark:text-white">{pub.title}</strong>
+            <span className="block">
+              {pub.authors.map((a, i) => (
+                <React.Fragment key={a}>
+                  {i > 0 && ', '}
+                  {a === ME ? <span className="font-semibold text-blue-600 dark:text-blue-400">{a}</span> : a}
+                </React.Fragment>
+              ))}
+            </span>
+            <em className="block text-sm">{pub.venue}</em>
             <div className="mt-1 text-sm flex flex-wrap gap-x-3">
               {pub.links.map((l) => <A key={l.label} href={l.href}>{l.label}</A>)}
             </div>
@@ -82,13 +88,8 @@ const HomeSections = () => (
 
       <div className="mt-12">
         <H2>Honours & achievements</H2>
-        <ul className="space-y-3">
-          {honours.map((h) => (
-            <li key={h.text} className="flex gap-4 text-gray-700 dark:text-gray-300">
-              <span className="w-20 shrink-0 text-sm text-gray-500 dark:text-gray-400 pt-0.5">{h.year}</span>
-              <span>{h.text}</span>
-            </li>
-          ))}
+        <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300 marker:text-blue-600 dark:marker:text-blue-400">
+          {honours.map((h) => <li key={h}>{h}</li>)}
         </ul>
       </div>
     </div>

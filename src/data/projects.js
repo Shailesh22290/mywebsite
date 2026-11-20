@@ -38,7 +38,7 @@ export const projects = [
     id: 23,
     title: "GAVAS: Geometry-Aware Video-to-Audio Synthesis",
     description: "4D acoustic scene graphs from street video, so planners can hear a street change before it is built.",
-    longDescription: "Part 2 of my MS thesis. Builds a 4D acoustic scene graph from ordinary or 360° street video and uses it to control a video-to-audio generator, so a what-if street edit becomes an edit of the graph. Submitted to Nature Cities (Shailesh Kachhi, Vaibhav Kumar). See /thesis/ms.",
+    longDescription: "Part 2 of my MS thesis. Builds a 4D acoustic scene graph from ordinary or 360° street video and uses it to control a video-to-audio generator, so a what-if street edit becomes an edit of the graph. Submitted to Nature Cities, a Nature Portfolio journal (Shailesh Kachhi, Vaibhav Kumar). See /thesis/ms.",
     category: "Research",
     type: "Urban Soundscapes",
     technologies: ["360° Video", "Scene Graphs", "Audio Generation"],

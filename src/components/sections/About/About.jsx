@@ -1,387 +1,148 @@
-import React, { useState } from 'react';
-import { 
-  User, 
-  MapPin, 
-  Calendar, 
-  Mail, 
-  Phone, 
-  Globe,
-  Download,
-  ExternalLink,
-  Heart,
-  Coffee,
-  Code,
-  Book
-} from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Download, Mail, MapPin } from 'lucide-react';
 import ProfileImage from '../Home/ProfileImage';
-// In any component where you want different background
+import { personalDetails } from '@/data/personal';
 
+const EMAIL = personalDetails.email;
+const CV = 'https://drive.google.com/file/d/1B3kt2UmzN5Z-iFPcgcocShfnOTpMjVHi/view?usp=sharing';
 
-const About = () => {
-  const [activeTab, setActiveTab] = useState('overview');
-
-  const personalInfo = {
-    name: "Shailesh K.",
-    title: "Data Science & Engineering Student",
-    location: "Bhopal, India",
-    email: "shailesh22@iiserb.ac.in ",
-    phone: "+91",
-    website: "https://shailesh22290.github.io",
-    joinDate: "December 2022"
-  };
-
-  const tabs = [
-    { id: 'overview', label: 'Overview', icon: User },
-    { id: 'interests', label: 'Interests', icon: Heart },
-    { id: 'philosophy', label: 'Philosophy', icon: Book },
-    { id: 'personal', label: 'Personal', icon: Coffee }
-  ];
-
-  const interests = [
-    { category: 'Research', items: ['Machine Learning', 'Data Science', 'AI Ethics', 'Computer Vision'] },
-    { category: 'Teaching', items: ['Curriculum Design', 'Student Mentoring', 'Educational Technology'] },
-    { category: 'Technology', items: ['React', 'Python', 'TensorFlow', 'Cloud Computing'] },
-    { category: 'Hobbies', items: ['Trekking', 'Travel', 'Reading', 'Cooking'] }
-  ];
-
-  const renderTabContent = () => {
-  switch (activeTab) {
-    case 'overview':
-      return (
-        <div className="space-y-6">
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            I am a Data Science and Engineering student with experience in 3D geospatial research and AI Applicaltion development. My work focuses on building scalable, data-driven solutions that bridge advanced analytics with practical applications. Through research, software development, and technical leadership, I aim to solve real-world challenges and drive meaningful innovation.
-          </p>
-          {/* Technical Skills with colored bullets */}
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              Technical Skills
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">Programming:</span> Python, C++, JavaScript, SQL, PHP
-                </span>
-              </li>
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">ML/AI Tools:</span> TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy
-                </span>
-              </li>
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">Databases:</span> MySQL, MongoDB, PostgreSQL
-                </span>
-              </li>
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">Web Development:</span> React.js, Node.js, HTML/CSS, REST APIs, Drupal
-                </span>
-              </li>
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">Cloud & Tools:</span> Google Colab, Firebase, Supabase, Docker, Git
-                </span>
-              </li>
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">Visualization & Analysis:</span> Power BI, Jupyter Notebook, Matplotlib, Seaborn, QGIS
-                </span>
-              </li>
-              <li className="flex items-center text-gray-700 dark:text-gray-300">
-                <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>
-                <span>
-                  <span className="font-semibold">Generative AI & Agents:</span> RAG Pipelines, LLM Integrations, Agentic Systems
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      );
-  
-  
-case 'interests':
-  return (
-    <div className="space-y-6">
-      <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        My interests span across various domains, from AI research to leadership and creative pursuits.
-        I aim to build innovative solutions, leading teams, and exploring the intersection of technology and human potential.
-        I believe in maintaining a balance between professional excellence and personal growth.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Research & AI */}
-        <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Research & AI</h3>
-          <ul className="space-y-2">
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>Machine Learning & Deep Learning
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>3D Computer Vision & NLP
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>Climate Modeling & Urban Analytics
-            </li>
-          </ul>
-        </div>
-
-        {/* Leadership & Management */}
-        <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Leadership & Management</h3>
-          <ul className="space-y-2">
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>Team Leadership & Management
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>Strategic Planning & Execution
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-amber-500 rounded-full mr-3"></div> Event & Budget Management
-            </li>
-          </ul>
-        </div>
-
-        {/* Technology & Development */}
-        <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Technology & Development</h3>
-          <ul className="space-y-2">
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></div>Full Stack Development 
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-teal-500 rounded-full mr-3"></div>MLOps & Model Deployment
-            </li>
-      
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-lime-500 rounded-full mr-3"></div>Data Engineering & Analytics
-            </li>
-          </ul>
-        </div>
-
-        {/* Personal Interests */}
-        <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Personal Interests</h3>
-          <ul className="space-y-2">
-            
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-rose-500 rounded-full mr-3"></div>Swimming & Fitness
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-violet-500 rounded-full mr-3"></div>Mentoring & Social Service
-            </li>
-            <li className="flex items-center text-gray-700 dark:text-gray-300">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>Travel & Cultural Exploration
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+const A = ({ href, children }) =>
+  href.startsWith('/') ? (
+    <Link to={href} className="text-blue-600 dark:text-blue-400 hover:underline">{children}</Link>
+  ) : (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">{children}</a>
   );
-     case 'philosophy':
-  return (
-    <div className="space-y-6">
-      <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-        My philosophy is rooted in the belief that technology and leadership should serve humanity's greater good. 
-        I approach every challenge, whether in research, development, or team management, with the conviction that
-        innovation thrives when we combine technical excellence with empathy, collaboration, and ethical responsibility.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Research & Innovation</h3>
-          <p className="text-gray-700 dark:text-gray-300">
-            I believe research should bridge the gap between theoretical possibilities and practical solutions. 
-            Whether working on climate modeling or urban safety, I focus on creating AI systems that are not just 
-            technically sound but also ethically responsible and socially impactful.
-          </p>
-        </div>
-        <div className="bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-900/10 dark:to-teal-900/10 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Leadership & Collaboration</h3>
-          <p className="text-gray-700 dark:text-gray-300">
-            Effective leadership isn't about commanding; it's about empowering. From managing 80+ students in technical
-            events to coordinating research teams, I believe in fostering environments where every individual can 
-            contribute their unique strengths toward shared goals.
-          </p>
-        </div>
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Technology & Ethics</h3>
-          <p className="text-gray-700 dark:text-gray-300">
-            Technology is a powerful tool that must be wielded responsibly. I'm passionate about developing AI solutions 
-            that enhance human capabilities while addressing bias, privacy, and transparency. Every algorithm we create 
-            should make the world more equitable, not less.
-          </p>
-        </div>
-        <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/10 dark:to-red-900/10 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Continuous Growth</h3>
-          <p className="text-gray-700 dark:text-gray-300">
-            The intersection of learning and teaching is where true growth happens. Whether mentoring students, 
-            leading teams, or diving into new research domains, I believe in staying curious, embracing challenges, 
-            and turning failures into stepping stones for innovation.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-     case 'personal':
-  return (
-    <div className="space-y-6">
-      <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-      Life is all about balance pushing myself in demanding research spaces while staying grounded through nature.
-From long Himalayan trails that test endurance and spirit, to quiet moments watching the mountains breathe, trekking keeps me connected to clarity and purpose.
 
-I've completed treks like Kedarkantha in Uttarakhand and Kheerganga in Himachal Pradesh, and each journey reminded me that growth happens step-by-step, whether it's climbing peaks or solving complex problems.
-Growing up in Jabalpur and now studying in Bhopal, I’ve learned to embrace both forward momentum and the beauty of the path itself.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Heart className="w-8 h-8 text-white" />
-          </div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Swimming</h3>
-          <p className="text-gray-600 dark:text-gray-400">
-            My go-to activity for mental clarity and physical fitness. There's something meditative about 
-            the rhythm of strokes that helps me think through complex problems.
+const now = [
+  <>Presenting <A href="/thesis/bs">GeoBuildSSL</A>, my paper on mapping building use from street view images, at ACM SIGSPATIAL 2026.</>,
+  <>Finishing my <A href="/thesis/ms">Master&apos;s thesis</A> on GAVAS, geometry-aware video-to-audio synthesis for urban scenes (submitted to Nature Cities).</>,
+  <>Working with Sekimoto Laboratory, CSIS, The University of Tokyo as a JST LOTUS Fellow: remotely from India until December 2026, then on site in Tokyo from January to July 2027.</>,
+];
+
+const timeline = [
+  { when: 'Oct 2026 to now', what: 'Visiting Researcher (JST LOTUS Fellowship)', where: 'Sekimoto Laboratory, CSIS, The University of Tokyo (on site Jan to Jul 2027)' },
+  { when: 'Jan 2025 to now', what: 'Graduate Researcher', where: 'GeoAI4Cities Lab, IISER Bhopal: research internship, BS thesis and MS thesis' },
+  { when: '2025 to 2026', what: 'AI/ML Engineer (part-time)', where: 'OpEx360AI: agentic RAG systems and a PPE compliance vision app' },
+  { when: 'Summer 2025', what: 'Summer Research Intern', where: 'IIT Delhi: reconstructing historical precipitation data with deep learning' },
+  { when: 'Summer 2024', what: 'Research Intern, Visual Intelligence and ML', where: 'IIT Mandi' },
+  { when: '2022 to now', what: 'BS-MS, Data Science and Engineering', where: 'IISER Bhopal, research at GeoAI4Cities Lab' },
+];
+
+const skills = [
+  ['Research areas', 'GeoAI, urban perception, 3D computer vision, point clouds, NLP'],
+  ['ML', 'PyTorch, TensorFlow, scikit-learn, self-supervised and multimodal learning, RAG and LLM agents'],
+  ['Geo and data', 'QGIS, PostgreSQL with pgvector, MySQL, MongoDB, Pandas, NumPy'],
+  ['Engineering', 'Python, C++, JavaScript, SQL, React, Node.js, Docker, Git'],
+];
+
+const H2 = ({ children }) => <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-5">{children}</h2>;
+
+const About = () => (
+  <section id="about" className="py-16 bg-white dark:bg-gray-900">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <header className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+        <ProfileImage size="large" />
+        <div className="text-center sm:text-left">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Shailesh Kachhi</h1>
+          <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
+            Master&apos;s student, Data Science and Engineering, IISER Bhopal
           </p>
-        </div>
-        <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Globe className="w-8 h-8 text-white" />
-          </div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Trekking</h3>
-          <p className="text-gray-600 dark:text-gray-400">
-          
-From sunrise climbs in the Himalayas to quiet forest paths, I love discovering new perspectives in nature where every step, horizon, and breath of mountain air feels like its own story.
+          <p className="mt-1 text-blue-700 dark:text-blue-300 font-medium">
+            JST LOTUS Fellow, The University of Tokyo (on site from Jan 2027)
           </p>
-        </div>
-        <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Book className="w-8 h-8 text-white" />
+          <div className="mt-4 flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" /> Bhopal, India</span>
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">
+              <Mail className="h-4 w-4" /> {EMAIL}
+            </a>
           </div>
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Mentoring</h3>
-          <p className="text-gray-600 dark:text-gray-400">
-            Guiding junior students through technical challenges and career decisions. Leading teams 
-            and sharing knowledge has taught me as much as any research project.
-          </p>
+          <a
+            href={CV}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-2.5 font-semibold text-white transition-colors"
+          >
+            <Download className="h-4 w-4" /> Download CV
+          </a>
         </div>
-      </div>
-      <div className="bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20 p-6 rounded-lg mt-8">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Life Philosophy</h3>
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          I believe that the best innovations come from diverse experiences. Whether I'm debugging code at 2 AM, 
-          swimming laps at dawn, or managing events with tight budgets, each experience shapes my approach 
-          to problem-solving. The discipline from swimming, creativity from photography, and empathy from mentoring 
-          all contribute to making me a better researcher and leader.
+      </header>
+
+      <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        <p>
+          I build AI systems that understand the real world. My research sits between geospatial AI and computer vision:
+          learning what buildings are used for from street view images, reading 3D structure from LiDAR and video,
+          and studying how people perceive the places they live in.
+        </p>
+        <p>
+          I do this at the <A href="https://geoai4cities.com/">GeoAI4Cities Lab</A>, IISER Bhopal, and with Sekimoto
+          Laboratory at The University of Tokyo as a JST LOTUS Fellow. Alongside research I have shipped production ML, including agentic
+          RAG systems and real-time computer vision for workplace safety.
         </p>
       </div>
-    </div>
-  );
-      
-      default:
-        return null;
-    }
-  };
 
-  return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            About Me
-          </h2>
-          {/* <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Get to know me better - my background, interests, and what drives my passion for 
-            education and research.
-          </p> */}
-        </div>
+      <div>
+        <H2>Now</H2>
+        <ul className="space-y-3">
+          {now.map((item, i) => (
+            <li key={i} className="border-l-2 border-blue-600 dark:border-blue-400 pl-4 text-gray-700 dark:text-gray-300">{item}</li>
+          ))}
+        </ul>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Profile Section */}
-          <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 sticky top-8">
-              <div className="text-center mb-8">
-                <ProfileImage size="large" />
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-4">
-                  {personalInfo.name}
-                </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
-                  {personalInfo.title}
-                </p>
+      <div>
+        <H2>Path so far</H2>
+        <ol className="space-y-5">
+          {timeline.map(({ when, what, where }) => (
+            <li key={what} className="grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-4">
+              <span className="font-mono text-sm text-blue-600 dark:text-blue-400 pt-0.5">{when}</span>
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white">{what}</p>
+                <p className="text-gray-600 dark:text-gray-400">{where}</p>
               </div>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+          Full details on the <A href="/experience">experience</A> and <A href="/projects">projects</A> pages.
+        </p>
+      </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center text-gray-700 dark:text-gray-300">
-                  <MapPin className="w-5 h-5 mr-3 text-blue-500" />
-                  <span>{personalInfo.location}</span>
-                </div>
-                <div className="flex items-center text-gray-700 dark:text-gray-300">
-                  <Mail className="w-5 h-5 mr-3 text-green-500" />
-                  <span>{personalInfo.email}</span>
-                </div>
-                {/* <div className="flex items-center text-gray-700 dark:text-gray-300">
-                  <Phone className="w-5 h-5 mr-3 text-purple-500" />
-                  <span>{personalInfo.phone}</span>
-                </div> */}
-                <div className="flex items-center text-gray-700 dark:text-gray-300">
-                  <Globe className="w-5 h-5 mr-3 text-orange-500" />
-                  <span>{personalInfo.website}</span>
-                </div>
-                {/* <div className="flex items-center text-gray-700 dark:text-gray-300">
-                  <Calendar className="w-5 h-5 mr-3 text-red-500" />
-                  <span>Since {personalInfo.joinDate}</span>
-                </div> */}
-              </div>
-
-              <div className="mt-8 space-y-3">
-                <a href="https://drive.google.com/file/d/1B3kt2UmzN5Z-iFPcgcocShfnOTpMjVHi/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
-                  <Download className="w-5 h-5 mr-2" />
-                  Download CV
-                </button> </a>
-                    <a href="/projects" target="_blank" rel="noopener noreferrer" className="mt-3 block">
-                <button className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
-                  <ExternalLink className="w-5 h-5 mr-2" />
-                  View Projects
-                </button></a>
-              </div>
+      <div>
+        <H2>Skills</H2>
+        <dl className="space-y-3">
+          {skills.map(([k, v]) => (
+            <div key={k} className="grid sm:grid-cols-[9rem_1fr] gap-1 sm:gap-4">
+              <dt className="font-semibold text-gray-900 dark:text-white">{k}</dt>
+              <dd className="text-gray-700 dark:text-gray-300">{v}</dd>
             </div>
-          </div>
+          ))}
+        </dl>
+      </div>
 
-          {/* Content Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-              {/* Tabs */}
-              <div className="flex flex-wrap gap-2 mb-8 border-b border-gray-200 dark:border-gray-700">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center px-4 py-2 rounded-t-lg font-medium transition-colors duration-200 ${
-                      activeTab === tab.id
-                        ? 'text-blue-600 dark:text-blue-400 border-b-2 border-blue-600 dark:border-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                        : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
-                    }`}
-                  >
-                    <tab.icon className="w-4 h-4 mr-2" />
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Tab Content */}
-              <div className="min-h-[400px]">
-                {renderTabContent()}
-              </div>
-            </div>
-          </div>
+      <div>
+        <H2>Outside research</H2>
+        <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <p>
+            I grew up in Jabalpur. Away from research I swim, go biking, and head to the Himalayas for treks whenever
+            I get the chance. I also build web applications as a side hobby, usually small tools that start as a
+            weekend idea; this website is one of them. A daily meditation practice keeps the rest of it in balance.
+          </p>
+          <p>
+            Some of what I value most I learned outside the lab. As General Secretary, Technical Affairs at IISER
+            Bhopal, and as Convenor of Techfest Armageddon for two years, I worked with a team of 80+ students to
+            create spaces where juniors could try their first project, make mistakes safely, and find something they
+            wanted to keep building. Seeing a few of them go on to lead those same clubs mattered more to me than any
+            single event.
+          </p>
+          <p>
+            Most of all, if I can add some value to someone&apos;s day, by helping them out or contributing something
+            useful, that makes mine.
+          </p>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default About;

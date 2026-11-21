@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen, Filter, ArrowRight } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen, ArrowRight } from 'lucide-react';
 import CourseGrid from './CourseGrid';
 import CertificateCard from './CertificateCard';
 
@@ -10,60 +10,49 @@ import CertificateCard from './CertificateCard';
 const educationData = [
   {
     id: 1,
-    degree: "BS-MS in Data Science and Engineering",
+    degree: "BS-MS (5-year integrated), Data Science and Engineering",
     institution: "Indian Institute of Science Education and Research (IISER) Bhopal",
     location: "Bhopal, India",
-    period: "Dec 2022 – Present",
-    gpa: "7.21/10.0",
+    period: "Dec 2022 to May 2027 (expected)",
     status: "in-progress",
     theses: [
       { label: 'BS thesis', to: '/thesis/bs' },
       { label: 'MS thesis', to: '/thesis/ms' },
     ],
     description:
-      "Undergraduate studies in Data Science and Engineering with a strong focus on Artificial Intelligence, Machine Learning, Computer Vision, Optimization, and Applied Mathematics. Completed multiple projects and internships in ML, AI, and full-stack development.",
+      "Integrated BS-MS focused on machine learning, computer vision, NLP and optimisation, now in the MS year. Thesis research at the GeoAI4Cities Lab on AI that understands cities: the BS thesis (GeoBuild-SSL) mapped building use from street-view images, and the MS thesis covers street-view OSM enrichment, geometry-aware urban sound synthesis and spatial question answering over LiDAR scene graphs.",
     achievements: [
-      "General Secretary, Technical Affairs – Student Activity Council (2024–2025)",
-      "Convenor – Techfest Armageddon (2023–2025)",
-      "Winner – Smart India Hackathon 2023 (National Level)",
-      "AIR 7288 – JEE Advanced 2022 (Top 1% among 1.5M candidates)"
+      "First-author paper from the BS thesis at ACM SIGSPATIAL 2026, with an ACM SIGSPATIAL Travel Grant",
+      "JST LOTUS Fellowship for a research visit to The University of Tokyo (2026 to 2027)",
+      "GATE Data Science and AI: AIR 604 (2025) and AIR 1106 (2026)",
     ]
   },
   {
     id: 2,
-    degree: "Senior Secondary Education (Class 12)",
+    degree: "Senior Secondary (Class 12), Physics, Chemistry and Mathematics",
     institution: "Ashoka Hall Senior Secondary School",
     location: "Jabalpur, India",
-    period: "2020 – 2021",
-    gpa: "83%",
+    period: "2020 to 2021",
     status: "completed",
-    description:
-      "Completed Class 12 with a focus on Physics, Chemistry, and Mathematics. Developed strong foundations in problem solving and logical reasoning.",
+    description: "Class 12 with Physics, Chemistry and Mathematics.",
     achievements: [
-      "Scored 83% in Class 12 Boards",
-      "Prepared and qualified JEE Advanced 2022"
+      "Qualified JEE Advanced 2022 with AIR 7288, top 1% of 1.5 million candidates"
     ]
   },
   {
     id: 3,
-    degree: "Secondary Education (Class 10)",
+    degree: "Secondary (Class 10)",
     institution: "Ashoka Hall Senior Secondary School",
     location: "Jabalpur, India",
-    period: "2018 – 2019",
-    gpa: "91%",
+    period: "2018 to 2019",
     status: "completed",
-    description:
-      "Completed Class 10 with distinction, excelling in mathematics and science subjects.",
-    achievements: [
-      "Scored 91% in Class 10 Boards",
-      "School merit list for academic excellence"
-    ]
+    description: "Class 10, with a focus on mathematics and science.",
+    achievements: []
   }
 ];
 
 const Education = () => {
   const [activeTab, setActiveTab] = useState('degrees');
-  const [selectedLevel, setSelectedLevel] = useState('all');
 
   const tabs = [
     { id: 'degrees', label: 'Academic Degrees', icon: GraduationCap },
@@ -71,35 +60,7 @@ const Education = () => {
     { id: 'certifications', label: 'Certifications', icon: Award }
   ];
 
-  const levels = [
-    { id: 'all', label: 'All Levels' },
-    { id: 'phd', label: 'Doctoral' },
-    { id: 'masters', label: 'Masters' },
-    { id: 'bachelors', label: 'Bachelors' }
-  ];
-
-  const filteredEducation = educationData.filter((edu) => {
-    if (selectedLevel === 'all') return true;
-    const degreeLower = edu.degree?.toLowerCase() || '';
-    const levelMap = {
-      phd: 'ph.d',
-      masters: 'master',
-      bachelors: 'b.s'
-    };
-    const searchTerm = levelMap[selectedLevel] || selectedLevel;
-    return degreeLower.includes(searchTerm);
-  });
-
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'completed':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300';
-      case 'in-progress':
-        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
-      default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300';
-    }
-  };
+  const filteredEducation = educationData;
 
   return (
     <section id="education" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -136,29 +97,6 @@ const Education = () => {
         {/* Content based on active tab */}
         {activeTab === 'degrees' && (
           <div>
-            {/* Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-                <Filter className="w-4 h-4" />
-                <span className="font-medium">Filter by level:</span>
-              </div>
-              {levels.map((level) => (
-                <button
-                  key={level.id}
-                  onClick={() => setSelectedLevel(level.id)}
-                  className={`
-                    px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
-                    ${selectedLevel === level.id
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-                    }
-                  `}
-                >
-                  {level.label}
-                </button>
-              ))}
-            </div>
-
             {/* Education Cards */}
             <div className="space-y-12">
               {filteredEducation.map((edu) => (
@@ -185,9 +123,11 @@ const Education = () => {
                             <span>{edu.period}</span>
                           </div>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(edu.status)}`}>
-                          {edu.status === 'completed' ? 'Completed' : 'In Progress'}
-                        </span>
+                        {edu.status !== 'completed' && (
+                          <span className="flex-shrink-0 rounded-md bg-gray-900/75 dark:bg-gray-700 px-2 py-0.5 text-xs font-medium text-white">
+                            Ongoing
+                          </span>
+                        )}
                       </div>
 
                       <p className="text-gray-600 dark:text-gray-300 mb-6">
@@ -196,17 +136,8 @@ const Education = () => {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                          <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                            Academic Details
-                          </h4>
-                          <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                            <div className="flex ">
-                              <span>GPA:</span>
-                              <span className="font-medium">{edu.gpa}</span>
-                            </div>
-                          </div>
                           {edu.theses && (
-                            <div className="mt-4">
+                            <div>
                               <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Thesis</h4>
                               <div className="flex flex-wrap gap-2">
                                 {edu.theses.map((t) => (
@@ -220,7 +151,7 @@ const Education = () => {
                           )}
                         </div>
 
-                        <div>
+                        {edu.achievements.length > 0 && <div>
                           <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
                             Key Achievements
                           </h4>
@@ -232,7 +163,7 @@ const Education = () => {
                               </li>
                             ))}
                           </ul>
-                        </div>
+                        </div>}
                       </div>
                     </div>
                   </div>

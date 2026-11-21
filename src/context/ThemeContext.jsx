@@ -12,8 +12,9 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Always start in light mode; dark only if the visitor picked it with the toggle.
-  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  // Dark by default; light only if the visitor picked it with the toggle.
+  // New key so the old auto-saved 'light' from earlier visits doesn't stick.
+  const [theme, setTheme] = useLocalStorage('themeChoice', 'dark');
   const [reducedMotion, setReducedMotion] = useLocalStorage('reducedMotion', false);
 
   // Apply theme to document

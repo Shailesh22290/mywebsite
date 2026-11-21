@@ -342,7 +342,7 @@ const Hero = () => {
             >
              Master's Student in Data Science & Engineering at Indian Institute of Science Education and Research (IISER) Bhopal, India
               <span className="block mt-2 text-lg text-blue-700 dark:text-blue-300 font-medium">
-                Incoming JST LOTUS Fellow, CSIS, The University of Tokyo (Jan 2027)
+                JST LOTUS Fellow, CSIS, The University of Tokyo (on site in Tokyo from Jan 2027)
               </span>
             </motion.p>
           </motion.div>

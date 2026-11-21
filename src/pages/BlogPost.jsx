@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, Clock, Tag, User, Eye, Share2 } from 'lucide-react
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import ImageSlot from '../components/sections/Blog/ImageSlot';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -183,7 +184,8 @@ const BlogPost = () => {
 
         {/* Article Header */}
         <article className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-          <div className="px-8 py-12">
+          <ImageSlot src={post.image} alt="Cover image" className="aspect-[2/1] rounded-none border-0" />
+          <div className="px-6 sm:px-8 py-12">
             {/* Meta Information */}
             <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-6">
               <div className="flex items-center">
@@ -238,6 +240,14 @@ const BlogPost = () => {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <ReactMarkdown
                 components={{
+                  img({ src, alt }) {
+                    return (
+                      <span className="block my-8">
+                        <ImageSlot src={src} alt={alt} />
+                        {alt && <span className="block mt-2 text-center text-sm text-gray-500 dark:text-gray-400">{alt}</span>}
+                      </span>
+                    );
+                  },
                   code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || '');
                     return !inline && match ? (

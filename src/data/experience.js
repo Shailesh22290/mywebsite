@@ -1,6 +1,54 @@
 // src/data/experience.js
 export const workExperience = [
   {
+    id: 9,
+    company: "Sekimoto Laboratory, CSIS, The University of Tokyo",
+    kind: "research",
+    position: "Visiting Researcher (JST LOTUS Fellowship)",
+    location: "Tokyo, Japan · Remote from India, then on site",
+    type: "Research Fellowship",
+    startDate: "2026-10-01",
+    endDate: null,
+    current: true,
+    description:
+      "Bilateral India and Japan research collaboration funded by the JST LOTUS Fellowship (Japan Science and Technology Agency). Working remotely from India from October to December 2026, then on site at the Komaba campus in Tokyo from January to July 2027.",
+    responsibilities: [
+      "Building a depth-aware vision-language framework that infers OpenStreetMap building and street-context attributes from a single street-view panorama.",
+      "Extending the work across Indian and Japanese cities to study how the models transfer between very different urban fabrics.",
+      "This work forms Part 1 of my MS thesis."
+    ],
+    technologies: ["Street-View Imagery", "Vision-Language Models", "OpenStreetMap", "GeoAI"],
+    achievements: [
+      "Awarded the JST LOTUS Fellowship by the Japan Science and Technology Agency, Government of Japan (2026)."
+    ],
+    logo: null,
+    website: "https://sekilab.iis.u-tokyo.ac.jp/"
+  },
+  {
+    id: 10,
+    company: "GeoAI4Cities Lab, IISER Bhopal",
+    kind: "research",
+    position: "Graduate Researcher",
+    location: "Bhopal, India",
+    type: "Research",
+    startDate: "2025-01-01",
+    endDate: null,
+    current: true,
+    description:
+      "Research on AI that understands cities from street-view imagery, video and LiDAR. Joined as a research intern, then carried out my BS thesis and now my MS thesis here (expected to finish May 2027).",
+    responsibilities: [
+      "BS thesis: GeoBuild-SSL, instance-level building use mapping from street-view panoramas across six cities in India and Japan, published at ACM SIGSPATIAL 2026.",
+      "MS thesis: OSM building enrichment from street view, GAVAS geometry-aware video-to-audio synthesis for urban scenes (submitted to Nature Cities), and UrbanSG-QA spatial question answering over LiDAR scene graphs.",
+      "Research intern on a VR-based framework for studying how people perceive safety in urban environments."
+    ],
+    technologies: ["PyTorch", "Self-Supervised Learning", "Street-View Imagery", "LiDAR", "Scene Graphs", "LLM Agents"],
+    achievements: [
+      "First-author paper at ACM SIGSPATIAL 2026, with an ACM SIGSPATIAL Travel Grant to present it."
+    ],
+    logo: null,
+    website: "https://geoai4cities.com/"
+  },
+  {
     id: 1,
     company: "OpEx360AI",
     position: "AI/ML Engineer",
@@ -30,6 +78,7 @@ export const workExperience = [
   {
     id: 2,
     company: "Indian Institute of Technology, Delhi",
+    kind: "research",
     position: "Summer Research Intern",
     location: "Hauz Khas, Delhi, India",
     type: "Internship",
@@ -127,6 +176,7 @@ export const workExperience = [
   {
     id: 6,
     company: "IIT Mandi",
+    kind: "research",
     position: "Intern - Visual Intelligence and Machine Learning",
     location: "Mandi, Himachal Pradesh, India",
     type: "Internship",

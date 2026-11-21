@@ -98,8 +98,6 @@ const Projects = () => {
                     key={project.id}
                     variants={fadeInUp}
                     custom={index}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.3 }}
                   >
                     <ProjectCard
                       project={project}

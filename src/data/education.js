@@ -8,7 +8,6 @@ export const education = [
     startDate: "2022-12-01",
     endDate: "Present",
     location: "Bhopal, India",
-    gpa: "8.12/10",
     status: "ongoing",
     coursework: [
       // Core DS & AI
@@ -102,32 +101,6 @@ export const certifications = [
     description: "Training in frontend, backend, and database development.",
     skills: ["Full Stack", "React", "Node.js", "SQL"]
   },
-
-  // Fake but relevant certifications
-  {
-    id: 5,
-    name: "AWS Certified Machine Learning – Specialty",
-    issuer: "Amazon Web Services",
-    issueDate: "2024-06-01",
-    expiryDate: "2027-06-01",
-    credentialId: "AWS-MLS-2024-001",
-    badgeUrl: "/assets/images/certifications/aws.png",
-    verificationUrl: "#",
-    description: "Validates expertise in building, training, and deploying ML models on AWS.",
-    skills: ["AWS", "Machine Learning", "Model Deployment"]
-  },
-  {
-    id: 6,
-    name: "TensorFlow Developer Certificate",
-    issuer: "TensorFlow",
-    issueDate: "2024-05-01",
-    expiryDate: "2027-05-01",
-    credentialId: "TF-DEV-2024-001",
-    badgeUrl: "/assets/images/certifications/tf.png",
-    verificationUrl: "#",
-    description: "Proficiency in developing ML models using TensorFlow.",
-    skills: ["TensorFlow", "Deep Learning", "Neural Networks"]
-  }
 ];
 
 export const onlineCourses = [
@@ -211,12 +184,10 @@ export const getEducationStats = () => {
   const totalDegrees = education.length;
   const totalCertifications = certifications.length;
   const totalPublications = 0; // not yet
-  const averageGPA = education.reduce((sum, edu) => sum + parseFloat(edu.gpa), 0) / education.length;
-  
+
   return {
     totalDegrees,
     totalCertifications,
     totalPublications,
-    averageGPA: Math.round(averageGPA * 100) / 100
   };
 };

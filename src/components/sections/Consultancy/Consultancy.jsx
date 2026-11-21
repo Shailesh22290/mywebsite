@@ -1,515 +1,153 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Briefcase, Users, Star, ChevronDown, Award, Globe, BrainCircuit, 
-  Video, CheckCircle, ArrowRight, Clock, DollarSign, Zap, Shield,
-  TrendingUp, Target, Lightbulb, MessageSquare
-} from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Calendar, Mail } from 'lucide-react';
+import { personalDetails } from '@/data/personal';
 
-// Helper Components
-const ServiceCard = ({ service, isActive, onToggle, delay }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: delay }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-md transition-all duration-300"
-    >
-      <div
-        className="flex justify-between items-center p-6 cursor-pointer group"
-        onClick={onToggle}
-      >
-        <div className="flex items-center gap-4">
-          <div className="bg-blue-600 p-3 rounded-xl text-white shadow-sm transition-transform">
-            {service.icon}
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-              {service.title}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{service.description}</p>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs px-2 py-1 rounded-full font-medium">
-                {service.successRate}% Success Rate
-              </span>
-              {service.isPopular && (
-                <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 text-xs px-2 py-1 rounded-full font-medium">
-                  🔥 Most Popular
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
-        <motion.div animate={{ rotate: isActive ? 180 : 0 }} className="text-blue-500">
-          <ChevronDown className="w-5 h-5" />
-        </motion.div>
-      </div>
-      <AnimatePresence>
-        {isActive && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="px-6 pb-6"
-          >
-            <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200 flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-yellow-500" />
-                    What You Get:
-                  </h4>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                    {service.features.map(feature => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200 flex items-center gap-2">
-                    <Target className="w-4 h-4 text-blue-500" />
-                    Perfect For:
-                  </h4>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                    {service.perfectFor.map(item => (
-                      <li key={item} className="flex items-start gap-2">
-                        <ArrowRight className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800">
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <DollarSign className="w-4 h-4 text-green-600" />
-                      <span className="font-bold text-gray-900 dark:text-white">{service.price}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-blue-600" />
-                      <span className="text-gray-600 dark:text-gray-300 font-medium">{service.duration}</span>
-                    </div>
-                  </div>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold text-sm transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
-                    Get Quote
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+const CALENDLY = 'https://calendly.com/shaileshkachhi786';
+
+const A = ({ href, children }) =>
+  href.startsWith('/') ? (
+    <Link to={href} className="text-blue-600 dark:text-blue-400 hover:underline">{children}</Link>
+  ) : (
+    <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">{children}</a>
   );
-};
 
-const TestimonialCard = ({ testimonial, delay }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: delay }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all duration-300"
-    >
-      <div className="flex items-center mb-4">
-        <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg mr-4">
-          {testimonial.name.charAt(0)}
+// Each area is backed by work a visitor can check.
+const areas = [
+  {
+    title: 'AI and machine learning',
+    text: 'Custom models for prediction, classification and automation, from first prototype to a deployed system, in whatever domain your data comes from.',
+    proof: <>Research at IISER Bhopal, IIT Delhi and IIT Mandi, published at ACM SIGSPATIAL 2026.</>,
+  },
+  {
+    title: 'LLM, RAG and AI agents',
+    text: 'Chatbots and agents that answer questions over your documents and databases, and automate reports and routine work.',
+    proof: <>Production agentic RAG systems at OpEx360AI; <A href="https://trustfirstai.streamlit.app/">Speak to Your Data</A>, a trust-first data analyst.</>,
+  },
+  {
+    title: 'Computer vision',
+    text: 'Detection, tracking, OCR and monitoring from images and video, built to run on real footage.',
+    proof: <>Real-time PPE compliance monitoring at OpEx360AI; license plate recognition; drone traffic analysis at IIT Mandi.</>,
+  },
+  {
+    title: 'Web and full-stack applications',
+    text: 'Websites, portals, dashboards and internal tools, with the backend and database behind them.',
+    proof: <>Built the <A href="https://library.iiserb.ac.in/">Central Library, IISER Bhopal</A> and <A href="https://dcecm.iitd.ac.in/">DST CoE, IIT Delhi</A> sites, an e-learning platform and an election system.</>,
+  },
+  {
+    title: 'Data analysis and visualisation',
+    text: 'Cleaning messy data, finding what it says, and presenting it in dashboards and reports people can act on.',
+    proof: <>Analytics dashboards for the Punjab Government job portal; data pipelines across my research projects.</>,
+  },
+  {
+    title: '3D, AR/VR and simulation',
+    text: 'Interactive 3D scenes, virtual tours and simulation front-ends for the web.',
+    proof: <>The <A href="https://library.iiserb.ac.in/services/virtual-tour">IISER Bhopal virtual tour</A> and 3D simulation work at SimDaaS.</>,
+  },
+];
+
+const steps = [
+  ['A first call', 'We talk through the problem, the data you have, and what a useful result would look like.'],
+  ['A written scope', 'I send a short plan with milestones, a timeline and a quote, or tell you honestly if I am not the right fit.'],
+  ['Pilot first', 'Larger projects start with a small proof of concept, so you see results on your own data before committing further.'],
+  ['You own it', 'Code, models and documentation are handed over in full, with regular updates along the way.'],
+];
+
+const H2 = ({ children }) => <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-5">{children}</h2>;
+
+const Consultancy = () => (
+  <section className="py-16 bg-white dark:bg-gray-900">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <header>
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Work with me</h1>
+        <p className="mt-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          Alongside my research, I take on a small number of projects across domains: AI and machine learning,
+          LLM applications, computer vision, and full-stack web development. I work with startups, companies,
+          institutions and individuals who have a real problem to solve and want it built properly.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href={CALENDLY}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-2.5 font-semibold text-white transition-colors"
+          >
+            <Calendar className="h-4 w-4" /> Book a call
+          </a>
+          <a
+            href={`mailto:${personalDetails.email}`}
+            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 dark:border-gray-600 px-5 py-2.5 font-semibold text-gray-800 dark:text-gray-200 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          >
+            <Mail className="h-4 w-4" /> Email me
+          </a>
+        </div>
+      </header>
+
+      <div>
+        <H2>What I can help with</H2>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {areas.map(({ title, text, proof }) => (
+            <div key={title} className="rounded-xl border border-gray-200 dark:border-gray-700 p-5">
+              <h3 className="font-semibold text-gray-900 dark:text-white">{title}</h3>
+              <p className="mt-2 text-gray-700 dark:text-gray-300">{text}</p>
+              <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">{proof}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
+          More examples on the <A href="/projects">projects</A> and <A href="/experience">experience</A> pages.
+        </p>
+      </div>
+
+      <div>
+        <H2>How a project works</H2>
+        <ol className="space-y-5">
+          {steps.map(([title, text], i) => (
+            <li key={title} className="grid grid-cols-[2.5rem_1fr] gap-3">
+              <span className="font-mono text-sm text-blue-600 dark:text-blue-400 pt-0.5">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white">{title}</p>
+                <p className="text-gray-700 dark:text-gray-300">{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-8">
+        <div>
+          <H2>A good fit</H2>
+          <ul className="space-y-2 text-gray-700 dark:text-gray-300 list-disc pl-5">
+            <li>You have a clear problem, and data or a product idea to go with it.</li>
+            <li>You need a working prototype, MVP or production feature, built carefully.</li>
+            <li>You want one person who can cover the model, the backend and the interface.</li>
+          </ul>
         </div>
         <div>
-          <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.name}</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
-          <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">{testimonial.company}</p>
+          <H2>Probably not a fit</H2>
+          <ul className="space-y-2 text-gray-700 dark:text-gray-300 list-disc pl-5">
+            <li>Copy-paste template sites with no real functionality.</li>
+            <li>Very short turnarounds with no room to understand the problem first.</li>
+          </ul>
         </div>
       </div>
-      <p className="text-gray-700 dark:text-gray-300 mb-4 italic leading-relaxed">"{testimonial.content}"</p>
-      <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-3">
-        <span>Project: <strong className="text-gray-700 dark:text-gray-300">{testimonial.project}</strong></span>
-        <div className="flex items-center gap-1">
-          {[...Array(testimonial.rating)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-          ))}
-        </div>
-      </div>
-      <div className="mt-3 text-xs text-green-600 dark:text-green-400 font-medium bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-md inline-block">
-        ✓ {testimonial.outcome}
-      </div>
-    </motion.div>
-  );
-};
 
-const ProcessStep = ({ step, index, delay }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: delay }}
-      className="flex items-start gap-4"
-    >
-      <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shadow-sm">
-        {index + 1}
-      </div>
-      <div>
-        <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{step.title}</h4>
-        <p className="text-sm text-gray-600 dark:text-gray-400">{step.description}</p>
-      </div>
-    </motion.div>
-  );
-};
-
-// Main Component
-const EnhancedConsultancy = () => {
-  const [activeService, setActiveService] = useState(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const services = [
-    {
-      id: 2, // Changed ID to make it appear first, assuming it's the main offering
-      title: "High-Converting Web Applications",
-      description: "Full-stack solutions that don't just look good, they convert visitors into customers.",
-      icon: <Globe className="w-6 h-6" />,
-      features: [
-        "Modern React.js frontend with 90+ PageSpeed score",
-        "Scalable Node.js/Python backend",
-        "SEO-optimized architecture",
-        "Mobile-first responsive design",
-        "Payment integration & analytics setup"
-      ],
-      perfectFor: [
-        "Businesses launching their first web presence",
-        "Companies needing to modernize legacy systems",
-        "Startups requiring MVP development"
-      ],
-      price: "From $450",
-      duration: "3-6 weeks",
-      successRate: 98,
-      isPopular: true
-    },
-    {
-      id: 1,
-      title: "AI & Data Strategy (Research-Based)",
-      description: "Leverage my ML research experience to explore and prototype data-driven features.",
-      icon: <BrainCircuit className="w-6 h-6" />,
-      features: [
-        "Feasibility analysis for AI concepts",
-        "Proof-of-concept (PoC) model development",
-        "Data strategy & roadmap creation",
-        "Guidance on data collection & annotation",
-        "Research paper implementation"
-      ],
-      perfectFor: [
-        "Companies exploring AI for the first time",
-        "Teams needing to validate an ML-based idea",
-        "Startups wanting a data-driven product roadmap"
-      ],
-      price: "From $300",
-      duration: "2-4 weeks",
-      successRate: 95
-    },
-    {
-      id: 3,
-      title: "Computer Vision R&D",
-      description: "Explore the potential of visual data with custom prototypes based on my research work.",
-      icon: <Video className="w-6 h-6" />,
-      features: [
-        "Proof-of-concept for object detection",
-        "Feasibility study for image recognition",
-        "Performance evaluation of existing models",
-        "Custom data augmentation strategies",
-        "Technical report on findings"
-      ],
-      perfectFor: [
-        "Businesses with unique visual data challenges",
-        "R&D departments needing specialized expertise",
-        "Validating ideas before major investment"
-      ],
-      price: "From $340",
-      duration: "2-5 weeks",
-      successRate: 92
-    },
-    {
-      id: 4,
-      title: "1-on-1 Technical Mentoring",
-      description: "Fast-track your team's skills in web development and introduce them to AI concepts.",
-      icon: <Users className="w-6 h-6" />,
-      features: [
-        "Personalized learning roadmaps for web dev",
-        "Hands-on project guidance (React, Node.js)",
-        "Code review & best practices",
-        "Introductory sessions on ML/CV theory",
-        "Flexible scheduling options"
-      ],
-      perfectFor: [
-        "Developers wanting to level up their skills",
-        "Teams adopting modern web technologies",
-        "Students preparing for tech careers"
-      ],
-      price: "From $30/hour",
-      duration: "Ongoing",
-      successRate: 99
-    }
-  ];
-
-  const testimonials = [
-   
-  {
-    "id": 1,
-    "name": "Dr. S.K. Pathak",
-    "role": "Librarian",
-    "company": "IISER Bhopal",
-    "content": "Shailesh developed a Central Library Management System that has significantly modernized our library operations. His implementation of a user-friendly interface with a robust backend has improved both our cataloging and user access.",
-    "rating": 5,
-    "project": "Central Library Management System",
-    "outcome": "Improved cataloging and user access"
-  },
-  {
-    "id": 2,
-    "name": "Aditi Sharma",
-    "role": "Project Lead",
-    "company": "Punjab Government Initiative",
-    "content": "The job portal and analytical tool Shailesh delivered were exceptional. He built a user-friendly platform with React and provided a powerful backend that gives us crucial insights into user demographics, helping us shape our employment strategies.",
-    "rating": 5,
-    "project": "Job portal and Analytical tool",
-    "outcome": "Enabled data-driven analysis of user demographics"
-  },
-  {
-    "id": 3,
-    "name": "Karan Mehra",
-    "role": "Founder",
-    "company": "BondVue",
-    "content": "As a Product Development Associate, Shailesh was instrumental in creating our new learning portal. He designed and developed a platform that allows users to track their progress effectively, which was a core requirement for our product launch.",
-    "rating": 5,
-    "project": "E-learning Portal for Bonds",
-    "outcome": "Successful launch of a new learning platform"
-  }
-
-  ];
-
-  const stats = [
-    { label: "Client Conversion Lift", value: "25%+", icon: <TrendingUp className="w-5 h-5" /> },
-    { label: "Projects Delivered On-Time", value: "100%", icon: <Clock className="w-5 h-5" /> },
-    { label: "Client Satisfaction", value: "100%", icon: <Shield className="w-5 h-5" /> },
-    { label: "Avg. Page Speed Boost", value: "60%", icon: <Target className="w-5 h-5" /> }
-  ];
-
-  const process = [
-    {
-      title: "Discovery Call (Free)",
-      description: "I discuss your challenges, goals, and success metrics in a 30-minute strategy session."
-    },
-    {
-      title: "Custom Strategy & Quote",
-      description: "Receive a detailed proposal with timeline, deliverables, and fixed pricing within 24 hours."
-    },
-    {
-      title: "Development & Weekly Updates",
-      description: "Watch your solution come to life with regular progress updates and milestone reviews."
-    },
-    {
-      title: "Launch & Optimization",
-      description: "Go live with confidence, plus 30 days of free optimization to maximize your results."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 z-50 bg-gray-200 dark:bg-gray-700">
-        <div 
-          className="h-full bg-blue-600 transition-all duration-300"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-
-      <div className="container mx-auto px-6 sm:px-8 lg:px-16 xl:px-48 py-20">
-        {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
+      <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+        <p className="text-gray-700 dark:text-gray-300">
+          I am currently a visiting researcher at The University of Tokyo, so I keep my project load small and choose
+          work that I can do well. If your problem sounds like a match, the quickest way to start is a short call.
+        </p>
+        <a
+          href={CALENDLY}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-flex items-center gap-2 font-semibold text-blue-600 dark:text-blue-400 hover:underline"
         >
-          <div className="mb-6">
-            <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
-              🚀 Building High-Performance Web Solutions
-            </span>
-          </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Build Web Applications
-            <br />
-            <span className="text-blue-600 dark:text-blue-400">That Drive Real Growth</span>
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-            I combine expert <strong>Full-Stack Development</strong> with an analytical approach from my <strong>AI/ML research</strong> to build web solutions that solve problems, boost efficiency, and deliver measurable results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="https://calendly.com/shaileshkachhi786" target="_blank" rel="noopener noreferrer">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-2">
-                <MessageSquare className="w-5 h-5" />
-                Start Free Consultation
-              </button>
-            </a>
-             <a href="/projects" target="_blank" rel="noopener noreferrer">
-            <button className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 flex items-center gap-2">
-              <Briefcase className="w-5 h-5" />
-              View Projects
-            </button>
-            </a>
-          </div>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            ⚡ Free strategy session • 💰 Resonable pricing • 🎯 Results guaranteed
-          </p>
-        </motion.div>
-
-        {/* Social Proof Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
-        >
-          {stats.map((stat, index) => (
-            <motion.div 
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 text-center hover:shadow-md transition-all duration-300"
-            >
-              <div className="flex justify-center mb-3 text-blue-600 dark:text-blue-400">
-                {stat.icon}
-              </div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 font-medium leading-tight">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Services Section */}
-        <div className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Solutions That Drive <span className="text-blue-600">Real Results</span>
-            </h2>
-          </motion.div>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                isActive={activeService === service.id}
-                onToggle={() => setActiveService(activeService === service.id ? null : service.id)}
-                delay={0.4 + index * 0.1}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Process Section */}
-        <div className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Simple, Transparent <span className="text-blue-600 dark:text-blue-400">Process</span>
-            </h2>
-          </motion.div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-sm border border-gray-100 dark:border-gray-700">
-            <div className="grid md:grid-cols-2 gap-8">
-              {process.map((step, index) => (
-                <ProcessStep
-                  key={index}
-                  step={step}
-                  index={index}
-                  delay={0.6 + index * 0.1}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Testimonials */}
-        <div className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Success Stories From <span className="text-green-600">Happy Clients</span>
-            </h2>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={testimonial.id}
-                testimonial={testimonial}
-                delay={0.8 + index * 0.1}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          className="text-center bg-blue-600 p-12 rounded-lg shadow-sm text-white relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-black opacity-10"></div>
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Build a Better Web Experience?
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-               <a href="https://calendly.com/shaileshkachhi786" target="_blank" rel="noopener noreferrer">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all duration-300 shadow-sm hover:shadow-md flex items-center gap-2">
-                <MessageSquare className="w-5 h-5" />
-                Book Free Strategy Call
-              </button>
-               </a>
-             <a href="/projects" target="_blank" rel="noopener noreferrer">
-              <button className="border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
-                <Lightbulb className="w-5 h-5" />
-                See Portfolio
-              </button>
-               </a>
-            
-            </div>
-            <div className="flex justify-center items-center gap-6 text-sm opacity-75">
-              <span>✅ No commitment required</span>
-              <span>⚡ Response within 24 hours</span>
-              <span>🎯 Customized solution</span>
-            </div>
-          </div>
-        </motion.div>
+          <Calendar className="h-4 w-4" /> Book a call
+        </a>
       </div>
     </div>
-  );
-};
+  </section>
+);
 
-export default EnhancedConsultancy;
+export default Consultancy;

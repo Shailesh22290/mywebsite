@@ -3,112 +3,213 @@
     {
       "id": 1,
       "slug": "jee-advanced-to-iiser-bhopal",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-02",
       "storyDate": "July 2023",
       "title": "From JEE Advanced to IISER Bhopal: The Year That Changed Everything",
       "excerpt": "Clearing JEE Advanced, choosing IISER Bhopal, and a first year of exploring, leading a batch of 380 as CR, and finding friends for life.",
-      "categories": ["Life"],
-      "image": null
+      "categories": [
+        "Life"
+      ],
+      "image": "/assets/images/blog/jee-advanced-to-iiser-bhopal/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "JEE Advanced",
+        "IISER Bhopal",
+        "College Life"
+      ],
+      "content": "The day the JEE Advanced results came out, I refreshed the page more times than I can count. When my rank finally loaded, the first feeling was not joy. It was relief, the kind that comes after carrying something heavy for two years and finally putting it down.\n\n![Add a photo here](/assets/images/blog/jee-advanced-to-iiser-bhopal/1.webp)\n\n## Choosing IISER over the obvious\n\nEveryone around me had an opinion about where I should go. The obvious path was an engineering branch at whichever institute my rank could reach. I chose IISER Bhopal and its new Data Science and Engineering programme instead, and I still remember how unsure I felt signing that form.\n\nWhat pulled me in was the idea of a five-year programme where research is not an afterthought. I did not know yet that this choice would shape almost everything that followed.\n\n## The first year\n\nThe first semester felt like stepping into a much bigger room. New subjects, new people, a campus that seemed to stretch forever. I was elected Class Representative for a batch of 380 students, which meant I learned the campus, the administration and my batchmates far faster than I would have otherwise.\n\n![Add a second photo here](/assets/images/blog/jee-advanced-to-iiser-bhopal/2.webp)\n\n## Friends for life\n\nThe best part of that year was not any course. It was the late-night conversations, the walks across campus, and the people who became my closest friends. Many of the projects and adventures in the posts that follow started with one of them saying, \"What if we tried this?\"\n\n## Looking back\n\nIf I could tell my younger self one thing, it would be this: the rank decides where you start, not where you end up. The year after JEE taught me that curiosity and people matter more than the label on the gate."
     },
     {
       "id": 2,
       "slug": "smart-india-hackathon-2023",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-03",
       "storyDate": "December 2023",
       "title": "My First Hackathon: What Smart India Hackathon 2023 Taught Me",
       "excerpt": "A real problem, a small team, and a deadline. What building under pressure at SIH 2023 taught me about tech and teamwork.",
-      "categories": ["Tech"],
-      "image": null
+      "categories": [
+        "Tech"
+      ],
+      "image": "/assets/images/blog/smart-india-hackathon-2023/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Hackathon",
+        "Teamwork",
+        "Full Stack"
+      ],
+      "content": "I had never been to a hackathon before Smart India Hackathon 2023. I did not really know what to expect, except that there would be very little sleep.\n\n![Add a photo here](/assets/images/blog/smart-india-hackathon-2023/1.webp)\n\n## The problem\n\nOur problem statement came from the Punjab Government: build a solution for analysing the demographics of users of a job portal, so that the state could understand who it was reaching and who it was missing. It was a real problem with real stakeholders, which made it feel very different from a class assignment.\n\n## Building under pressure\n\nWe were a small team with a clear split. I worked on the backend and the machine learning side, building the candidate matching and the analytics behind the dashboards. The first version of everything was rough. The second version was better. The version we finally presented was held together by a lot of coffee and a lot of trust in each other.\n\n![Add a second photo here](/assets/images/blog/smart-india-hackathon-2023/2.webp)\n\n## What it taught me\n\nThe biggest lesson was not technical. It was learning to cut scope without cutting quality, to decide quickly, and to keep the team calm when something broke an hour before judging. When the results were announced and we had won, the feeling was less about the trophy and more about what we had built together in such a short time.\n\n## Since then\n\nThat hackathon gave me the confidence to take on bigger technical projects, and it was the first time I saw how software can directly serve people. That idea has stayed with me ever since."
     },
     {
       "id": 3,
       "slug": "kedarkantha-trek",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-04",
       "storyDate": "March 2024",
       "title": "12,500 Feet Above Everything: Conquering Kedarkantha",
       "excerpt": "Snow, steep trails, and a summit sunrise. What a Himalayan trek taught me that no classroom could.",
-      "categories": ["Life"],
-      "image": null
+      "categories": [
+        "Life"
+      ],
+      "image": "/assets/images/blog/kedarkantha-trek/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Trekking",
+        "Himalayas",
+        "Travel"
+      ],
+      "content": "Some places change how you see everything else. For me, one of them sits at 12,500 feet in the Garhwal Himalayas.\n\n![Add a photo here](/assets/images/blog/kedarkantha-trek/1.webp)\n\n## The climb\n\nThe trail to Kedarkantha winds through pine forests that slowly give way to snow. Each day was a little colder, a little steeper and a little quieter. Carrying a backpack up a slope of fresh snow teaches you very quickly how much you can actually do when you stop thinking about giving up.\n\n## Summit morning\n\nWe started for the summit long before sunrise, walking in a line of headlamps through the dark. The last stretch was the hardest. Then the sky began to turn orange, and the peaks around us lit up one by one. Standing at the top, I forgot about the cold for a while.\n\n![Add a second photo here](/assets/images/blog/kedarkantha-trek/2.webp)\n\n## What the mountains taught me\n\nA trek like this is a lesson in patience. You cannot rush the mountain; you can only keep taking the next step. I have found the same is true of research and of most hard things in life. Progress is slow, and then one morning you look up and you are above the clouds.\n\n## Coming back down\n\nI came back with sore legs, a lot of photographs and a clearer head. Trekking has been part of my life ever since, and it is still where I go when I need to reset."
     },
     {
       "id": 4,
       "slug": "armageddon-techfest",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-05",
       "storyDate": "April 2024",
       "title": "How We Turned a College Fest into a Techfest: The Armageddon Story",
       "excerpt": "As a second year student, I helped reinvent Armageddon with a tech expo and brand new events. Here is how it happened.",
-      "categories": ["Leadership"],
-      "image": null
+      "categories": [
+        "Leadership"
+      ],
+      "image": "/assets/images/blog/armageddon-techfest/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Techfest",
+        "Leadership",
+        "Events"
+      ],
+      "content": "When I first heard about Armageddon, it was a college fest. By the time I handed it over, it had become a techfest. This is the story of how that happened.\n\n![Add a photo here](/assets/images/blog/armageddon-techfest/1.webp)\n\n## Starting with a question\n\nAs a second year student, I joined the organising team with one question in mind: what if a science institute's fest actually showcased science and technology? It sounds obvious, but changing the identity of an event that people already know is harder than starting a new one.\n\n## Building something new\n\nWe added a tech expo where students and startups could show what they were building, and designed a set of new events that mixed competition with learning. Every new idea needed a budget, a team, permissions and a plan B. I learned to write proposals, negotiate with vendors and, most of all, to trust the people working alongside me.\n\n![Add a second photo here](/assets/images/blog/armageddon-techfest/2.webp)\n\n## The people behind it\n\nBehind every event is a team that rarely gets seen. Volunteers who stayed up building stages, juniors who handled registrations, friends who stepped in when something went wrong at the last minute. As Convenor, my most important job was making sure they had what they needed and felt that the fest was theirs too.\n\n## What stayed with me\n\nArmageddon taught me that leadership is mostly about listening, planning and showing up. The fest has grown since, and seeing new teams take it further is the best outcome I could have hoped for."
     },
     {
       "id": 5,
       "slug": "iit-mandi-research-internship",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-06",
       "storyDate": "July 2024",
       "title": "My First Taste of Real Research: A Summer at IIT Mandi",
       "excerpt": "In the mountains of Himachal Pradesh, I learned what research really looks like, beyond the textbooks.",
-      "categories": ["Research"],
-      "image": null
+      "categories": [
+        "Research"
+      ],
+      "image": "/assets/images/blog/iit-mandi-research-internship/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Research Internship",
+        "Computer Vision",
+        "IIT Mandi"
+      ],
+      "content": "My first real research experience came in the summer of 2024, in the mountains of Himachal Pradesh at IIT Mandi.\n\n![Add a photo here](/assets/images/blog/iit-mandi-research-internship/1.webp)\n\n## From textbooks to real data\n\nI joined a project on drone-based traffic surveillance. On paper the task sounded simple: detect and classify vehicles in drone footage. In practice, the footage was messy, the angles were strange and the labels did not exist yet. A large part of my time went into annotating data, which taught me more about the problem than any model ever did.\n\n## Learning what research looks like\n\nI worked on models for vehicle classification across six types, road type detection and trajectory tracking. Most experiments did not work the first time. Some did not work the tenth time. Slowly I understood that research is mostly about asking the right question, being honest about results and trying again.\n\n![Add a second photo here](/assets/images/blog/iit-mandi-research-internship/2.webp)\n\n## Life in Mandi\n\nThe campus sits in a valley surrounded by hills, and evenings there were some of the most peaceful of my life. Walks after work, conversations with other interns and the occasional trip into the hills made the summer feel like much more than an internship.\n\n## What I took home\n\nI came back to Bhopal knowing that I wanted research to be a serious part of my future. That summer was the first step toward the work I do today in computer vision and urban AI."
     },
     {
       "id": 6,
       "slug": "aarohan-cnc-secretary",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-07",
       "storyDate": "April 2025",
       "title": "₹33 Lakhs, 80 People, One Fest: My Mini MBA Leading Aarohan",
       "excerpt": "Elected CNC Secretary by the whole college, I led Aarohan to its biggest budget ever, with EDM nights, a defence expo with the Army, and a tech expo.",
-      "categories": ["Leadership"],
-      "image": null
+      "categories": [
+        "Leadership"
+      ],
+      "image": "/assets/images/blog/aarohan-cnc-secretary/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Leadership",
+        "Fest Management",
+        "IISER Bhopal"
+      ],
+      "content": "I have never done an MBA. But leading Aarohan as CNC Secretary came close.\n\n![Add a photo here](/assets/images/blog/aarohan-cnc-secretary/1.webp)\n\n## Elected by the whole college\n\nBeing elected by the entire student body is humbling. It also means that hundreds of people expect something from you. Aarohan, the college fest, was the biggest of those expectations.\n\n## The biggest budget ever\n\nThat year Aarohan ran on a budget of ₹33 lakhs with a team of about 80 people. Every rupee needed a plan and every plan needed a person responsible for it. We put together EDM nights, a defence expo organised with the Indian Army, and a tech expo that brought students and companies onto the same floor.\n\n![Add a second photo here](/assets/images/blog/aarohan-cnc-secretary/2.webp)\n\n## What it really involved\n\nMost of the work happened far from the stage: sponsorship meetings, approvals, vendor negotiations, safety plans and late-night calls when something changed at the last minute. I learned to read a budget, to say no when needed and to keep a large team aligned on one goal.\n\n## The mini MBA\n\nBy the end, I understood why people call this kind of role a mini MBA. Planning, finance, marketing, operations and people management were all part of the job. More than any skill, though, Aarohan taught me how much a committed team can achieve when everyone owns a piece of it."
     },
     {
       "id": 7,
       "slug": "iit-delhi-research-internship",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-08",
       "storyDate": "July 2025",
       "title": "The IIT Dream JEE Didn't Give Me, Research Did: My Summer at IIT Delhi",
       "excerpt": "Research at the DST Centre of Excellence for Climate Information, working with professors I once only read about, and life in Delhi.",
-      "categories": ["Research"],
-      "image": null
+      "categories": [
+        "Research"
+      ],
+      "image": "/assets/images/blog/iit-delhi-research-internship/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Research Internship",
+        "Climate",
+        "IIT Delhi"
+      ],
+      "content": "JEE did not give me a seat at an IIT. A few years later, research did.\n\n![Add a photo here](/assets/images/blog/iit-delhi-research-internship/1.webp)\n\n## The DST Centre of Excellence\n\nIn the summer of 2025 I joined the DST Centre of Excellence for Climate Information at IIT Delhi. I was working with professors whose papers I had once only read, on problems that matter far beyond the lab: understanding climate and the monsoon over India.\n\n## The work\n\nMy project used deep learning to reconstruct historical precipitation data from before satellite records began. Climate models are computationally expensive, so I also worked on ways to reduce redundant computation in ensemble runs. It was my first time working with long climate datasets, and they demanded patience and careful validation.\n\n![Add a second photo here](/assets/images/blog/iit-delhi-research-internship/2.webp)\n\n## Life in Delhi\n\nDelhi in summer is hot, loud and full of energy. Between work days I explored the city, its food and its history. Living there for a few months made the internship feel like a complete chapter of life, not just a line on a CV.\n\n## Closing the loop\n\nWalking through the IIT Delhi campus every morning, I sometimes thought about the version of me who had refreshed the JEE result page. The path had been different from what I imagined, but it had led somewhere even better."
     },
     {
       "id": 8,
       "slug": "joining-us-startup",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-09",
       "storyDate": "November 2025",
       "title": "Working for a US Startup from India: What Nobody Tells You",
       "excerpt": "Time zones, ownership, and moving fast. What I learned working remotely with a US startup team.",
-      "categories": ["Work"],
-      "image": null
+      "categories": [
+        "Work"
+      ],
+      "image": "/assets/images/blog/joining-us-startup/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Startup",
+        "Remote Work",
+        "AI Engineering"
+      ],
+      "content": "In late 2025 I started working as an AI/ML engineer with OpEx360AI, a US-based startup, while still studying in India. Here is what that experience taught me.\n\n![Add a photo here](/assets/images/blog/joining-us-startup/1.webp)\n\n## Time zones are real\n\nThe first thing you learn is that your calendar now lives in two countries. Morning in Bhopal is evening in the US. Meetings, updates and reviews all need planning, and clear written communication becomes far more important than in an office where you can simply walk over and ask.\n\n## Ownership from day one\n\nAt a small startup, nobody hands you a narrow task and waits. I worked on agentic RAG systems that let people ask questions of their own data, and on a computer vision application for safety compliance. Features went from idea to production quickly, and I was responsible for them end to end.\n\n![Add a second photo here](/assets/images/blog/joining-us-startup/2.webp)\n\n## Moving fast without breaking trust\n\nSpeed is the whole point of a startup, but clients still need systems they can rely on. Balancing quick delivery with careful engineering was one of the most valuable things I learned.\n\n## What nobody tells you\n\nWorking remotely for a startup is not just about code. It is about being reliable when nobody is watching, asking for help early and taking ownership of outcomes, not just tasks. Those lessons now shape how I approach both research and engineering."
     },
     {
       "id": 9,
       "slug": "first-flight-dubai",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-10",
       "storyDate": "January 2026",
       "title": "First Flight, First Business Trip: The Day I Landed in Dubai",
       "excerpt": "I had never been on a plane. Then a work trip took me to a city I thought I would only ever see in pictures.",
-      "categories": ["Work", "Life"],
-      "image": null
+      "categories": [
+        "Work",
+        "Life"
+      ],
+      "image": "/assets/images/blog/first-flight-dubai/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Travel",
+        "Dubai",
+        "First Flight"
+      ],
+      "content": "Before January 2026, I had never been on a plane. My first flight ended up being a business trip to Dubai.\n\n![Add a photo here](/assets/images/blog/first-flight-dubai/1.webp)\n\n## The night before\n\nI packed and repacked my bag three times. I read airport instructions as if I were preparing for an exam. Looking back, it is funny how nervous I was about something millions of people do every day.\n\n## Taking off\n\nThe moment the plane left the ground, everything I had been worried about disappeared. Looking down at the lights of the city getting smaller, I felt both very small and very lucky.\n\n![Add a second photo here](/assets/images/blog/first-flight-dubai/2.webp)\n\n## A city I had only seen in pictures\n\nDubai felt unreal at first: tall towers, wide roads and a skyline I had only seen on screens. Between work meetings I tried to take in as much as I could, from the architecture to the food to the people from every part of the world.\n\n## Why it mattered\n\nThat trip was about more than travel. It was proof that the work I was doing could take me places I had never imagined. A first flight is a small thing for many people. For me, it was a reminder of how far a few years of effort can carry you."
     },
     {
       "id": 10,
       "slug": "bs-thesis-to-acm-sigspatial",
-      "upcoming": true,
+      "upcoming": false,
       "publishDate": "2026-11-11",
       "storyDate": "August 2026",
       "title": "From BS Thesis to ACM SIGSPATIAL: The Story Behind My First Paper",
       "excerpt": "How a final year thesis became my first research paper at a CORE A conference, and everything I learned along the way.",
-      "categories": ["Research"],
-      "image": null
+      "categories": [
+        "Research"
+      ],
+      "image": "/assets/images/blog/bs-thesis-to-acm-sigspatial/cover.webp",
+      "author": "Shailesh Kachhi",
+      "readTime": "2 min read",
+      "tags": [
+        "Research",
+        "ACM SIGSPATIAL",
+        "Street View"
+      ],
+      "content": "Every paper has a story behind it. This is the story of my first one, which grew out of my BS thesis and was accepted at ACM SIGSPATIAL 2026.\n\n![Add a photo here](/assets/images/blog/bs-thesis-to-acm-sigspatial/1.webp)\n\n## The question\n\nCities change faster than maps do. In many places, especially in India, nobody knows reliably what each building is used for: homes, shops, offices or something in between. I wanted to know whether a single street-view image could answer that question building by building.\n\n## Building the dataset\n\nThere was no ready dataset, so we built one. A five-stage annotation pipeline produced more than 27,000 labelled building instances across six cities in India and Japan. This part took longer than anything else, and it was also where I learned the most about the problem.\n\n![Add a second photo here](/assets/images/blog/bs-thesis-to-acm-sigspatial/2.webp)\n\n## The model\n\nGeoBuild-SSL combines several signals: the image itself, an estimate of depth, and the text on signboards read in multiple languages. Bringing these together with self-supervised learning improved the weighted F1 score from 0.40 for an image-only baseline to 0.67.\n\n## From thesis to paper\n\nTurning a thesis into a paper meant rewriting, cutting and defending every claim. Reviews were tough but fair, and they made the work better. When the acceptance email arrived, I read it twice before I believed it. Receiving the ACM SIGSPATIAL Travel Grant to present it made it even more special.\n\n## What I learned\n\nGood research starts with a question you genuinely care about, needs data you can trust, and takes far longer than you expect. I would not trade any part of that journey."
     }
   ]
 }

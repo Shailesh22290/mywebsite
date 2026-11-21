@@ -8,6 +8,7 @@ const coursesData = [
   {
     id: 1,
     title: "Machine Learning",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2025",
@@ -18,6 +19,7 @@ const coursesData = [
   {
     id: 2,
     title: "Deep Learning",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2025",
@@ -48,6 +50,7 @@ const coursesData = [
   {
     id: 5,
     title: "Computer Vision",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2024",
@@ -89,6 +92,7 @@ const coursesData = [
   {
     id: 9,
     title: "3D Deep Learning and Applications",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2025",
@@ -99,6 +103,7 @@ const coursesData = [
   {
     id: 10,
     title: "Advanced Natural Language Processing",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2025",
@@ -109,6 +114,7 @@ const coursesData = [
   {
     id: 11,
     title: "Machine Learning with Graphs",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2025",
@@ -131,6 +137,7 @@ const coursesData = [
   {
     id: 13,
     title: "Linear Algebra",
+    core: true,
     institution: "IISER Bhopal",
     category: "mathematics",
     completedDate: "2023",
@@ -151,6 +158,7 @@ const coursesData = [
   {
     id: 15,
     title: "Probability and Statistics",
+    core: true,
     institution: "IISER Bhopal",
     category: "mathematics",
     completedDate: "2024",
@@ -181,6 +189,7 @@ const coursesData = [
   {
     id: 18,
     title: "Applied Optimization",
+    core: true,
     institution: "IISER Bhopal",
     category: "data-science",
     completedDate: "2025",
@@ -203,6 +212,7 @@ const coursesData = [
   {
     id: 20,
     title: "Cities: Memories, Perceptions and Stories",
+    core: true,
     institution: "IISER Bhopal",
     category: "humanities",
     completedDate: "2025",
@@ -453,18 +463,41 @@ const coursesData = [
     instructor: "PT Instructor",
     description: "Physical training sessions for health and fitness.",
     skills: ["Fitness", "Discipline"]
+  },
+  // Added Nov 2026
+  {
+    id: 100,
+    title: "Cloud Computing",
+    institution: "IISER Bhopal",
+    category: "data-science",
+    core: true,
+    completedDate: "2026",
+    instructor: "Dept. of Data Science & Engineering",
+    description: "Cloud architectures, virtualisation, containers and deploying scalable services.",
+    skills: ["Cloud Architecture", "Virtualisation", "Containers", "Distributed Systems"]
+  },
+  {
+    id: 101,
+    title: "Accelerated Artificial Intelligence (AAAI)",
+    institution: "IISER Bhopal",
+    category: "data-science",
+    core: true,
+    completedDate: "2026",
+    instructor: "Dept. of Data Science & Engineering",
+    description: "Training and running AI models efficiently on GPUs and accelerated hardware.",
+    skills: ["GPU Computing", "Efficient Training", "Model Optimisation"]
   }
 ];
 
 const CourseGrid = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('core');
   const [sortBy, setSortBy] = useState('recent');
 
-  const categories = ['all', 'data-science', 'mathematics', 'humanities', 'chemical-engineering', 'others'];
+  const categories = ['core', 'all', 'data-science', 'mathematics', 'humanities', 'chemical-engineering', 'others'];
 
 
   const filteredCourses = (Array.isArray(coursesData) ? coursesData : [])
-    .filter(course => selectedCategory === 'all' || course.category === selectedCategory)
+    .filter(course => selectedCategory === 'all' || (selectedCategory === 'core' ? course.core : course.category === selectedCategory))
     .sort((a, b) => {
       if (sortBy === 'recent') {
         return new Date(b.completedDate || 0) - new Date(a.completedDate || 0);
@@ -496,7 +529,7 @@ const CourseGrid = () => {
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')}
+              {category === 'core' ? 'Core courses' : category === 'all' ? 'All courses' : category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ')}
             </button>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/common/Layout/Layout';
 import Home from './components/sections/Home/Hero';
 import News from './components/sections/News/News';
@@ -54,6 +54,12 @@ function App() {
 
     return () => clearTimeout(loadingTimer);
   }, []);
+
+  // Every new page opens at the top (links to a #section are left alone).
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname, hash]);
 
   // Show preloader while loading
   if (isLoading) {

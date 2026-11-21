@@ -13,7 +13,8 @@ import {
   Heart,
   Target,
   Clock,
-  Globe
+  Globe,
+  FlaskConical
 } from 'lucide-react';
 
 // CORRECTED IMPORT PATH:
@@ -24,7 +25,7 @@ import { workExperience, volunteerExperience } from '../../../data/experience.js
 // you may need to adjust the '../../../data/experience.js' path slightly.
 
 const Experience = () => { // Removed props from the component signature
-  const [selectedCategory, setSelectedCategory] = useState('professional');
+  const [selectedCategory, setSelectedCategory] = useState('research');
   const [expandedExperience, setExpandedExperience] = useState(null);
 
   // Use the imported data directly
@@ -33,7 +34,7 @@ const Experience = () => { // Removed props from the component signature
 
   // Combine professional and volunteer experience
   const allExperiences = [
-    ...experienceData.map(exp => ({ ...exp, category: 'professional' })),
+    ...experienceData.map(exp => ({ ...exp, category: exp.kind === 'research' ? 'research' : 'industry' })),
     ...volunteerData.map(exp => ({ ...exp, category: 'volunteer' }))
   ];
 
@@ -70,21 +71,16 @@ const Experience = () => { // Removed props from the component signature
     setExpandedExperience(expandedExperience === index ? null : index);
   };
 
-  const getCategoryIcon = (category) => {
-    return category === 'volunteer' ? Heart : Briefcase;
+  // Solid colours from the site's own blue and slate palette (no gradients).
+  const CATEGORY = {
+    research: { label: 'Research', icon: FlaskConical, color: 'bg-blue-600 dark:bg-blue-700 text-white', border: 'border-blue-100 dark:border-blue-900/60' },
+    industry: { label: 'Industry', icon: Briefcase, color: 'bg-slate-700 dark:bg-slate-700 text-white', border: 'border-gray-200 dark:border-gray-700' },
+    volunteer: { label: 'Volunteer', icon: Heart, color: 'bg-sky-700 dark:bg-sky-800 text-white', border: 'border-sky-100 dark:border-sky-900/60' },
   };
-
-  const getCategoryColor = (category) => {
-    return category === 'volunteer'
-      ? 'from-amber-600 to-orange-600 text-white'
-      : 'from-slate-700 to-blue-900 text-white';
-  };
-
-  const getCategoryBorderColor = (category) => {
-    return category === 'volunteer'
-      ? 'border-amber-200 dark:border-amber-800'
-      : 'border-slate-200 dark:border-slate-700';
-  };
+  const count = (key) => allExperiences.filter((e) => e.category === key).length;
+  const getCategoryIcon = (category) => CATEGORY[category].icon;
+  const getCategoryColor = (category) => CATEGORY[category].color;
+  const getCategoryBorderColor = (category) => CATEGORY[category].border;
 
   // Enhanced Work Card Component
   const EnhancedWorkCard = ({ experience, onToggleExpanded, isExpanded, category }) => {
@@ -101,7 +97,7 @@ const Experience = () => { // Removed props from the component signature
         whileHover={{ y: -5 }}
       >
         {/* Header with gradient background */}
-        <div className={`bg-gradient-to-r ${gradientColor} p-6 relative overflow-hidden`}>
+        <div className={`${gradientColor} p-6 relative overflow-hidden`}>
           <div className="absolute top-0 right-0 w-32 h-32 opacity-20 transform translate-x-8 -translate-y-8">
             <CategoryIcon className="w-full h-full" />
           </div>
@@ -111,7 +107,7 @@ const Experience = () => { // Removed props from the component signature
               <div className="flex items-center gap-2">
                 <CategoryIcon className="w-5 h-5" />
                 <span className="text-sm font-medium opacity-90">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {CATEGORY[category].label}
                 </span>
               </div>
               <motion.button
@@ -216,7 +212,7 @@ const Experience = () => { // Removed props from the component signature
                           transition={{ delay: index * 0.1 }}
                           className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
                         >
-                          <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-gradient-to-r ${gradientColor}`}></div>
+                          <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-blue-600 dark:bg-blue-400`}></div>
                           <span>{item}</span>
                         </motion.li>
                       ))}
@@ -227,7 +223,7 @@ const Experience = () => { // Removed props from the component signature
                 {experience.achievements && experience.achievements.length > 0 && (
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                      <Award className="w-4 h-4 text-amber-500" />
+                      <Award className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       Key Achievements
                     </h4>
                     <ul className="space-y-2">
@@ -239,7 +235,7 @@ const Experience = () => { // Removed props from the component signature
                           transition={{ delay: index * 0.1 }}
                           className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
                         >
-                          <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-amber-500"></div>
+                          <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-blue-600 dark:bg-blue-400"></div>
                           <span>{item}</span>
                         </motion.li>
                       ))}
@@ -277,7 +273,7 @@ const Experience = () => { // Removed props from the component signature
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900 min-h-screen">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Enhanced Header */}
@@ -287,7 +283,7 @@ const Experience = () => { // Removed props from the component signature
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6">
+            <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
              Experience
             </h2>
           </motion.div>
@@ -299,17 +295,15 @@ const Experience = () => { // Removed props from the component signature
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center mb-12"
           >
-            <div className="flex bg-white dark:bg-gray-800 rounded-xl p-2 shadow-lg border border-gray-200 dark:border-gray-700">
-              {[
-                { key: 'professional', label: 'Professional', icon: Briefcase, count: experienceData.length },
-                { key: 'volunteer', label: 'Volunteer', icon: Heart, count: volunteerData.length }
-              ].map(({ key, label, icon: Icon, count }) => (
+            <div className="flex flex-wrap justify-center bg-white dark:bg-gray-800 rounded-xl p-2 shadow-lg border border-gray-200 dark:border-gray-700">
+              {Object.entries(CATEGORY).map(([key, { label, icon: Icon }]) => (
+
                 <button
                   key={key}
                   onClick={() => setSelectedCategory(key)}
                   className={`flex items-center gap-3 px-6 py-3 rounded-lg transition-all duration-300 ${
                     selectedCategory === key
-                      ? `bg-gradient-to-r ${getCategoryColor(key)} shadow-lg transform scale-105`
+                      ? `${getCategoryColor(key)} shadow-md`
                       : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
                   }`}
                 >
@@ -320,7 +314,7 @@ const Experience = () => { // Removed props from the component signature
                       ? 'bg-white/20' 
                       : 'bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-400'
                   }`}>
-                    {count}
+                    {count(key)}
                   </span>
                 </button>
               ))}
@@ -334,7 +328,7 @@ const Experience = () => { // Removed props from the component signature
             animate="visible"
             className="relative max-w-4xl mx-auto"
           >
-            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-700 to-amber-600 rounded-full"></div>
+            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
 
             {filteredExperience.map((experience, index) => (
               <motion.div
@@ -342,7 +336,7 @@ const Experience = () => { // Removed props from the component signature
                 variants={itemVariants}
                 className="relative mb-12"
               >
-                <div className={`absolute left-6 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10 bg-gradient-to-r ${getCategoryColor(experience.category)}`}></div>
+                <div className={`absolute left-6 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 shadow-lg z-10 ${getCategoryColor(experience.category)}`}></div>
 
                 <div className="ml-20">
                   <EnhancedWorkCard 
@@ -365,21 +359,11 @@ const Experience = () => { // Removed props from the component signature
             >
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-12 max-w-md mx-auto border border-gray-200 dark:border-gray-700">
                 <div className="flex justify-center mb-6">
-                  {selectedCategory === 'volunteer' ? (
-                    <Heart className="w-20 h-20 text-amber-400" />
-                  ) : (
-                    <Briefcase className="w-20 h-20 text-slate-400" />
-                  )}
+                  {React.createElement(getCategoryIcon(selectedCategory), { className: 'w-20 h-20 text-gray-400' })}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   No {selectedCategory} experience yet
                 </h3>
-                <button
-                  onClick={() => setSelectedCategory(selectedCategory === 'professional' ? 'volunteer' : 'professional')}
-                  className={`px-6 py-3 bg-gradient-to-r ${getCategoryColor(selectedCategory === 'professional' ? 'volunteer' : 'professional')} rounded-lg font-medium hover:shadow-lg transition-all duration-300`}
-                >
-                  View {selectedCategory === 'professional' ? 'Volunteer' : 'Professional'} Experience
-                </button>
               </div>
             </motion.div>
           )}
@@ -393,16 +377,25 @@ const Experience = () => { // Removed props from the component signature
 >
   {[
     {
-      title: "Professional Roles",
-      value: experienceData.length,
+      title: "Research Roles",
+      value: count('research'),
+      icon: FlaskConical,
+      gradient: "bg-blue-600",
+      text: "text-blue-600 dark:text-blue-400",
+    },
+    {
+      title: "Industry Roles",
+      value: count('industry'),
       icon: Briefcase,
-      gradient: "from-slate-700 to-blue-900",
+      gradient: "bg-slate-700",
+      text: "text-slate-700 dark:text-slate-300",
     },
     {
       title: "Volunteer Roles",
       value: volunteerData.length,
       icon: Heart,
-      gradient: "from-amber-600 to-orange-600",
+      gradient: "bg-sky-700",
+      text: "text-sky-700 dark:text-sky-400",
     },
     {
       title: "Organizations",
@@ -412,31 +405,8 @@ const Experience = () => { // Removed props from the component signature
         ),
       ].length,
       icon: Building,
-      gradient: "from-green-500 to-emerald-500",
-    },
-    {
-      title: "Total Years",
-      value: (() => {
-        if (!allExperiences.length) return 0;
-
-        // find earliest start and latest end
-        const starts = allExperiences
-          .map((exp) => exp.startDate && new Date(exp.startDate))
-          .filter(Boolean);
-        const ends = allExperiences.map((exp) =>
-          exp.endDate ? new Date(exp.endDate) : new Date()
-        );
-
-        const minStart = new Date(Math.min(...starts));
-        const maxEnd = new Date(Math.max(...ends));
-
-        const diffYears =
-          (maxEnd - minStart) / (1000 * 60 * 60 * 24 * 365);
-
-        return Math.max(1, Math.round(diffYears)); // ensure at least 1 year
-      })(),
-      icon: Clock,
-      gradient: "from-purple-500 to-violet-500",
+      gradient: "bg-gray-600",
+      text: "text-gray-700 dark:text-gray-300",
     },
   ].map((stat, index) => (
     <motion.div
@@ -448,18 +418,18 @@ const Experience = () => { // Removed props from the component signature
       className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-200 dark:border-gray-700 overflow-hidden group"
     >
       <div
-        className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+        className={`absolute inset-0 ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
       ></div>
 
       <div className="relative z-10">
         <div
-          className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${stat.gradient} mb-4`}
+          className={`inline-flex p-3 rounded-xl ${stat.gradient} mb-4`}
         >
           <stat.icon className="w-6 h-6 text-white" />
         </div>
 
         <div
-          className={`text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2`}
+          className={`text-4xl font-bold ${stat.text} mb-2`}
         >
           {stat.value}
         </div>

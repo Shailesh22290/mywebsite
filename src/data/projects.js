@@ -4,7 +4,7 @@ export const projects = [
     id: 21,
     title: "JST LOTUS: Street-View Enrichment of OSM Buildings",
     description: "Multi-attribute enrichment of OSM buildings and street context from street-view panoramas in India and Japan.",
-    longDescription: "A depth-aware vision-language framework that infers ten OSM building and street-context attributes from a single panorama in Indian and Japanese cities. Part 1 of my MS thesis, with a residency at CSIS, The University of Tokyo (Jan to Jun 2027). See /thesis/ms.",
+    longDescription: "A depth-aware vision-language framework that infers ten OSM building and street-context attributes from a single panorama in Indian and Japanese cities. Part 1 of my MS thesis, with a residency at CSIS, The University of Tokyo (remote from Oct 2026, on site Jan to Jul 2027). See /thesis/ms.",
     category: "Research",
     type: "GeoAI",
     technologies: ["Street-View Imagery", "Vision-Language Models", "OpenStreetMap"],
@@ -13,7 +13,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: null,
     paperUrl: null,
-    image: [],
+    image: ["/assets/images/projects/lotus-osm-enrichment.webp"],
     tags: ["OSM", "Street View", "GeoAI"],
     featured: true
   },
@@ -30,7 +30,7 @@ export const projects = [
     githubUrl: "https://github.com/geoai4cities/geobuild-ssl",
     liveUrl: null,
     paperUrl: "https://drive.google.com/file/d/1f4rFpEHExIXyivyStMpaN3MtAG9Rrn4Q/view?usp=sharing",
-    image: ["/thesis/bs/fig-challenges.jpg"],
+    image: ["/thesis/bs/fig-challenges.webp"],
     tags: ["Street View", "Self-Supervised Learning", "Building Use"],
     featured: true
   },
@@ -47,7 +47,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: null,
     paperUrl: null,
-    image: [],
+    image: ["/assets/images/projects/gavas.webp"],
     tags: ["Soundscapes", "Urban Planning"],
     featured: true
   },
@@ -64,7 +64,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: null,
     paperUrl: null,
-    image: [],
+    image: ["/assets/images/projects/urbansg-qa.webp"],
     tags: ["LiDAR", "Spatial QA"],
     featured: true
   },
@@ -81,7 +81,7 @@ export const projects = [
     githubUrl: null, // TODO: https://github.com/Shailesh22290/osm-attribute-completeness returned 404; add once public
     liveUrl: null,
     paperUrl: null,
-    image: [],
+    image: ["/assets/images/projects/osm-completeness.webp"],
     tags: ["OSM", "Data Quality"],
     featured: true
   },
@@ -109,7 +109,7 @@ export const projects = [
   githubUrl: "https://github.com/Shailesh22290/analytical-ai-agent",
   liveUrl: "https://trustfirstai.streamlit.app/",
   demoVideoUrl: "",
-  image: ["/assets/images/projects/aa.png"],
+  image: ["/assets/images/projects/aa.webp"],
   tags: ["GenAI", "Data Privacy", "RAG", "FAISS", "Pandas", "Data Security"],
   featured: true
 },
@@ -131,7 +131,7 @@ export const projects = [
     githubUrl: "https://github.com/Shailesh22290",
     liveUrl: null,
     paperUrl: null,
-    image: ["/assets/images/projects/en.png"],
+    image: ["/assets/images/projects/en.webp"],
     tags: ["Climate Modeling", "Machine Learning", "Ensemble Methods"],
     featured: true
   },
@@ -153,7 +153,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: null,
     paperUrl: null,
-    image: ["/assets/images/projects/pr.png"],
+    image: ["/assets/images/projects/pr.webp"],
     tags: ["VR", "Urban Safety", "AI", "Biometrics"],
     featured: true
   },
@@ -176,7 +176,7 @@ export const projects = [
     githubUrl: "https://github.com/Shailesh22290/SmartVehEntryAI",
     liveUrl: "",
     paperUrl: null,
-    image: ["/assets/images/projects/vn.png"],
+    image: ["/assets/images/projects/vn.webp"],
     tags: ["Full Stack", "E-Governance", "Data Security"],
     metrics: { users: "200+", responseTime: "< 300ms" },
     challenges: [
@@ -191,6 +191,69 @@ export const projects = [
   },
 
   // 🧠 Research
+   {
+    id: 15,
+    title: "SAC IISERB",
+   description: "Official web platform for the Student Activity Council (SAC) at IISER Bhopal, the elected student body representing and supporting the campus community.",
+   longDescription: "Designed and developed a digital platform for the Student Activity Council (SAC) at IISER Bhopal. The portal highlights SAC’s role as the bridge between administration and students, showcasing its initiatives, activities, and responsibilities in ensuring smooth functioning of campus life while giving visibility to student concerns, events, and collaborations.",
+
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js","JavaScript","Tailwind CSS"],
+    status: "completed",
+    startDate: "2023-02-01",
+    endDate: "2023-07-28",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    githubUrl: "https://github.com/Shailesh22290/SAC-IISERB",
+    liveUrl: "https://students.ac.in/",
+    paperUrl: null,
+    image: ["/assets/images/projects/sac.webp"],
+    tags: [ "Web Development"],
+
+    featured: false
+  },
+    {
+    id: 14,
+    title: "DST CoE Website",
+    description: "Developed a web platform for the DST Centre of Excellence with resource access and virtual experience.",
+    longDescription: "Created a comprehensive website for the DST CoE at IIT Delhi using React.js. With the details of Centre work collaborators and people.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js","JavaScript","Tailwind CSS"],
+    status: "completed",
+    startDate: "2025-02-01",
+    endDate: "2025-02-28",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    githubUrl: "",
+    liveUrl: "https://dcecm.iitd.ac.in/",
+    paperUrl: null,
+    image: ["/assets/images/projects/ci.webp"],
+    tags: ["Freelancing", "Web Development"],
+
+    featured: false
+  },
+  {
+    id: 12,
+    title: "Central Library Website",
+    description: "Official website of Central Library, IISER Bhopal with full virtual experience and resource access.",
+    longDescription: "Developed a modern library website for IISER Bhopal using React.js, MongoDB, Tailwind CSS, and HTML. Integrated book databases, digital resources, and a virtual walkthrough to improve the accessibility of library services.",
+    category: "Development",
+    type: "Web Application",
+    technologies: ["React.js", "MongoDB", "Tailwind", "HTML"],
+    status: "completed",
+    startDate: "2024-01-01",
+    endDate: "2024-05-30",
+    teamSize: 2,
+    role: "Full-Stack Developer",
+    githubUrl: "https://github.com/Shailesh22290/Libraryiiserb",
+    liveUrl: "https://library.iiserb.ac.in/",
+    paperUrl: null,
+    image: ["/assets/images/projects/cl.webp"],
+    tags: ["Web Development", "React", "MongoDB", "Tailwind"],
+    featured: true
+  },
 {
     id: 4,
     title: "AR/VR Streetview Campus Exploration",
@@ -205,9 +268,9 @@ export const projects = [
     teamSize: 2,
     role: "Lead Developer",
     githubUrl: "https://github.com/Shailesh22290/streetview-cc",
-    liveUrl: "https://streetview-cc-iiserb.netlify.app/",
+    liveUrl: "https://library.iiserb.ac.in/services/virtual-tour",
     paperUrl: null,
-    image: ["/assets/images/projects/vr.png"],
+    image: ["/assets/images/projects/vr.webp"],
     tags: ["AR/VR", "Streetview", "3D Visualization"],
     featured: true
   },
@@ -229,7 +292,7 @@ export const projects = [
     githubUrl: "https://github.com/Shailesh22290/SIH_2023_Grand_Finale",
     liveUrl: null,
     paperUrl: null,
-    image: ["/assets/images/projects/pb.png"],
+    image: ["/assets/images/projects/pb.webp"],
     tags: ["Full Stack", "ML", "Analytics"],
     featured: true
   },
@@ -251,7 +314,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: null,
     paperUrl: null,
-    image: ["/assets/images/projects/dv.png"],
+    image: ["/assets/images/projects/dv.webp"],
     tags: ["Drone Vision", "Traffic Analysis", "Computer Vision"],
     featured: false
   },
@@ -273,7 +336,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: "https://learninghub.bondvue.com/",
     paperUrl: null,
-    image: ["/assets/images/projects/bv.png"],
+    image: ["/assets/images/projects/bv.webp"],
     tags: ["E-Learning", "Full Stack", "Recommendations"],
     featured: false
   },
@@ -295,7 +358,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: "https://simdaas.com/",
     paperUrl: null,
-    image: ["/assets/images/projects/sd.png"],
+    image: ["/assets/images/projects/sd.webp"],
     tags: ["Simulation", "Autonomous Systems", "3D"],
     featured: false
   },
@@ -317,7 +380,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: "https://dcecm.iitd.ac.in/skm/website/",
     paperUrl: null,
-    image: ["/assets/images/projects/co.png"],
+    image: ["/assets/images/projects/co.webp"],
     tags: ["Portfolio", "Academic", "Web Development"],
     featured: false
   },
@@ -339,7 +402,7 @@ export const projects = [
     githubUrl: null,
     liveUrl: "https://anirudharora.netlify.app/",
     paperUrl: null,
-    image: ["/assets/images/projects/ee.png"],
+    image: ["/assets/images/projects/ee.webp"],
     tags: ["Portfolio", "Academic", "Web Development"],
     featured: false
   },
@@ -361,32 +424,12 @@ export const projects = [
     githubUrl: "",
     liveUrl: "https://movx.in/iiserb_election_new/client_side/system_login.php",
     paperUrl: null,
-    image: ["/assets/images/projects/em.png"],
+    image: ["/assets/images/projects/em.webp"],
     tags: ["E-Governance", "Full Stack", "Secure Systems"],
     featured: false
   },
 
   // 📚 Development (New)
-  {
-    id: 12,
-    title: "Central Library Website",
-    description: "Official website of Central Library, IISER Bhopal with full virtual experience and resource access.",
-    longDescription: "Developed a modern library website for IISER Bhopal using React.js, MongoDB, Tailwind CSS, and HTML. Integrated book databases, digital resources, and a virtual walkthrough to improve the accessibility of library services.",
-    category: "Development",
-    type: "Web Application",
-    technologies: ["React.js", "MongoDB", "Tailwind", "HTML"],
-    status: "completed",
-    startDate: "2024-01-01",
-    endDate: "2024-05-30",
-    teamSize: 2,
-    role: "Full-Stack Developer",
-    githubUrl: "https://github.com/Shailesh22290/Libraryiiserb",
-    liveUrl: "https://library.iiserb.ac.in/",
-    paperUrl: null,
-    image: ["/assets/images/projects/cl.png"],
-    tags: ["Web Development", "React", "MongoDB", "Tailwind"],
-    featured: true
-  },
     {
     id: 13,
     title: "Freelance Portal",
@@ -403,54 +446,11 @@ export const projects = [
     githubUrl: "",
     liveUrl: "https://movx.in/iiserb/home",
     paperUrl: null,
-    image: ["/assets/images/projects/fr.png"],
+    image: ["/assets/images/projects/fr.webp"],
     tags: ["Freelancing", "Web Development", "Analytics"],
     metrics: { users: "50+", projects: "20+" },
     challenges: ["Building secure multi-user architecture", "Implementing personalized analytics"],
     outcomes: ["Improved project allocation efficiency", "Enhanced user engagement with progress tracking"],
-    featured: false
-  },
-    {
-    id: 14,
-    title: "DST CoE Website",
-    description: "Developed a web platform for the DST Centre of Excellence with resource access and virtual experience.",
-    longDescription: "Created a comprehensive website for the DST CoE at IIT Delhi using React.js. With the details of Centre work collaborators and people.",
-    category: "Development",
-    type: "Web Application",
-    technologies: ["React.js","JavaScript","Tailwind CSS"],
-    status: "completed",
-    startDate: "2025-02-01",
-    endDate: "2025-02-28",
-    teamSize: 2,
-    role: "Full-Stack Developer",
-    githubUrl: "",
-    liveUrl: "https://dcecm.iitd.ac.in/",
-    paperUrl: null,
-    image: ["/assets/images/projects/ci.png"],
-    tags: ["Freelancing", "Web Development"],
-
-    featured: false
-  },
-   {
-    id: 15,
-    title: "SAC IISERB",
-   description: "Official web platform for the Student Activity Council (SAC) at IISER Bhopal, the elected student body representing and supporting the campus community.",
-   longDescription: "Designed and developed a digital platform for the Student Activity Council (SAC) at IISER Bhopal. The portal highlights SAC’s role as the bridge between administration and students, showcasing its initiatives, activities, and responsibilities in ensuring smooth functioning of campus life while giving visibility to student concerns, events, and collaborations.",
-
-    category: "Development",
-    type: "Web Application",
-    technologies: ["React.js","JavaScript","Tailwind CSS"],
-    status: "completed",
-    startDate: "2023-02-01",
-    endDate: "2023-07-28",
-    teamSize: 2,
-    role: "Full-Stack Developer",
-    githubUrl: "https://github.com/Shailesh22290/SAC-IISERB",
-    liveUrl: "https://students.ac.in/",
-    paperUrl: null,
-    image: ["/assets/images/projects/sac.png"],
-    tags: [ "Web Development"],
-
     featured: false
   },
 

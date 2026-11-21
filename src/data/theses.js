@@ -29,7 +29,7 @@ export const theses = {
       },
     ],
     heroFigure: {
-      src: '/thesis/bs/fig-challenges.jpg',
+      src: '/thesis/bs/fig-challenges.webp',
       alt: 'Three street-view examples of ambiguous depth, similar-looking facades and multilingual signage',
       caption:
         'Key challenges in building-usage classification from street-view imagery: (a) depth ambiguity, (b) facade ambiguity, (c) multilingual signage with cross-cultural divergence.',
@@ -41,13 +41,13 @@ export const theses = {
     ],
     summaryFigures: [
       {
-        src: '/thesis/bs/fig-annotation.jpg',
+        src: '/thesis/bs/fig-annotation.webp',
         alt: 'Flow diagram of the five-stage automatic labelling pipeline, from street-view imagery to labelled building instances',
         caption: 'The five-stage annotation pipeline used to generate building-usage labels.',
       },
     ],
     summaryFigure: {
-      src: '/thesis/bs/fig-architecture.jpg',
+      src: '/thesis/bs/fig-architecture.webp',
       alt: 'GeoBuild-SSL architecture: RGB, depth and OCR text streams feed separate encoders, fusion layers and a final MLP classifier',
       caption: 'The GeoBuild-SSL method: RGB, depth and OCR text streams, fused for building-use classification.',
     },
@@ -80,7 +80,7 @@ export const theses = {
         title: 'Depth as a geometric prior',
         text: 'Two buildings can occupy almost the same pixels and still be very different things. Monocular depth separates a near residential house (~9 m) from a commercial tower behind it (~28 m). Depth enters the visual features through FiLM, and in the ablation it is the single most informative cue: scalar depth conditioning alone lifts weighted F1 from 0.40 to 0.65, and the full depth-map pathway reaches 0.67.',
         figure: {
-          src: '/thesis/bs/fig-depth.jpg',
+          src: '/thesis/bs/fig-depth.webp',
           alt: 'Street-view images from Tokyo, Bengaluru and Delhi with relative-depth maps, building distances and detected building boxes',
           caption: 'Depth used for building classification in (a) Tokyo, (b) Bengaluru, (c) Delhi. Only buildings within 30 m of the camera are classified.',
         },
@@ -89,7 +89,7 @@ export const theses = {
         title: 'Reading the signs',
         text: 'Shop boards and institutional signs often say what a building is used for. Multilingual OCR (English, Hindi and regional scripts, Kanji/Kana) is encoded into one CLIP embedding space, which sharpens the Institutional class: hospitals, banks and government offices.',
         figure: {
-          src: '/thesis/bs/fig-ocr.jpg',
+          src: '/thesis/bs/fig-ocr.webp',
           alt: 'Shopfronts with OCR bounding boxes over English, Hindi and Japanese signs',
           caption: 'PaddleOCR detections on shopfronts in (a) Bengaluru, (b) Tokyo, (c) Delhi and (d) Osaka.',
         },
@@ -98,7 +98,7 @@ export const theses = {
         title: 'Training across cultures',
         text: 'Indian and Japanese streets look very different. Joint India–Japan training transfers markedly better than single-country models: the India test subset rises from 0.56 (India-only) to 0.64, and the Japan subset from 0.60 (Japan-only) to 0.71. Depth helps here too, since a building at 8 m activates the same depth-conditioned channels in Bengaluru as in Tokyo.',
         figure: {
-          src: '/thesis/bs/fig-study-area.jpg',
+          src: '/thesis/bs/fig-study-area.webp',
           alt: 'Maps of India and Japan marking Mumbai, Delhi, Chennai, Bengaluru, Tokyo and Osaka',
           caption: 'Study areas: six cities in India and Japan.',
         },
@@ -107,7 +107,7 @@ export const theses = {
         title: 'From pixels to maps',
         text: 'Predictions are attached to OSM building footprints, producing machine-readable usage labels for untagged buildings. I position this as a screening layer for human review, not a replacement for mappers.',
         figure: {
-          src: '/thesis/bs/fig-usage-map.jpg',
+          src: '/thesis/bs/fig-usage-map.webp',
           alt: 'Building-usage maps for Delhi, Tokyo, Chennai and Osaka comparing ground truth, RGB-only and RGB plus depth predictions',
           caption: 'Building-usage maps for (a) Delhi, (b) Tokyo, (c) Chennai, (d) Osaka: ground truth (left), RGB-only (centre), RGB+depth (right). Footprints © OpenStreetMap contributors.',
         },
@@ -144,7 +144,7 @@ export const theses = {
     highlights: [
       {
         title: 'Part 1: Street-view attribute enrichment (JST LOTUS)',
-        text: 'A depth-aware vision-language framework that infers ten OSM building and street-context attributes from a single panorama in Indian and Japanese cities. Residency at CSIS, The University of Tokyo (Jan–Jun 2027).',
+        text: 'A depth-aware vision-language framework that infers ten OSM building and street-context attributes from a single panorama in Indian and Japanese cities. Residency at CSIS, The University of Tokyo (remote from Oct 2026, on site Jan to Jul 2027).',
       },
       {
         title: 'Part 2: GAVAS, Geometry-Aware Video-to-Audio Synthesis with 4D Acoustic Scene Graphs',

@@ -1,6 +1,7 @@
 // src/components/sections/Blog/BlogCard.jsx
 import React from 'react';
-import { Calendar, Clock, Eye, User, Tag } from 'lucide-react';
+import { Calendar, Clock, User, Tag } from 'lucide-react';
+import ImageSlot from './ImageSlot';
 
 const BlogCard = ({ post, featured = false, onClick }) => {
   const handleClick = () => {
@@ -29,33 +30,7 @@ const BlogCard = ({ post, featured = false, onClick }) => {
       role="button"
       aria-label={`Read more about ${post.title}`}
     >
-      {/* Image Placeholder */}
-      {post.image ? (
-        <div className="aspect-video w-full overflow-hidden">
-          <img 
-            src={post.image} 
-            alt={post.title}
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-      ) : (
-        <div className={`aspect-video w-full bg-gradient-to-br ${
-          featured 
-            ? 'from-blue-500 to-purple-600' 
-            : 'from-gray-400 to-gray-600 dark:from-gray-600 dark:to-gray-800'
-        } flex items-center justify-center`}>
-          <div className="text-white text-center p-6">
-            <h3 className="text-lg font-semibold mb-2 line-clamp-2">
-              {post.title}
-            </h3>
-            {featured && (
-              <span className="inline-block px-3 py-1 bg-white bg-opacity-20 text-white text-xs rounded-full">
-                Featured
-              </span>
-            )}
-          </div>
-        </div>
-      )}
+      <ImageSlot src={post.image} alt="Cover image" className="aspect-video rounded-none border-0 border-b" />
 
       <div className="p-6">
         {/* Categories */}

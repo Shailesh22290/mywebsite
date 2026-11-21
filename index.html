@@ -20,12 +20,12 @@
 
    
     <link rel="icon" type="image/png" href="/assets/images/profile.jpg" />
-    <meta name="theme-color" content="#ffffff" />
-    <!-- Light by default; apply a saved dark choice before first paint so it never flashes white -->
+    <meta name="theme-color" content="#0f172a" />
+    <!-- Dark by default; only a saved light choice skips it, applied before first paint -->
     <script>
       try {
-        if (JSON.parse(localStorage.getItem('theme')) === 'dark') document.documentElement.classList.add('dark');
-      } catch (e) {}
+        if (JSON.parse(localStorage.getItem('themeChoice')) !== 'light') document.documentElement.classList.add('dark');
+      } catch (e) { document.documentElement.classList.add('dark'); }
     </script>
   </head>
   <body>

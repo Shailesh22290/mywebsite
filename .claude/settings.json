@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git commit -q -m 'Add news: JST LOTUS fellowship, SIGSPATIAL travel grant, GeoBuildSSL presentation *)",
+      "Bash(python3 -c \"import json;d=json.load\\(open\\('public/posts.json'\\)\\);print\\(list\\(d.keys\\(\\)\\)\\);print\\(list\\(d['posts'][0].keys\\(\\)\\)\\)\")",
+      "Bash(git commit -q -m 'Plan upcoming blog posts, default to light mode, refine news titles *)"
+    ]
+  }
+}

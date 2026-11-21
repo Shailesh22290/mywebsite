@@ -5,15 +5,10 @@ import Sky from './Sky';
 import { CLASSES } from './city';
 import { personalDetails } from '@/data/personal';
 
-// The 3D point cloud is only worth fetching on a decent connection and when motion is welcome.
+// The 3D point cloud is only worth fetching on a decent connection (reduced motion gets a still frame).
 const canUse3D = () => {
   const c = navigator.connection;
-  return (
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-    !document.documentElement.classList.contains('reduce-motion') &&
-    !c?.saveData &&
-    !/2g/.test(c?.effectiveType || '')
-  );
+  return !c?.saveData && !/2g/.test(c?.effectiveType || '');
 };
 
 const CityBanner = () => {

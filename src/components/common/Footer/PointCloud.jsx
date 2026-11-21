@@ -133,6 +133,9 @@ const PointCloud = ({ onReady }) => {
 
   useEffect(() => {
     const el = mount.current;
+    // Reduced motion: draw the finished scan once, no animation.
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      document.documentElement.classList.contains('reduce-motion');
     let renderer;
     try {
       renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
@@ -152,8 +155,8 @@ const PointCloud = ({ onReady }) => {
     //  - uScan: an intro sweep; points right of it are hidden, points just behind it glow.
     //  - uPulse: an expanding ring from the scanner car (uSensor) that lights what it hits.
     const uniforms = {
-      uScan: { value: -WIDTH },
-      uPulse: { value: 0 },
+      uScan: { value: still ? 1e4 : -WIDTH },
+      uPulse: { value: still ? 1e4 : 0 },
       uSensor: { value: new THREE.Vector3() },
       uGlow: { value: new THREE.Color() },
     };
@@ -232,8 +235,9 @@ const PointCloud = ({ onReady }) => {
         geometry.attributes.color.needsUpdate = true;
       }
     };
+    const redraw = () => still && renderer.render(scene, camera);
     paint();
-    const themeObserver = new MutationObserver(paint);
+    const themeObserver = new MutationObserver(() => { paint(); redraw(); });
     themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
     // Elevated street view: look down at the middle of the block, whole width in frame.
@@ -255,7 +259,7 @@ const PointCloud = ({ onReady }) => {
       camera.updateProjectionMatrix();
       frame(PITCH_DEG);
     };
-    const sizeObserver = new ResizeObserver(resize);
+    const sizeObserver = new ResizeObserver(() => { resize(); redraw(); });
     sizeObserver.observe(el);
     resize();
 
@@ -307,7 +311,7 @@ const PointCloud = ({ onReady }) => {
     animateSea(0);
     renderer.render(scene, camera);
     onReady?.();
-    raf = requestAnimationFrame(tick);
+    if (!still) raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);

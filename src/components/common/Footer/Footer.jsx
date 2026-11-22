@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { FileText, Github, Linkedin, Mail } from 'lucide-react';
 import Skyline from './Skyline';
 import Sky from './Sky';
 import { CLASSES } from './city';
@@ -54,6 +54,7 @@ const CityBanner = () => {
 const socialLinks = [
   { icon: Github, href: 'https://github.com/shailesh22290', label: 'GitHub' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/shailesh-kachhi-681a041a2/', label: 'LinkedIn' },
+  { icon: FileText, href: 'https://orcid.org/0009-0000-8893-4171', label: 'ORCID' },
   { icon: Mail, href: `mailto:${personalDetails.email}`, label: 'Email' },
 ];
 

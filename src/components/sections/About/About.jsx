@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Download, Mail, MapPin } from 'lucide-react';
+import { FileText, Mail, MapPin } from 'lucide-react';
 import ProfileImage from '../Home/ProfileImage';
 import { personalDetails } from '@/data/personal';
 
@@ -63,7 +63,7 @@ const About = () => (
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-2.5 font-semibold text-white transition-colors"
           >
-            <Download className="h-4 w-4" /> Download CV
+            <FileText className="h-4 w-4" /> View CV
           </a>
         </div>
       </header>

@@ -37,7 +37,7 @@ const Navigation = () => {
     { path: '/consultancy', label: 'Consultancy', icon: Handshake },
     // { path: '/discussions', label: 'Discussions', icon: MessageSquare },
     // { path: '/posters', label: 'Posters', icon: FileImage },
-    { path: '/resources', label: 'Resources', icon: Archive },
+    //     { path: '/resources', label: 'Resources', icon: Archive },
     { path: '/contact', label: 'Contact', icon: Mail },
   ];
 

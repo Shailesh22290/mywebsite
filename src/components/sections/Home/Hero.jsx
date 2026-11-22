@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Mail } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../../common/UI/Button';
 import ProfileImage from './ProfileImage';
@@ -8,13 +8,6 @@ import { Rocket, ArrowRight as ArrowRightIcon } from "lucide-react";
 
 
 const Hero = () => {
-  const handleDownloadCV = () => {
-    // Create a temporary link element to trigger download
-    const link = document.createElement('a');
-    link.href = '/assets/documents/cv.pdf';
-    link.download = 'CV.pdf';
-    link.click();
-  };
 
   // Generate nodes for network visualization
   const generateNodes = () => {

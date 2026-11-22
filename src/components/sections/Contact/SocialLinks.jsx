@@ -49,13 +49,13 @@ const SocialLinks = ({ size = 'default', showLabels = true, className = '' }) =>
     //   color: 'hover:bg-teal-50 dark:hover:bg-teal-900',
     //   description: 'Research collaboration and publications'
     // },
-    // {
-    //   name: 'ORCID',
-    //   url: 'https://orcid.org/0000-0000-0000-0000',
-    //   icon: FileText,
-    //   color: 'hover:bg-green-50 dark:hover:bg-green-900',
-    //   description: 'Academic identifier and research outputs'
-    // },
+    {
+      name: 'ORCID',
+      url: 'https://orcid.org/0009-0000-8893-4171',
+      icon: FileText,
+      color: 'hover:bg-green-50 dark:hover:bg-green-900',
+      description: 'Academic identifier and research outputs'
+    },
     // {
     //   name: 'YouTube',
     //   url: 'https://youtube.com/channel/username',

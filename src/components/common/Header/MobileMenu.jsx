@@ -13,7 +13,7 @@ const MobileMenu = ({ isOpen }) => {
     // { path: '/talks', label: 'Talks' },
     { path: '/education', label: 'Education' },
     { path: '/blog', label: 'Blog' },
-    { path: '/resources', label: 'Resources' },
+    //     { path: '/resources', label: 'Resources' },
     { path: '/contact', label: 'Contact' },
   ];
 
